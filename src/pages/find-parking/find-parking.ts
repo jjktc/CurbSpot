@@ -71,6 +71,7 @@ export class FindParkingPage {
               });
               if(this.suggestions.length >= 1) {
                 this.bestPrediction = this.suggestions[0].description;
+                this.selectPlace(this.suggestions[0]);
               } else {
                 this.bestPrediction = "";
               }

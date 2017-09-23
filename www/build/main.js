@@ -66,6 +66,7 @@ var FindParkingPage = (function () {
                     });
                     if (_this.suggestions.length >= 1) {
                         _this.bestPrediction = _this.suggestions[0].description;
+                        _this.selectPlace(_this.suggestions[0]);
                     }
                     else {
                         _this.bestPrediction = "";
@@ -743,10 +744,9 @@ ReservationsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let reservation of reservations">\n    <ion-item>\n      <ion-icon name="ios-information-circle-outline" item-start large></ion-icon>\n      <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n      <p text-wrap>{{reservation.address}}</p>\n    </ion-item>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], ReservationsPage);
 
-var _a, _b;
 //# sourceMappingURL=reservations.js.map
 
 /***/ })
