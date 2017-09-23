@@ -1,5 +1,6 @@
 {
   "name": "CurbSpot",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "95cbec00",
+  "type": "ionic-angular",
+  "integrations": {}
 }
