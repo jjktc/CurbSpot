@@ -10,7 +10,7 @@
     </ion-navbar>
   
     <ion-toolbar>
-      <ion-searchbar>
+      <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()">
         
       </ion-searchbar>
     </ion-toolbar>
@@ -57,7 +57,9 @@
   
   
   <ion-content>
-    <div #map id="map"></div>
+    <div #map id="map">
+      <ion-spinner></ion-spinner>
+    </div>
     <ion-fab top right edge>
       <button ion-fab mini>
         <ion-icon name="md-arrow-round-forward"></ion-icon>

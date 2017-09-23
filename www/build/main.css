@@ -25199,6 +25199,10 @@ ion-navbar.toolbar {
   }
 }
 
+ion-content {
+  background-color: #f4f4f7 !important;
+}
+
 page-find-events ion-card {
   position: relative;
   text-align: center;
@@ -25246,4 +25250,5 @@ page-find-parking .scroll {
 page-find-parking #map {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
