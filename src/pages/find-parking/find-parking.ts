@@ -44,11 +44,11 @@ export class FindParkingPage {
 
   selectPlace(place) {
     this.placesService.getDetails({placeId: place.place_id}, (details) => {
-        this.location.name = details.name;
-        this.location.lat = details.geometry.location.lat();
-        this.location.lng = details.geometry.location.lng();
+      this.location.name = details.name;
+      this.location.lat = details.geometry.location.lat();
+      this.location.lng = details.geometry.location.lng();
 
-        this.map.setCenter({lat: this.location.lat, lng: this.location.lng}); 
+      this.map.setCenter({lat: this.location.lat, lng: this.location.lng}); 
     });
   }
 
@@ -62,21 +62,21 @@ export class FindParkingPage {
 
       this.acService.getPlacePredictions(config, (predictions, status) => {
 
-          if(status == google.maps.places.PlacesServiceStatus.OK && predictions){
+        if(status == google.maps.places.PlacesServiceStatus.OK && predictions){
 
-              this.suggestions = [];
+          this.suggestions = [];
 
-              predictions.forEach((prediction) => {
-                  this.suggestions.push(prediction);
-              });
-              if(this.suggestions.length >= 1) {
-                this.bestPrediction = this.suggestions[0].description;
-                this.selectPlace(this.suggestions[0]);
-              } else {
-                this.bestPrediction = "";
-              }
-              
+          predictions.forEach((prediction) => {
+              this.suggestions.push(prediction);
+          });
+          if(this.suggestions.length >= 1) {
+            this.bestPrediction = this.suggestions[0].description;
+            this.selectPlace(this.suggestions[0]);
+          } else {
+            this.bestPrediction = "";
           }
+            
+        }
 
       });
     }
