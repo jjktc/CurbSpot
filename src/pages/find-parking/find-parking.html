@@ -4,13 +4,12 @@
       <ion-title>Find Parking</ion-title>
   
       <ion-buttons end>
-  
-      <button ion-button (click)="openEvents()">Events</button>
+        <button ion-button (click)="openEvents()">Events</button>
       </ion-buttons>
     </ion-navbar>
   
     <ion-toolbar>
-      <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()">
+      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">
         
       </ion-searchbar>
     </ion-toolbar>

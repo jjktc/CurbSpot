@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SingletonProvider } from '../providers/singleton/singleton';
+import { MapServiceProvider } from '../providers/map-service/map-service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SingletonProvider } from '../providers/singleton/singleton';
     SplashScreen,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SingletonProvider
+    SingletonProvider,
+    MapServiceProvider
   ]
 })
 export class AppModule {}

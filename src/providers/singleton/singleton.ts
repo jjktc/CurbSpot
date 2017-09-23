@@ -255,8 +255,13 @@ export class SingletonProvider {
   }
 
   createModal(content) {
-    let m = this.mc.create(content);
-    m.present();
+    return new Promise(resolve => {
+      let m = this.mc.create(content);
+      m.present();
+      m.onDidDismiss(data => {
+        resolve([{data: data}]);
+      });
+    });
   }
 
   capitalizeFirstLetter(str) {

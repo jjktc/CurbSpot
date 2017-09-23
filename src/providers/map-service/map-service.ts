@@ -1,0 +1,86 @@
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+import { Geolocation } from '@ionic-native/geolocation';
+
+declare var google;
+
+@Injectable()
+export class MapServiceProvider {
+
+  public acService : any;
+  public placesService : any;
+  public suggestions = [];
+  public location = {
+    name: "",
+    lat: 0,
+    lng: 0
+  }
+  public map : any;
+
+  constructor(public http: Http, public geolocation : Geolocation) {
+    console.log('Hello MapServiceProvider Provider');
+  }
+
+  selectPlace(place) {
+    this.placesService.getDetails({placeId: place.place_id}, (details) => {
+      this.location.name = details.name;
+      this.location.lat = details.geometry.location.lat();
+      this.location.lng = details.geometry.location.lng();
+
+      this.map.setCenter({lat: this.location.lat, lng: this.location.lng}); 
+    });
+  }
+
+  searchPlace(query) {
+    return new Promise(resolve => {
+      if(query.length > 0) {
+        
+        let config = {
+          types: ['geocode'],
+          input: query
+        }
+  
+        this.acService.getPlacePredictions(config, (predictions, status) => {
+  
+          if(status == google.maps.places.PlacesServiceStatus.OK && predictions){
+  
+            this.suggestions = [];
+  
+            predictions.forEach((prediction) => {
+                this.suggestions.push(prediction);
+            });
+            resolve([{suggestions: this.suggestions}]);
+          }
+  
+        });
+      }
+    });
+  }
+
+  loadMap(mapElement) {
+    this.geolocation.getCurrentPosition().then((position) => {
+      this.location.lat = position.coords.latitude;
+      this.location.lng = position.coords.longitude;
+      
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeControl: false,
+        zoomControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+
+      this.acService = new google.maps.places.AutocompleteService();
+      this.placesService = new google.maps.places.PlacesService(this.map);
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
+}

@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="vc.dismiss()">
+          Cancel
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()" #searchbar>
+      
+    </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of suggestions" (click)="selectPlace(item)">
+      {{item.description}}
+    </button>
+  </ion-list>
+
+</ion-content>

@@ -1,14 +1,64 @@
-webpackJsonp([4],{
+webpackJsonp([5],{
 
 /***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ReservationsPage = (function () {
+    function ReservationsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.reservationType = "upcoming";
+        this.reservations = [
+            {
+                address: "1 Oakwood Avenue, Los Angeles, CA",
+                startDate: "09/23/2017",
+                startTime: "09:30 am",
+                endDate: "09/23/2017",
+                endTime: "02:30 pm"
+            }
+        ];
+    }
+    ReservationsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReservationsPage');
+    };
+    return ReservationsPage;
+}());
+ReservationsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="reservationType">\n      <ion-segment-button value="history">\n        History\n      </ion-segment-button>\n      <ion-segment-button value="upcoming">\n        Upcoming\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="reservationType">\n    <div *ngSwitchCase="\'history\'">\n\n    </div>\n    <div *ngSwitchCase="\'upcoming\'">\n      <ion-card *ngFor="let reservation of reservations">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n          <p text-wrap>{{reservation.address}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-alarm"></ion-icon>\n              <div>Set Alarm</div>\n            </button>\n          </ion-col>\n          <ion-col text-center>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-navigate"></ion-icon>\n              <div>Navigate</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+], ReservationsPage);
+
+//# sourceMappingURL=reservations.js.map
+
+/***/ }),
+
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FindParkingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_singleton_singleton__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -23,15 +73,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FindParkingPage = (function () {
-    function FindParkingPage(navCtrl, navParams, geolocation, singleton) {
+    function FindParkingPage(navCtrl, navParams, singleton, ms) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.geolocation = geolocation;
         this.singleton = singleton;
+        this.ms = ms;
         this.query = "";
         this.filterType = "price";
-        this.suggestions = [];
-        this.bestPrediction = "Search";
         this.location = {
             name: "",
             lat: 0,
@@ -40,9 +88,76 @@ var FindParkingPage = (function () {
     }
     FindParkingPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FindParkingPage');
-        this.loadMap();
+        this.ms.loadMap(this.mapElement);
     };
-    FindParkingPage.prototype.selectPlace = function (place) {
+    FindParkingPage.prototype.onFocusSearch = function () {
+        var _this = this;
+        this.singleton.createModal("LocationPickerPage").then(function (res) {
+            if (res != undefined && res[0] != undefined && res[0].data != undefined) {
+                console.log("Received location", res[0].data);
+                _this.ms.selectPlace(res[0].data.place);
+            }
+        });
+    };
+    FindParkingPage.prototype.openEvents = function () {
+        this.singleton.createModal("FindEventsPage").then(function (res) {
+        });
+    };
+    return FindParkingPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+], FindParkingPage.prototype, "mapElement", void 0);
+FindParkingPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
+], FindParkingPage);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=find-parking.js.map
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(157);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MapServiceProvider = (function () {
+    function MapServiceProvider(http, geolocation) {
+        this.http = http;
+        this.geolocation = geolocation;
+        this.suggestions = [];
+        this.location = {
+            name: "",
+            lat: 0,
+            lng: 0
+        };
+        console.log('Hello MapServiceProvider Provider');
+    }
+    MapServiceProvider.prototype.selectPlace = function (place) {
         var _this = this;
         this.placesService.getDetails({ placeId: place.place_id }, function (details) {
             _this.location.name = details.name;
@@ -51,31 +166,27 @@ var FindParkingPage = (function () {
             _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
         });
     };
-    FindParkingPage.prototype.searchPlace = function () {
+    MapServiceProvider.prototype.searchPlace = function (query) {
         var _this = this;
-        if (this.query.length > 0) {
-            var config = {
-                types: ['geocode'],
-                input: this.query
-            };
-            this.acService.getPlacePredictions(config, function (predictions, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK && predictions) {
-                    _this.suggestions = [];
-                    predictions.forEach(function (prediction) {
-                        _this.suggestions.push(prediction);
-                    });
-                    if (_this.suggestions.length >= 1) {
-                        _this.bestPrediction = _this.suggestions[0].description;
-                        _this.selectPlace(_this.suggestions[0]);
+        return new Promise(function (resolve) {
+            if (query.length > 0) {
+                var config = {
+                    types: ['geocode'],
+                    input: query
+                };
+                _this.acService.getPlacePredictions(config, function (predictions, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK && predictions) {
+                        _this.suggestions = [];
+                        predictions.forEach(function (prediction) {
+                            _this.suggestions.push(prediction);
+                        });
+                        resolve([{ suggestions: _this.suggestions }]);
                     }
-                    else {
-                        _this.bestPrediction = "";
-                    }
-                }
-            });
-        }
+                });
+            }
+        });
     };
-    FindParkingPage.prototype.loadMap = function () {
+    MapServiceProvider.prototype.loadMap = function (mapElement) {
         var _this = this;
         this.geolocation.getCurrentPosition().then(function (position) {
             _this.location.lat = position.coords.latitude;
@@ -88,35 +199,25 @@ var FindParkingPage = (function () {
                 zoomControl: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-            _this.map = new google.maps.Map(_this.mapElement.nativeElement, mapOptions);
+            _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
             _this.acService = new google.maps.places.AutocompleteService();
             _this.placesService = new google.maps.places.PlacesService(_this.map);
         }, function (err) {
             console.log(err);
         });
     };
-    FindParkingPage.prototype.openEvents = function () {
-        this.singleton.createModal("FindEventsPage");
-    };
-    return FindParkingPage;
+    return MapServiceProvider;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
-], FindParkingPage.prototype, "mapElement", void 0);
-FindParkingPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n  \n      <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_3__providers_singleton_singleton__["a" /* SingletonProvider */]])
-], FindParkingPage);
+MapServiceProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
+], MapServiceProvider);
 
-//# sourceMappingURL=find-parking.js.map
+//# sourceMappingURL=map-service.js.map
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -162,7 +263,7 @@ AccountPage = __decorate([
 
 /***/ }),
 
-/***/ 110:
+/***/ 112:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -175,29 +276,33 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 110;
+webpackEmptyAsyncContext.id = 112;
 
 /***/ }),
 
-/***/ 152:
+/***/ 154:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/account/account.module": [
+		272,
+		4
+	],
+	"../pages/find-events/find-events.module": [
+		270,
+		1
+	],
+	"../pages/find-parking/find-parking.module": [
 		271,
 		3
 	],
-	"../pages/find-events/find-events.module": [
-		269,
+	"../pages/location-picker/location-picker.module": [
+		273,
 		0
 	],
-	"../pages/find-parking/find-parking.module": [
-		270,
-		2
-	],
 	"../pages/reservations/reservations.module": [
-		268,
-		1
+		269,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -211,7 +316,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 152;
+webpackAsyncContext.id = 154;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -222,8 +327,8 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SingletonProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(27);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -482,8 +587,14 @@ var SingletonProvider = (function () {
         }
     };
     SingletonProvider.prototype.createModal = function (content) {
-        var m = this.mc.create(content);
-        m.present();
+        var _this = this;
+        return new Promise(function (resolve) {
+            var m = _this.mc.create(content);
+            m.present();
+            m.onDidDismiss(function (data) {
+                resolve([{ data: data }]);
+            });
+        });
     };
     SingletonProvider.prototype.capitalizeFirstLetter = function (str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -509,22 +620,22 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
 ], SingletonProvider);
 
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),
 
-/***/ 198:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__account_account__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__account_account__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -556,13 +667,13 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 199:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(220);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -570,7 +681,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -578,22 +689,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_account_account__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_account_account__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_singleton_singleton__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_map_service_map_service__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -629,7 +742,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/reservations/reservations.module#ReservationsPageModule', name: 'ReservationsPage', segment: 'reservations', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/find-events/find-events.module#FindEventsPageModule', name: 'FindEventsPage', segment: 'find-events', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/find-parking/find-parking.module#FindParkingPageModule', name: 'FindParkingPage', segment: 'find-parking', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/location-picker/location-picker.module#LocationPickerPageModule', name: 'LocationPickerPage', segment: 'location-picker', priority: 'low', defaultHistory: [] }
                 ]
             })
         ],
@@ -646,7 +760,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_12__providers_singleton_singleton__["a" /* SingletonProvider */]
+            __WEBPACK_IMPORTED_MODULE_12__providers_singleton_singleton__["a" /* SingletonProvider */],
+            __WEBPACK_IMPORTED_MODULE_13__providers_map_service_map_service__["a" /* MapServiceProvider */]
         ]
     })
 ], AppModule);
@@ -655,16 +770,16 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 267:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,56 +814,7 @@ MyApp = __decorate([
 
 //# sourceMappingURL=app.component.js.map
 
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ReservationsPage = (function () {
-    function ReservationsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.reservations = [
-            {
-                address: "1 Oakwood Avenue, Los Angeles, CA",
-                startDate: "09/23/2017",
-                startTime: "09:30 am",
-                endDate: "09/23/2017",
-                endTime: "02:30 pm"
-            }
-        ];
-    }
-    ReservationsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReservationsPage');
-    };
-    return ReservationsPage;
-}());
-ReservationsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let reservation of reservations">\n    <ion-item>\n      <ion-icon name="ios-information-circle-outline" item-start large></ion-icon>\n      <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n      <p text-wrap>{{reservation.address}}</p>\n    </ion-item>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], ReservationsPage);
-
-//# sourceMappingURL=reservations.js.map
-
 /***/ })
 
-},[199]);
+},[201]);
 //# sourceMappingURL=main.js.map

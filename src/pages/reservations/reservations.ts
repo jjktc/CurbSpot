@@ -8,6 +8,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReservationsPage {
 
+  public reservationType : any = "upcoming";
+
   public reservations = [
     {
       address: "1 Oakwood Avenue, Los Angeles, CA",

@@ -4,17 +4,49 @@
     <ion-title>Reservations</ion-title>
   </ion-navbar>
 
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="reservationType">
+      <ion-segment-button value="history">
+        History
+      </ion-segment-button>
+      <ion-segment-button value="upcoming">
+        Upcoming
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 </ion-header>
 
 
 <ion-content padding>
 
-  <ion-card *ngFor="let reservation of reservations">
-    <ion-item>
-      <ion-icon name="ios-information-circle-outline" item-start large></ion-icon>
-      <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>
-      <p text-wrap>{{reservation.address}}</p>
-    </ion-item>
-  </ion-card>
+  <div [ngSwitch]="reservationType">
+    <div *ngSwitchCase="'history'">
+
+    </div>
+    <div *ngSwitchCase="'upcoming'">
+      <ion-card *ngFor="let reservation of reservations">
+        <ion-item>
+          <ion-icon name="md-calendar" item-start large></ion-icon>
+          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>
+          <p text-wrap>{{reservation.address}}</p>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear block>
+              <ion-icon name="md-alarm"></ion-icon>
+              <div>Set Alarm</div>
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button icon-left clear block>
+              <ion-icon name="md-navigate"></ion-icon>
+              <div>Navigate</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </div>
 
 </ion-content>
