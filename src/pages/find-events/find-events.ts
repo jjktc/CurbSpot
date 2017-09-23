@@ -1,19 +1,35 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the FindEventsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-find-events',
   templateUrl: 'find-events.html',
 })
 export class FindEventsPage {
+
+  public events = [
+    {
+      title: "Lollapalooza",
+      subtitle: "21 spots",
+      image: "http://edmchicago.com/wp-content/uploads/2015/12/TC-Lollapalooza.jpg"
+    },
+    {
+      title: "Comic-Con",
+      subtitle: "16 spots",
+      image: "http://sdccsurvivalguide.com/wp-content/uploads/2016/07/sdccsg-02-floor.jpg"
+    },
+    {
+      title: "event 3",
+      subtitle: "subtitle",
+      image: ""
+    },
+    {
+      title: "event 4",
+      subtitle: "subtitle",
+      image: ""
+    }
+  ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

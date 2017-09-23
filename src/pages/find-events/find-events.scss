@@ -1,3 +1,45 @@
 page-find-events {
-
-}
+    
+        ion-card {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 56%;
+    
+            //background-image: url("http://edmchicago.com/wp-content/uploads/2015/12/TC-Lollapalooza.jpg") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+    
+            img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                -webkit-filter: blur(0.2px);
+                filter: blur(0.2px);
+                object-fit: cover;
+            }
+        }
+    
+        .card-title {
+            text-shadow: 0px 0px 15px #000000;
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+        }
+    
+        .card-subtitle {
+            text-shadow: 0px 0px 15px #000000;
+            font-size: 1.2em;
+            position: absolute;
+            top: 54%;
+            width: 100%;
+            color: #fff;
+        }
+    
+    }
+    
