@@ -42,9 +42,44 @@ export class FindParkingPage {
     this.singleton.createModal("LocationPickerPage").then(res => {
       if(res != undefined && res[0] != undefined && res[0].data != undefined) {
         console.log("Received location", res[0].data);
-        this.ms.selectPlace(res[0].data.place);
+        this.query = res[0].data.place.description;
+        this.ms.selectPlace(res[0].data.place).then(res => {
+          this.randomizeMarkers(res[0].lat, res[0].lng);
+        });
       }
     });
+  }
+
+  randomizeMarkers(lat, lng) {
+    console.log("Randomizing markers");
+    for(var i = 0; i < 3; i++) {
+      var newLat = (lat + (Math.random() * 0.01));
+      var newLng = (lng + (Math.random() * 0.01));
+      var title = "Title";
+      var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+      this.ms.createMarker(newLat, newLng, title, content);
+    }
+    for(var i = 0; i < 3; i++) {
+      newLat = (lat - (Math.random() * 0.01));
+      newLng = (lng - (Math.random() * 0.01));
+      var title = "Title";
+      var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+      this.ms.createMarker(newLat, newLng, title, content);
+    }
+    for(var i = 0; i < 3; i++) {
+      newLat = (lat + (Math.random() * 0.01));
+      newLng = (lng - (Math.random() * 0.01));
+      var title = "Title";
+      var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+      this.ms.createMarker(newLat, newLng, title, content);
+    }
+    for(var i = 0; i < 3; i++) {
+      newLat = (lat - (Math.random() * 0.01));
+      newLng = (lng + (Math.random() * 0.01));
+      var title = "Title";
+      var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+      this.ms.createMarker(newLat, newLng, title, content);
+    }
   }
 
   openEvents() {

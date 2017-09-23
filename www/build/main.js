@@ -23,7 +23,16 @@ var ReservationsPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.reservationType = "upcoming";
-        this.reservations = [
+        this.history = [
+            {
+                address: "1 Oakwood Avenue, Los Angeles, CA",
+                startDate: "09/14/2017",
+                startTime: "09:30 am",
+                endDate: "09/14/2017",
+                endTime: "02:30 pm"
+            }
+        ];
+        this.upcoming = [
             {
                 address: "1 Oakwood Avenue, Los Angeles, CA",
                 startDate: "09/23/2017",
@@ -41,7 +50,7 @@ var ReservationsPage = (function () {
 ReservationsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="reservationType">\n      <ion-segment-button value="history">\n        History\n      </ion-segment-button>\n      <ion-segment-button value="upcoming">\n        Upcoming\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="reservationType">\n    <div *ngSwitchCase="\'history\'">\n\n    </div>\n    <div *ngSwitchCase="\'upcoming\'">\n      <ion-card *ngFor="let reservation of reservations">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n          <p text-wrap>{{reservation.address}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-alarm"></ion-icon>\n              <div>Set Alarm</div>\n            </button>\n          </ion-col>\n          <ion-col text-center>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-navigate"></ion-icon>\n              <div>Navigate</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
+        selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="reservationType">\n      <ion-segment-button value="history">\n        History\n      </ion-segment-button>\n      <ion-segment-button value="upcoming">\n        Upcoming\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="reservationType">\n    <div *ngSwitchCase="\'history\'">\n      <ion-card *ngFor="let reservation of history">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2 text-wrap>{{reservation.address}}</h2>\n          <p>{{reservation.startDate}} @ {{reservation.startTime}} - {{reservation.endTime}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-search"></ion-icon>\n              <div>Availability</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n    <div *ngSwitchCase="\'upcoming\'">\n      <ion-card *ngFor="let reservation of upcoming">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n          <p text-wrap>{{reservation.address}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-alarm"></ion-icon>\n              <div>Set Alarm</div>\n            </button>\n          </ion-col>\n          <ion-col text-center>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-navigate"></ion-icon>\n              <div>Navigate</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], ReservationsPage);
@@ -95,9 +104,43 @@ var FindParkingPage = (function () {
         this.singleton.createModal("LocationPickerPage").then(function (res) {
             if (res != undefined && res[0] != undefined && res[0].data != undefined) {
                 console.log("Received location", res[0].data);
-                _this.ms.selectPlace(res[0].data.place);
+                _this.query = res[0].data.place.description;
+                _this.ms.selectPlace(res[0].data.place).then(function (res) {
+                    _this.randomizeMarkers(res[0].lat, res[0].lng);
+                });
             }
         });
+    };
+    FindParkingPage.prototype.randomizeMarkers = function (lat, lng) {
+        console.log("Randomizing markers");
+        for (var i = 0; i < 3; i++) {
+            var newLat = (lat + (Math.random() * 0.01));
+            var newLng = (lng + (Math.random() * 0.01));
+            var title = "Title";
+            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+            this.ms.createMarker(newLat, newLng, title, content);
+        }
+        for (var i = 0; i < 3; i++) {
+            newLat = (lat - (Math.random() * 0.01));
+            newLng = (lng - (Math.random() * 0.01));
+            var title = "Title";
+            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+            this.ms.createMarker(newLat, newLng, title, content);
+        }
+        for (var i = 0; i < 3; i++) {
+            newLat = (lat + (Math.random() * 0.01));
+            newLng = (lng - (Math.random() * 0.01));
+            var title = "Title";
+            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+            this.ms.createMarker(newLat, newLng, title, content);
+        }
+        for (var i = 0; i < 3; i++) {
+            newLat = (lat - (Math.random() * 0.01));
+            newLng = (lng + (Math.random() * 0.01));
+            var title = "Title";
+            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
+            this.ms.createMarker(newLat, newLng, title, content);
+        }
     };
     FindParkingPage.prototype.openEvents = function () {
         this.singleton.createModal("FindEventsPage").then(function (res) {
@@ -107,17 +150,16 @@ var FindParkingPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], FindParkingPage.prototype, "mapElement", void 0);
 FindParkingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
 ], FindParkingPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=find-parking.js.map
 
 /***/ }),
@@ -159,11 +201,14 @@ var MapServiceProvider = (function () {
     }
     MapServiceProvider.prototype.selectPlace = function (place) {
         var _this = this;
-        this.placesService.getDetails({ placeId: place.place_id }, function (details) {
-            _this.location.name = details.name;
-            _this.location.lat = details.geometry.location.lat();
-            _this.location.lng = details.geometry.location.lng();
-            _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
+        return new Promise(function (resolve) {
+            _this.placesService.getDetails({ placeId: place.place_id }, function (details) {
+                _this.location.name = details.name;
+                _this.location.lat = details.geometry.location.lat();
+                _this.location.lng = details.geometry.location.lng();
+                _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
+                resolve([{ lat: _this.location.lat, lng: _this.location.lng }]);
+            });
         });
     };
     MapServiceProvider.prototype.searchPlace = function (query) {
@@ -186,6 +231,19 @@ var MapServiceProvider = (function () {
             }
         });
     };
+    MapServiceProvider.prototype.createMarker = function (lat, lng, title, content) {
+        var info = new google.maps.InfoWindow({
+            content: content
+        });
+        var marker = new google.maps.Marker({
+            position: { lat: lat, lng: lng },
+            map: this.map,
+            title: title
+        });
+        marker.addListener("click", function () {
+            info.open(this.map, marker);
+        });
+    };
     MapServiceProvider.prototype.loadMap = function (mapElement) {
         var _this = this;
         this.geolocation.getCurrentPosition().then(function (position) {
@@ -200,6 +258,7 @@ var MapServiceProvider = (function () {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+            //this.createMarker(this.location.lat, this.location.lng, "title", "content");
             _this.acService = new google.maps.places.AutocompleteService();
             _this.placesService = new google.maps.places.PlacesService(_this.map);
         }, function (err) {

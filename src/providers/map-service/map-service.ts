@@ -24,13 +24,16 @@ export class MapServiceProvider {
   }
 
   selectPlace(place) {
-    this.placesService.getDetails({placeId: place.place_id}, (details) => {
-      this.location.name = details.name;
-      this.location.lat = details.geometry.location.lat();
-      this.location.lng = details.geometry.location.lng();
-
-      this.map.setCenter({lat: this.location.lat, lng: this.location.lng}); 
-    });
+    return new Promise(resolve => {
+      this.placesService.getDetails({placeId: place.place_id}, (details) => {
+        this.location.name = details.name;
+        this.location.lat = details.geometry.location.lat();
+        this.location.lng = details.geometry.location.lng();
+  
+        this.map.setCenter({lat: this.location.lat, lng: this.location.lng}); 
+        resolve([{lat: this.location.lat, lng: this.location.lng}]);
+      });
+    })
   }
 
   searchPlace(query) {
@@ -59,6 +62,21 @@ export class MapServiceProvider {
     });
   }
 
+  createMarker(lat, lng, title, content) {
+    var info = new google.maps.InfoWindow({
+      content: content
+    });
+    var marker = new google.maps.Marker({
+      position: {lat: lat, lng: lng},
+      map: this.map,
+      title: title
+    });
+    marker.addListener("click", function() {
+      info.open(this.map, marker);
+    });
+
+  }
+
   loadMap(mapElement) {
     this.geolocation.getCurrentPosition().then((position) => {
       this.location.lat = position.coords.latitude;
@@ -75,6 +93,8 @@ export class MapServiceProvider {
       }
 
       this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+
+      //this.createMarker(this.location.lat, this.location.lng, "title", "content");
 
       this.acService = new google.maps.places.AutocompleteService();
       this.placesService = new google.maps.places.PlacesService(this.map);

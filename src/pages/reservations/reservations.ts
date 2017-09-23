@@ -10,7 +10,17 @@ export class ReservationsPage {
 
   public reservationType : any = "upcoming";
 
-  public reservations = [
+  public history = [
+    {
+      address: "1 Oakwood Avenue, Los Angeles, CA",
+      startDate: "09/14/2017",
+      startTime: "09:30 am",
+      endDate: "09/14/2017",
+      endTime: "02:30 pm"
+    }
+  ];
+
+  public upcoming = [
     {
       address: "1 Oakwood Avenue, Los Angeles, CA",
       startDate: "09/23/2017",

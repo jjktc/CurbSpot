@@ -73,9 +73,9 @@ var FindEventsPage = (function () {
                 image: "http://sdccsurvivalguide.com/wp-content/uploads/2016/07/sdccsg-02-floor.jpg"
             },
             {
-                title: "event 3",
-                subtitle: "subtitle",
-                image: ""
+                title: "Chicago Bulls",
+                subtitle: "19 spots",
+                image: "http://mediad.publicbroadcasting.net/p/wamc/files/201505/clevelandcavaliers.jpg"
             },
             {
                 title: "event 4",

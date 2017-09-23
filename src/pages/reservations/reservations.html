@@ -22,10 +22,24 @@
 
   <div [ngSwitch]="reservationType">
     <div *ngSwitchCase="'history'">
-
+      <ion-card *ngFor="let reservation of history">
+        <ion-item>
+          <ion-icon name="md-calendar" item-start large></ion-icon>
+          <h2 text-wrap>{{reservation.address}}</h2>
+          <p>{{reservation.startDate}} @ {{reservation.startTime}} - {{reservation.endTime}}</p>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear block>
+              <ion-icon name="md-search"></ion-icon>
+              <div>Availability</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
     </div>
     <div *ngSwitchCase="'upcoming'">
-      <ion-card *ngFor="let reservation of reservations">
+      <ion-card *ngFor="let reservation of upcoming">
         <ion-item>
           <ion-icon name="md-calendar" item-start large></ion-icon>
           <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>
