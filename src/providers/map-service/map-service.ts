@@ -68,33 +68,27 @@ export class MapServiceProvider {
     console.log("test");
   }
 
-  createBasicMarker(lat, lng, title, cost) {
-    return new Promise(resolve => {
-      this.createMarker(lat, lng, title, 
-        "<span id='myid' style='font-weight: bold'>" + cost + "</span>"
-      ).then(res => {
-        resolve(res);
-      })
-    })
+  createBasicMarker(lat, lng, title, cost, func) {
+    this.createMarker(lat, lng, title, 
+      "<span id='myid' style='font-weight: bold'>" + cost + "</span>",
+      func);
   }
 
-  createMarker(lat, lng, title, content) {
-    return new Promise(resolve => {
-      var info = new google.maps.InfoWindow({
-        content: content
-      });
-      var marker = new google.maps.Marker({
-        position: {lat: lat, lng: lng},
-        map: this.map,
-        title: title,
-        //icon: "http://wfarm3.dataknet.com/static/resources/icons/set28/58aac1c.png"
-        animation:google.maps.Animation.DROP
-      });
+  createMarker(lat, lng, title, content, func) {
+    var info = new google.maps.InfoWindow({
+      content: content
+    });
+    var marker = new google.maps.Marker({
+      position: {lat: lat, lng: lng},
+      map: this.map,
+      title: title,
+      //icon: "https://i.stack.imgur.com/VpVF8.png",
+      animation:google.maps.Animation.DROP
+    });
+    info.open(this.map, marker);
+    marker.addListener("click", function() {
       info.open(this.map, marker);
-      marker.addListener("click", function() {
-        info.open(this.map, marker);
-        resolve([{marker: title}]);
-      });
+      func();
     });
   }
 
@@ -105,12 +99,12 @@ export class MapServiceProvider {
         if (status === 'OK') {
           if (results[0]) {
             console.log(results[0].formatted_address)
-            resolve([{address: results[0].formatted_address}]);
+            resolve([{address: results[0].formatted_address, lat: lat, lng: lng}]);
           } else {
-            resolve([{address: ""}]);
+            resolve([{address: "", lat: 0, lng: 0}]);
           }
         } else {
-          resolve([{address: ""}]);
+          resolve([{address: "", lat: 0, lng: 0}]);
         }
       });
     });

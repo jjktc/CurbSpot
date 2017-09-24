@@ -23,6 +23,8 @@
 		558CD3B6D82B4CB5A9074C4A /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 16248421F35A4552809DCF26 /* CDVViewController+SplashScreen.m */; };
 		D7038DCF230E46479C54C924 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EB6F7E93D145E69EEF90DD /* CDVStatusBar.m */; };
 		2185B103B7484390B5BAB309 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6175EE9C5175441AA19BC905 /* IonicKeyboard.m */; };
+		29CDD96F36C147E98DAE5176 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F0E5D82C244FFA81FCE4F7 /* DatePicker.m */; };
+		9DB23E3810BB46D590BF6ECD /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FDA5C10A14434CA21BF841 /* DatePicker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,9 @@
 		C534B3CFE2134BCFAF40D21B /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		6175EE9C5175441AA19BC905 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		FF0F934B9DF24730AA4F7C8F /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		10F0E5D82C244FFA81FCE4F7 /* DatePicker.m */ = {isa = PBXFileReference; name = "DatePicker.m"; path = "cordova-plugin-datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		323A2B2E78C14903A53E173C /* DatePicker.h */ = {isa = PBXFileReference; name = "DatePicker.h"; path = "cordova-plugin-datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		98FDA5C10A14434CA21BF841 /* DatePicker.xib */ = {isa = PBXFileReference; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +152,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* CurbSpot-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				98FDA5C10A14434CA21BF841 /* DatePicker.xib */,
 			);
 			name = Resources;
 			path = "CurbSpot/Resources";
@@ -193,6 +199,8 @@
 				C534B3CFE2134BCFAF40D21B /* CDVStatusBar.h */,
 				6175EE9C5175441AA19BC905 /* IonicKeyboard.m */,
 				FF0F934B9DF24730AA4F7C8F /* IonicKeyboard.h */,
+				10F0E5D82C244FFA81FCE4F7 /* DatePicker.m */,
+				323A2B2E78C14903A53E173C /* DatePicker.h */,
 			);
 			name = Plugins;
 			path = "CurbSpot/Plugins";
@@ -274,6 +282,7 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				9DB23E3810BB46D590BF6ECD /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +320,7 @@
 				558CD3B6D82B4CB5A9074C4A /* CDVViewController+SplashScreen.m in Sources */,
 				D7038DCF230E46479C54C924 /* CDVStatusBar.m in Sources */,
 				2185B103B7484390B5BAB309 /* IonicKeyboard.m in Sources */,
+				29CDD96F36C147E98DAE5176 /* DatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DatePicker } from '@ionic-native/date-picker';
 import { HttpModule } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SingletonProvider } from '../providers/singleton/singleton';
@@ -40,6 +41,7 @@ import { MapServiceProvider } from '../providers/map-service/map-service';
     StatusBar,
     SplashScreen,
     Geolocation,
+    DatePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SingletonProvider,
     MapServiceProvider

@@ -52,60 +52,42 @@ export class FindParkingPage {
     });
   }
 
+  onClickDuration() {
+    this.singleton.createDatePicker();
+  }
+
+  markers = []
+
+  addMarker(lat, lng, cost) {
+    this.markers.push({
+      lat: lat,
+      lng: lng,
+      content: cost
+    });
+    //console.log("Creating marker", [lat, lng], cost);
+    this.ms.createBasicMarker(lat, lng, "title", cost, () => {
+      this.ms.geocodeLatLng(lat, lng).then(res => {
+        if(res[0].address.length > 0) {
+          this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: res[0].lat, lng: res[0].lng, cost: cost});
+        }
+      });
+    });
+  }
+
   randomizeMarkers(lat, lng) {
     console.log("Randomizing markers");
     var total = 0;
     for(var i = 0; i < 3; i++) {
-      var newLat = (lat + (Math.random() * 0.01));
-      var newLng = (lng + (Math.random() * 0.01));
-      var title = "Title";
-      var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
-      this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.ms.geocodeLatLng(newLat, newLng).then(res => {
-          if(res[0].address.length > 0) {
-            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
-          }
-        });
-      });
+      this.addMarker((lat + (Math.random() * 0.005 * (i + 1))), (lng + (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
     }
     for(var i = 0; i < 3; i++) {
-      newLat = (lat - (Math.random() * 0.01));
-      newLng = (lng - (Math.random() * 0.01));
-      var title = "Title";
-      var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
-      this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.ms.geocodeLatLng(newLat, newLng).then(res => {
-          if(res[0].address.length > 0) {
-            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
-          }
-        });
-      });
+      this.addMarker((lat - (Math.random() * 0.005 * (i + 1))), (lng - (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
     }
     for(var i = 0; i < 3; i++) {
-      newLat = (lat + (Math.random() * 0.01));
-      newLng = (lng - (Math.random() * 0.01));
-      var title = "Title";
-      var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
-      this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.ms.geocodeLatLng(newLat, newLng).then(res => {
-          if(res[0].address.length > 0) {
-            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
-          }
-        });
-      });
+      this.addMarker((lat - (Math.random() * 0.005 * (i + 1))), (lng + (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
     }
     for(var i = 0; i < 3; i++) {
-      newLat = (lat - (Math.random() * 0.01));
-      newLng = (lng + (Math.random() * 0.01));
-      var title = "Title";
-      var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
-      this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.ms.geocodeLatLng(newLat, newLng).then(res => {
-          if(res[0].address.length > 0) {
-            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
-          }
-        });
-      });
+      this.addMarker((lat + (Math.random() * 0.005 * (i + 1))), (lng - (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
     }
   }
 

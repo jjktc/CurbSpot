@@ -3,12 +3,14 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Platform, AlertController, ToastController, LoadingController, ModalController } from 'ionic-angular';
 
+import { DatePicker } from '@ionic-native/date-picker';
+
 @Injectable()
 export class SingletonProvider {
 
   public loader : any;
 
-  constructor(public http: Http, public platform : Platform, public ac : AlertController, public tc : ToastController, public lc : LoadingController, public mc : ModalController) {
+  constructor(public http: Http, public platform : Platform, public ac : AlertController, public tc : ToastController, public lc : LoadingController, public mc : ModalController, public datePicker : DatePicker) {
     console.log('Hello SingletonProvider Provider');
   }
 
@@ -78,6 +80,17 @@ export class SingletonProvider {
       return aL < bL ? -1 : aL > bL ? 1 : 0;
     });
     return sorted;
+  }
+
+  createDatePicker() {
+    this.datePicker.show({
+      date: new Date(),
+      mode: 'date',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+    }).then(
+      date => console.log('Got date: ', date),
+      err => console.log('Error occurred while getting date: ', err)
+    );
   }
 
   createDateAlert(aTitle, aValue) {
@@ -242,6 +255,7 @@ export class SingletonProvider {
   //creates a spinner object with the desired message
   createLoader(message) {
     this.loader = this.lc.create({
+      spinner: "dots",
       content: message
     });
     this.loader.present();
