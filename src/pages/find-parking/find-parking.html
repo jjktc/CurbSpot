@@ -1,68 +1,80 @@
-<ion-header>
+<!--<ion-header>
   
-    <ion-navbar>
+    <ion-navbar no-shadow no-border transparent>
       <ion-title>Find Parking</ion-title>
   
       <ion-buttons end>
         <button ion-button (click)="openEvents()">Events</button>
       </ion-buttons>
     </ion-navbar>
-  
-    <ion-toolbar>
-      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">
-        
-      </ion-searchbar>
-    </ion-toolbar>
-    <ion-toolbar>
-      <ion-segment [(ngModel)]="filterType">
-        <ion-segment-button value="price">
-          Price
-        </ion-segment-button>
-        <ion-segment-button value="duration">
-          Duration
-        </ion-segment-button>
-        <ion-segment-button value="radius">
-          Radius
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-    <ion-toolbar [ngSwitch]="filterType">
-      <div *ngSwitchCase="'price'">
-        <ion-range min="5" max="50" step="5" snaps="true">
-          <ion-label range-left>
-            $5
-          </ion-label>
-          <ion-label range-right>
-            $50
-          </ion-label>
-        </ion-range>
-      </div>
-      <div *ngSwitchCase="'duration'">
-        <ion-range min="1" max="24" step="1" snaps="true">
-          <ion-label range-left>
-            1hr
-          </ion-label>
-          <ion-label range-right>
-            24hr
-          </ion-label>
-        </ion-range>
-      </div>
-      <div *ngSwitchCase="'radius'">
-        radius
-      </div>
-    </ion-toolbar>
-  
-  </ion-header>
-  
+</ion-header>-->
+<ion-toolbar mode="md" transparent>
+  <ion-searchbar mode="md" padding-left padding-right [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">
+    
+  </ion-searchbar>
+</ion-toolbar>
+<!--<ion-toolbar transparent>
+  <ion-segment [(ngModel)]="filterType">
+    <ion-segment-button value="price">
+      Price
+    </ion-segment-button>
+    <ion-segment-button value="duration">
+      Duration
+    </ion-segment-button>
+    <ion-segment-button value="radius">
+      Radius
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+<ion-toolbar [ngSwitch]="filterType">
+  <div *ngSwitchCase="'price'">
+    <ion-range min="5" max="50" step="5" snaps="true">
+      <ion-label range-left>
+        $5
+      </ion-label>
+      <ion-label range-right>
+        $50
+      </ion-label>
+    </ion-range>
+  </div>
+  <div *ngSwitchCase="'duration'">
+    <ion-range min="1" max="24" step="1" snaps="true">
+      <ion-label range-left>
+        1hr
+      </ion-label>
+      <ion-label range-right>
+        24hr
+      </ion-label>
+    </ion-range>
+  </div>
+  <div *ngSwitchCase="'radius'">
+    radius
+  </div>
+</ion-toolbar>-->
   
   <ion-content>
     <div #map id="map">
       <ion-spinner color="primary" name="dots"></ion-spinner>
     </div>
-    <ion-fab top right edge>
-      <button ion-fab mini>
-        <ion-icon name="md-arrow-round-forward"></ion-icon>
+    <ion-fab top right mode="md">
+      <button ion-fab mini mode="md">
+        <!--<ion-icon name="md-arrow-round-forward"></ion-icon>-->
+        <ion-icon name="ios-settings"></ion-icon>
       </button>
+      <ion-fab-list mode="md">
+        <button ion-fab color="primary">
+          <ion-label>Price</ion-label>
+          <ion-icon name="md-pricetags"></ion-icon>
+        </button>
+        <button ion-fab color="primary">
+          <ion-label>Duration</ion-label>
+          <ion-icon name="md-time"></ion-icon>
+        </button>
+        <button ion-fab color="primary">
+          <ion-label>Distance</ion-label>
+          <ion-icon name="md-pin"></ion-icon>
+        </button>
+      </ion-fab-list>
     </ion-fab>
   </ion-content>
   

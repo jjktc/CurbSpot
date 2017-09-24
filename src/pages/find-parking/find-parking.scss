@@ -4,6 +4,19 @@ page-find-parking {
         background: transparent !important;
         
     }
+
+    ion-fab {
+        position: absolute;
+        top: 120px !important;
+    }
+
+    ion-toolbar {
+       height: 176px;
+    }
+
+    .searchbar-input-container {
+        box-shadow: 0px 8px 40px #999;
+    }
     
     .scroll {
         height: 100%

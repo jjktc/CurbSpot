@@ -45,7 +45,7 @@ PaymentPageModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -83,17 +83,16 @@ var PaymentPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('pano'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], PaymentPage.prototype, "panoElement", void 0);
 PaymentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-payment',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reserve</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-left (click)="viewCtrl.dismiss()">\n          <ion-icon name="arrow-back"></ion-icon>\n          Cancel\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <ion-card>\n    <ion-card-header text-wrap>\n      {{address}}\n      <h2>{{cost}}</h2>\n    </ion-card-header>\n\n\n  </ion-card>\n\n  <div #pano id="pano">\n    <ion-spinner color="primary" name="dots"></ion-spinner>\n  </div>\n  <!--<div #pano id="pano"><ion-spinner></ion-spinner></div>-->\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding>\n    <button no-padding ion-button full color="secondary">Reserve ({{cost}})</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/,
+        selector: 'page-payment',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reserve</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-left (click)="viewCtrl.dismiss()">\n          <ion-icon name="arrow-back"></ion-icon>\n          Cancel\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <ion-card>\n    <ion-card-header text-wrap>\n      {{address}}\n      <h2>{{cost}}</h2>\n    </ion-card-header>\n\n  </ion-card>\n\n  <div #pano id="pano">\n    <ion-spinner color="primary" name="dots"></ion-spinner>\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding>\n    <button no-padding ion-button icon-left large full color="secondary">\n      <ion-icon showWhen="ios" name="logo-apple"></ion-icon>\n      <ion-icon showWhen="android" name="logo-android"></ion-icon>\n      Reserve ({{cost}})\n    </button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
 ], PaymentPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=payment.js.map
 
 /***/ })

@@ -25212,6 +25212,28 @@ ion-footer button {
   margin-bottom: 0px !important;
 }
 
+button[ion-fab] {
+  overflow: visible;
+  position: relative;
+  -webkit-box-shadow: 0px 4px 10px #888;
+  box-shadow: 0px 4px 10px #888;
+}
+
+button[ion-fab] ion-label {
+  position: absolute;
+  top: -8px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.fab {
+  contain: layout;
+}
+
 page-find-events ion-card {
   position: relative;
   text-align: center;
@@ -25254,6 +25276,20 @@ page-find-events .card-subtitle {
 
 page-find-parking ion-header, page-find-parking ion-navbar, page-find-parking ion-title, page-find-parking ion-toolbar {
   background: transparent !important;
+}
+
+page-find-parking ion-fab {
+  position: absolute;
+  top: 120px !important;
+}
+
+page-find-parking ion-toolbar {
+  height: 176px;
+}
+
+page-find-parking .searchbar-input-container {
+  -webkit-box-shadow: 0px 8px 40px #999;
+  box-shadow: 0px 8px 40px #999;
 }
 
 page-find-parking .scroll {

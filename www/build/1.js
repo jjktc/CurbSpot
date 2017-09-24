@@ -45,7 +45,7 @@ LocationPickerPageModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocationPickerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,7 +93,7 @@ __decorate([
 LocationPickerPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-location-picker',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/location-picker/location-picker.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Search</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-left (click)="vc.dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>  \n        Cancel\n      </button>\n  </ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()" #searchbar>\n      \n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <button ion-item *ngFor="let item of suggestions" (click)="selectPlace(item)">\n      {{item.description}}\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/location-picker/location-picker.html"*/,
+        selector: 'page-location-picker',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/location-picker/location-picker.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="vc.dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>  \n      </button>\n  </ion-buttons>\n    <ion-searchbar [(ngModel)]="query" (ionInput)="searchPlace()" #searchbar>\n      \n    </ion-searchbar>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <button ion-item *ngFor="let item of suggestions" (click)="selectPlace(item)">\n      {{item.description}}\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/location-picker/location-picker.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */]])
 ], LocationPickerPage);

@@ -21,18 +21,20 @@
       <h2>{{cost}}</h2>
     </ion-card-header>
 
-
   </ion-card>
 
   <div #pano id="pano">
     <ion-spinner color="primary" name="dots"></ion-spinner>
   </div>
-  <!--<div #pano id="pano"><ion-spinner></ion-spinner></div>-->
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar no-padding>
-    <button no-padding ion-button full color="secondary">Reserve ({{cost}})</button>
+    <button no-padding ion-button icon-left large full color="secondary">
+      <ion-icon showWhen="ios" name="logo-apple"></ion-icon>
+      <ion-icon showWhen="android" name="logo-android"></ion-icon>
+      Reserve ({{cost}})
+    </button>
   </ion-toolbar>
 </ion-footer>

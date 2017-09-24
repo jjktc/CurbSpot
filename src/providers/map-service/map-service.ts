@@ -87,6 +87,7 @@ export class MapServiceProvider {
         position: {lat: lat, lng: lng},
         map: this.map,
         title: title,
+        //icon: "http://wfarm3.dataknet.com/static/resources/icons/set28/58aac1c.png"
         animation:google.maps.Animation.DROP
       });
       info.open(this.map, marker);

@@ -4,6 +4,173 @@ webpackJsonp([6],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(157);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MapServiceProvider = (function () {
+    function MapServiceProvider(http, geolocation) {
+        this.http = http;
+        this.geolocation = geolocation;
+        this.suggestions = [];
+        this.location = {
+            name: "",
+            lat: 0,
+            lng: 0
+        };
+        console.log('Hello MapServiceProvider Provider');
+    }
+    MapServiceProvider.prototype.selectPlace = function (place) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.placesService.getDetails({ placeId: place.place_id }, function (details) {
+                _this.location.name = details.name;
+                _this.location.lat = details.geometry.location.lat();
+                _this.location.lng = details.geometry.location.lng();
+                _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
+                resolve([{ lat: _this.location.lat, lng: _this.location.lng }]);
+            });
+        });
+    };
+    MapServiceProvider.prototype.searchPlace = function (query) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            if (query.length > 0) {
+                var config = {
+                    types: ['geocode'],
+                    input: query
+                };
+                _this.acService.getPlacePredictions(config, function (predictions, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK && predictions) {
+                        _this.suggestions = [];
+                        predictions.forEach(function (prediction) {
+                            _this.suggestions.push(prediction);
+                        });
+                        resolve([{ suggestions: _this.suggestions }]);
+                    }
+                });
+            }
+        });
+    };
+    MapServiceProvider.prototype.myFunction = function () {
+        console.log("test");
+    };
+    MapServiceProvider.prototype.createBasicMarker = function (lat, lng, title, cost) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.createMarker(lat, lng, title, "<span id='myid' style='font-weight: bold'>" + cost + "</span>").then(function (res) {
+                resolve(res);
+            });
+        });
+    };
+    MapServiceProvider.prototype.createMarker = function (lat, lng, title, content) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var info = new google.maps.InfoWindow({
+                content: content
+            });
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng },
+                map: _this.map,
+                title: title,
+                //icon: "http://wfarm3.dataknet.com/static/resources/icons/set28/58aac1c.png"
+                animation: google.maps.Animation.DROP
+            });
+            info.open(_this.map, marker);
+            marker.addListener("click", function () {
+                info.open(this.map, marker);
+                resolve([{ marker: title }]);
+            });
+        });
+    };
+    MapServiceProvider.prototype.geocodeLatLng = function (lat, lng) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var latlng = { lat: lat, lng: lng };
+            _this.geocoder.geocode({ 'location': latlng }, function (results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        console.log(results[0].formatted_address);
+                        resolve([{ address: results[0].formatted_address }]);
+                    }
+                    else {
+                        resolve([{ address: "" }]);
+                    }
+                }
+                else {
+                    resolve([{ address: "" }]);
+                }
+            });
+        });
+    };
+    MapServiceProvider.prototype.streetView = function (panoElement, lat, lng) {
+        var location = { lat: lat, lng: lng };
+        var latLng = new google.maps.LatLng(lat, lng);
+        var panorama = new google.maps.StreetViewPanorama(panoElement.nativeElement, {
+            position: location,
+            pov: {
+                heading: 34,
+                pitch: 0
+            },
+            zoom: 1
+        });
+    };
+    MapServiceProvider.prototype.loadMap = function (mapElement) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.geolocation.getCurrentPosition().then(function (position) {
+                _this.location.lat = position.coords.latitude;
+                _this.location.lng = position.coords.longitude;
+                var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    center: latLng,
+                    zoom: 15,
+                    mapTypeControl: false,
+                    zoomControl: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+                //this.createMarker(this.location.lat, this.location.lng, "title", "content");
+                _this.acService = new google.maps.places.AutocompleteService();
+                _this.placesService = new google.maps.places.PlacesService(_this.map);
+                _this.geocoder = new google.maps.Geocoder;
+                resolve();
+            }, function (err) {
+                console.log(err);
+            });
+        });
+    };
+    return MapServiceProvider;
+}());
+MapServiceProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object])
+], MapServiceProvider);
+
+var _a, _b;
+//# sourceMappingURL=map-service.js.map
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
@@ -59,7 +226,7 @@ ReservationsPage = __decorate([
 
 /***/ }),
 
-/***/ 101:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67,7 +234,7 @@ ReservationsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -180,184 +347,17 @@ var FindParkingPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], FindParkingPage.prototype, "mapElement", void 0);
 FindParkingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
+        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<!--<ion-header>\n  \n    <ion-navbar no-shadow no-border transparent>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n</ion-header>-->\n<ion-toolbar mode="md" transparent>\n  <ion-searchbar mode="md" padding-left padding-right [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n    \n  </ion-searchbar>\n</ion-toolbar>\n<!--<ion-toolbar transparent>\n  <ion-segment [(ngModel)]="filterType">\n    <ion-segment-button value="price">\n      Price\n    </ion-segment-button>\n    <ion-segment-button value="duration">\n      Duration\n    </ion-segment-button>\n    <ion-segment-button value="radius">\n      Radius\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n<ion-toolbar [ngSwitch]="filterType">\n  <div *ngSwitchCase="\'price\'">\n    <ion-range min="5" max="50" step="5" snaps="true">\n      <ion-label range-left>\n        $5\n      </ion-label>\n      <ion-label range-right>\n        $50\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'duration\'">\n    <ion-range min="1" max="24" step="1" snaps="true">\n      <ion-label range-left>\n        1hr\n      </ion-label>\n      <ion-label range-right>\n        24hr\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'radius\'">\n    radius\n  </div>\n</ion-toolbar>-->\n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right mode="md">\n      <button ion-fab mini mode="md">\n        <!--<ion-icon name="md-arrow-round-forward"></ion-icon>-->\n        <ion-icon name="ios-settings"></ion-icon>\n      </button>\n      <ion-fab-list mode="md">\n        <button ion-fab color="primary">\n          <ion-label>Price</ion-label>\n          <ion-icon name="md-pricetags"></ion-icon>\n        </button>\n        <button ion-fab color="primary">\n          <ion-label>Duration</ion-label>\n          <ion-icon name="md-time"></ion-icon>\n        </button>\n        <button ion-fab color="primary">\n          <ion-label>Distance</ion-label>\n          <ion-icon name="md-pin"></ion-icon>\n        </button>\n      </ion-fab-list>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
 ], FindParkingPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=find-parking.js.map
-
-/***/ }),
-
-/***/ 102:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(157);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var MapServiceProvider = (function () {
-    function MapServiceProvider(http, geolocation) {
-        this.http = http;
-        this.geolocation = geolocation;
-        this.suggestions = [];
-        this.location = {
-            name: "",
-            lat: 0,
-            lng: 0
-        };
-        console.log('Hello MapServiceProvider Provider');
-    }
-    MapServiceProvider.prototype.selectPlace = function (place) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.placesService.getDetails({ placeId: place.place_id }, function (details) {
-                _this.location.name = details.name;
-                _this.location.lat = details.geometry.location.lat();
-                _this.location.lng = details.geometry.location.lng();
-                _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
-                resolve([{ lat: _this.location.lat, lng: _this.location.lng }]);
-            });
-        });
-    };
-    MapServiceProvider.prototype.searchPlace = function (query) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            if (query.length > 0) {
-                var config = {
-                    types: ['geocode'],
-                    input: query
-                };
-                _this.acService.getPlacePredictions(config, function (predictions, status) {
-                    if (status == google.maps.places.PlacesServiceStatus.OK && predictions) {
-                        _this.suggestions = [];
-                        predictions.forEach(function (prediction) {
-                            _this.suggestions.push(prediction);
-                        });
-                        resolve([{ suggestions: _this.suggestions }]);
-                    }
-                });
-            }
-        });
-    };
-    MapServiceProvider.prototype.myFunction = function () {
-        console.log("test");
-    };
-    MapServiceProvider.prototype.createBasicMarker = function (lat, lng, title, cost) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.createMarker(lat, lng, title, "<span id='myid' style='font-weight: bold'>" + cost + "</span>").then(function (res) {
-                resolve(res);
-            });
-        });
-    };
-    MapServiceProvider.prototype.createMarker = function (lat, lng, title, content) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            var info = new google.maps.InfoWindow({
-                content: content
-            });
-            var marker = new google.maps.Marker({
-                position: { lat: lat, lng: lng },
-                map: _this.map,
-                title: title,
-                animation: google.maps.Animation.DROP
-            });
-            info.open(_this.map, marker);
-            marker.addListener("click", function () {
-                info.open(this.map, marker);
-                resolve([{ marker: title }]);
-            });
-        });
-    };
-    MapServiceProvider.prototype.geocodeLatLng = function (lat, lng) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            var latlng = { lat: lat, lng: lng };
-            _this.geocoder.geocode({ 'location': latlng }, function (results, status) {
-                if (status === 'OK') {
-                    if (results[0]) {
-                        console.log(results[0].formatted_address);
-                        resolve([{ address: results[0].formatted_address }]);
-                    }
-                    else {
-                        resolve([{ address: "" }]);
-                    }
-                }
-                else {
-                    resolve([{ address: "" }]);
-                }
-            });
-        });
-    };
-    MapServiceProvider.prototype.streetView = function (panoElement, lat, lng) {
-        var location = { lat: lat, lng: lng };
-        var latLng = new google.maps.LatLng(lat, lng);
-        var panorama = new google.maps.StreetViewPanorama(panoElement.nativeElement, {
-            position: location,
-            pov: {
-                heading: 34,
-                pitch: 0
-            },
-            zoom: 1
-        });
-    };
-    MapServiceProvider.prototype.loadMap = function (mapElement) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.geolocation.getCurrentPosition().then(function (position) {
-                _this.location.lat = position.coords.latitude;
-                _this.location.lng = position.coords.longitude;
-                var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                var mapOptions = {
-                    center: latLng,
-                    zoom: 15,
-                    mapTypeControl: false,
-                    zoomControl: false,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
-                //this.createMarker(this.location.lat, this.location.lng, "title", "content");
-                _this.acService = new google.maps.places.AutocompleteService();
-                _this.placesService = new google.maps.places.PlacesService(_this.map);
-                _this.geocoder = new google.maps.Geocoder;
-                resolve();
-            }, function (err) {
-                console.log(err);
-            });
-        });
-    };
-    return MapServiceProvider;
-}());
-MapServiceProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object])
-], MapServiceProvider);
-
-var _a, _b;
-//# sourceMappingURL=map-service.js.map
 
 /***/ }),
 
@@ -791,8 +791,8 @@ SingletonProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__account_account__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -816,7 +816,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/'<ion-tabs selectedIndex="0">\n  <ion-tab [root]="tab1Root" tabTitle="Find Parking" tabIcon="md-car"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Reservations" tabIcon="md-bookmarks"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Account" tabIcon="md-contact"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/'<ion-tabs selectedIndex="0">\n  <ion-tab [root]="tab1Root" tabIcon="md-car"></ion-tab>\n  <ion-tab [root]="tab2Root" tabIcon="md-bookmarks"></ion-tab>\n  <ion-tab [root]="tab3Root" tabIcon="md-contact"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -848,8 +848,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_account_account__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(198);
@@ -857,7 +857,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_singleton_singleton__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_map_service_map_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_map_service_map_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
