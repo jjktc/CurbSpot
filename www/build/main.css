@@ -25343,3 +25343,7 @@ page-payment #pano {
   -ms-flex-align: center;
   align-items: center;
 }
+
+page-payment ion-footer button {
+  font-weight: bold;
+}
