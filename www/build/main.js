@@ -151,10 +151,9 @@ var MapServiceProvider = (function () {
 }());
 MapServiceProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
 ], MapServiceProvider);
 
-var _a, _b;
 //# sourceMappingURL=map-service.js.map
 
 /***/ }),
@@ -318,17 +317,16 @@ var FindParkingPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], FindParkingPage.prototype, "mapElement", void 0);
 FindParkingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<!--<ion-header>\n  \n    <ion-navbar no-shadow no-border transparent>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n</ion-header>-->\n<ion-toolbar mode="md" transparent>\n  <ion-searchbar mode="md" padding-left padding-right [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n    \n  </ion-searchbar>\n</ion-toolbar>\n<!--<ion-toolbar transparent>\n  <ion-segment [(ngModel)]="filterType">\n    <ion-segment-button value="price">\n      Price\n    </ion-segment-button>\n    <ion-segment-button value="duration">\n      Duration\n    </ion-segment-button>\n    <ion-segment-button value="radius">\n      Radius\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n<ion-toolbar [ngSwitch]="filterType">\n  <div *ngSwitchCase="\'price\'">\n    <ion-range min="5" max="50" step="5" snaps="true">\n      <ion-label range-left>\n        $5\n      </ion-label>\n      <ion-label range-right>\n        $50\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'duration\'">\n    <ion-range min="1" max="24" step="1" snaps="true">\n      <ion-label range-left>\n        1hr\n      </ion-label>\n      <ion-label range-right>\n        24hr\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'radius\'">\n    radius\n  </div>\n</ion-toolbar>-->\n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right mode="md">\n      <button ion-fab mini mode="md">\n        <!--<ion-icon name="md-arrow-round-forward"></ion-icon>-->\n        <ion-icon name="ios-settings"></ion-icon>\n      </button>\n      <ion-fab-list mode="md">\n        <button ion-fab color="primary">\n          <ion-label>Price</ion-label>\n          <ion-icon name="md-pricetags"></ion-icon>\n        </button>\n        <button ion-fab color="primary" (click)="onClickDuration()">\n          <ion-label>Duration</ion-label>\n          <ion-icon name="md-time"></ion-icon>\n        </button>\n        <button ion-fab color="primary">\n          <ion-label>Distance</ion-label>\n          <ion-icon name="md-pin"></ion-icon>\n        </button>\n      </ion-fab-list>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
 ], FindParkingPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=find-parking.js.map
 
 /***/ }),
@@ -761,10 +759,9 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */]])
 ], SingletonProvider);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),
