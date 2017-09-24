@@ -16,16 +16,31 @@
 <ion-content>
 
   <ion-card>
-    <ion-card-header text-wrap>
-      {{address}}
-      <h2>{{cost}}</h2>
-    </ion-card-header>
+      <ion-item>
+        <ion-icon name="md-pin" item-start large></ion-icon>
+        <h2 text-wrap>{{address}}</h2>
+      </ion-item>
 
   </ion-card>
 
   <div #pano id="pano">
     <ion-spinner color="primary" name="dots"></ion-spinner>
   </div>
+
+  <ion-list>
+    <ion-list-header>
+      Reservation Starts
+    </ion-list-header>
+    <button ion-item >
+      Sept 24, 2017 @ 9:30 am
+    </button>
+    <ion-list-header>
+      Reservation Ends
+    </ion-list-header>
+    <button ion-item>
+      Sept 24, 2017 @ 2:30 pm
+    </button>
+  </ion-list>
 
 </ion-content>
 
