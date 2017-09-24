@@ -264,6 +264,16 @@ export class SingletonProvider {
     });
   }
 
+  createModalParams(content, params) {
+    return new Promise(resolve => {
+      let m = this.mc.create(content, params);
+      m.present();
+      m.onDidDismiss(data => {
+        resolve([{data: data}]);
+      });
+    });
+  }
+
   capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }

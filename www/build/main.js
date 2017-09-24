@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -112,34 +112,48 @@ var FindParkingPage = (function () {
         });
     };
     FindParkingPage.prototype.randomizeMarkers = function (lat, lng) {
+        var _this = this;
         console.log("Randomizing markers");
+        var total = 0;
         for (var i = 0; i < 3; i++) {
             var newLat = (lat + (Math.random() * 0.01));
             var newLng = (lng + (Math.random() * 0.01));
             var title = "Title";
-            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
-            this.ms.createMarker(newLat, newLng, title, content);
+            var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
+            this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
+                _this.singleton.createModalParams("PaymentPage", { cost: content });
+                console.log(res);
+            });
         }
         for (var i = 0; i < 3; i++) {
             newLat = (lat - (Math.random() * 0.01));
             newLng = (lng - (Math.random() * 0.01));
             var title = "Title";
-            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
-            this.ms.createMarker(newLat, newLng, title, content);
+            var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
+            this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
+                _this.singleton.createModalParams("PaymentPage", { cost: content });
+                console.log(res);
+            });
         }
         for (var i = 0; i < 3; i++) {
             newLat = (lat + (Math.random() * 0.01));
             newLng = (lng - (Math.random() * 0.01));
             var title = "Title";
-            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
-            this.ms.createMarker(newLat, newLng, title, content);
+            var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
+            this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
+                _this.singleton.createModalParams("PaymentPage", { cost: content });
+                console.log(res);
+            });
         }
         for (var i = 0; i < 3; i++) {
             newLat = (lat - (Math.random() * 0.01));
             newLng = (lng + (Math.random() * 0.01));
             var title = "Title";
-            var content = "<h4>$" + (Math.floor((Math.random() * 15.0)) + 5) + "</h4>";
-            this.ms.createMarker(newLat, newLng, title, content);
+            var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
+            this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
+                _this.singleton.createModalParams("PaymentPage", { cost: content });
+                console.log(res);
+            });
         }
     };
     FindParkingPage.prototype.openEvents = function () {
@@ -150,16 +164,17 @@ var FindParkingPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
 ], FindParkingPage.prototype, "mapElement", void 0);
 FindParkingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
 ], FindParkingPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=find-parking.js.map
 
 /***/ }),
@@ -231,17 +246,34 @@ var MapServiceProvider = (function () {
             }
         });
     };
+    MapServiceProvider.prototype.myFunction = function () {
+        console.log("test");
+    };
+    MapServiceProvider.prototype.createBasicMarker = function (lat, lng, title, cost) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.createMarker(lat, lng, title, "<span id='myid' style='font-weight: bold'>" + cost + "</span>").then(function (res) {
+                resolve(res);
+            });
+        });
+    };
     MapServiceProvider.prototype.createMarker = function (lat, lng, title, content) {
-        var info = new google.maps.InfoWindow({
-            content: content
-        });
-        var marker = new google.maps.Marker({
-            position: { lat: lat, lng: lng },
-            map: this.map,
-            title: title
-        });
-        marker.addListener("click", function () {
-            info.open(this.map, marker);
+        var _this = this;
+        return new Promise(function (resolve) {
+            var info = new google.maps.InfoWindow({
+                content: content
+            });
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng },
+                map: _this.map,
+                title: title,
+                animation: google.maps.Animation.DROP
+            });
+            info.open(_this.map, marker);
+            marker.addListener("click", function () {
+                info.open(this.map, marker);
+                resolve([{ marker: title }]);
+            });
         });
     };
     MapServiceProvider.prototype.loadMap = function (mapElement) {
@@ -269,9 +301,10 @@ var MapServiceProvider = (function () {
 }());
 MapServiceProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object])
 ], MapServiceProvider);
 
+var _a, _b;
 //# sourceMappingURL=map-service.js.map
 
 /***/ }),
@@ -345,23 +378,27 @@ webpackEmptyAsyncContext.id = 112;
 var map = {
 	"../pages/account/account.module": [
 		272,
-		4
+		5
 	],
 	"../pages/find-events/find-events.module": [
 		270,
-		1
+		2
 	],
 	"../pages/find-parking/find-parking.module": [
 		271,
-		3
+		4
 	],
 	"../pages/location-picker/location-picker.module": [
 		273,
+		1
+	],
+	"../pages/payment/payment.module": [
+		274,
 		0
 	],
 	"../pages/reservations/reservations.module": [
 		269,
-		2
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -655,6 +692,16 @@ var SingletonProvider = (function () {
             });
         });
     };
+    SingletonProvider.prototype.createModalParams = function (content, params) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var m = _this.mc.create(content, params);
+            m.present();
+            m.onDidDismiss(function (data) {
+                resolve([{ data: data }]);
+            });
+        });
+    };
     SingletonProvider.prototype.capitalizeFirstLetter = function (str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     };
@@ -679,9 +726,10 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object])
 ], SingletonProvider);
 
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),
@@ -802,7 +850,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/find-events/find-events.module#FindEventsPageModule', name: 'FindEventsPage', segment: 'find-events', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/find-parking/find-parking.module#FindParkingPageModule', name: 'FindParkingPage', segment: 'find-parking', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/location-picker/location-picker.module#LocationPickerPageModule', name: 'LocationPickerPage', segment: 'location-picker', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/location-picker/location-picker.module#LocationPickerPageModule', name: 'LocationPickerPage', segment: 'location-picker', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/payment/payment.module#PaymentPageModule', name: 'PaymentPage', segment: 'payment', priority: 'low', defaultHistory: [] }
                 ]
             })
         ],

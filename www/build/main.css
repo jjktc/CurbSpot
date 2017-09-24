@@ -25203,6 +25203,10 @@ ion-content {
   background-color: #f4f4f7 !important;
 }
 
+img[src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+  display: none;
+}
+
 page-find-events ion-card {
   position: relative;
   text-align: center;

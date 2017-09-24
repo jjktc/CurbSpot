@@ -62,19 +62,37 @@ export class MapServiceProvider {
     });
   }
 
-  createMarker(lat, lng, title, content) {
-    var info = new google.maps.InfoWindow({
-      content: content
-    });
-    var marker = new google.maps.Marker({
-      position: {lat: lat, lng: lng},
-      map: this.map,
-      title: title
-    });
-    marker.addListener("click", function() {
-      info.open(this.map, marker);
-    });
+  myFunction() {
+    console.log("test");
+  }
 
+  createBasicMarker(lat, lng, title, cost) {
+    return new Promise(resolve => {
+      this.createMarker(lat, lng, title, 
+        "<span id='myid' style='font-weight: bold'>" + cost + "</span>"
+      ).then(res => {
+        resolve(res);
+      })
+    })
+  }
+
+  createMarker(lat, lng, title, content) {
+    return new Promise(resolve => {
+      var info = new google.maps.InfoWindow({
+        content: content
+      });
+      var marker = new google.maps.Marker({
+        position: {lat: lat, lng: lng},
+        map: this.map,
+        title: title,
+        animation:google.maps.Animation.DROP
+      });
+      info.open(this.map, marker);
+      marker.addListener("click", function() {
+        info.open(this.map, marker);
+        resolve([{marker: title}]);
+      });
+    });
   }
 
   loadMap(mapElement) {
