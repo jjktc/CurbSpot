@@ -34,8 +34,10 @@ export class FindParkingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FindParkingPage');
-    
-    this.ms.loadMap(this.mapElement);
+    this.singleton.createLoader("Loading latest data");
+    this.ms.loadMap(this.mapElement).then(res => {
+      this.singleton.destroyLoader();
+    })
   }
 
   onFocusSearch() {
@@ -59,8 +61,11 @@ export class FindParkingPage {
       var title = "Title";
       var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
       this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.singleton.createModalParams("PaymentPage", {cost: content});
-        console.log(res);
+        this.ms.geocodeLatLng(newLat, newLng).then(res => {
+          if(res[0].address.length > 0) {
+            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
+          }
+        });
       });
     }
     for(var i = 0; i < 3; i++) {
@@ -69,8 +74,11 @@ export class FindParkingPage {
       var title = "Title";
       var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
       this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.singleton.createModalParams("PaymentPage", {cost: content});
-        console.log(res);
+        this.ms.geocodeLatLng(newLat, newLng).then(res => {
+          if(res[0].address.length > 0) {
+            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
+          }
+        });
       });
     }
     for(var i = 0; i < 3; i++) {
@@ -79,8 +87,11 @@ export class FindParkingPage {
       var title = "Title";
       var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
       this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.singleton.createModalParams("PaymentPage", {cost: content});
-        console.log(res);
+        this.ms.geocodeLatLng(newLat, newLng).then(res => {
+          if(res[0].address.length > 0) {
+            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
+          }
+        });
       });
     }
     for(var i = 0; i < 3; i++) {
@@ -89,8 +100,11 @@ export class FindParkingPage {
       var title = "Title";
       var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
       this.ms.createBasicMarker(newLat, newLng, title, content).then(res => {
-        this.singleton.createModalParams("PaymentPage", {cost: content});
-        console.log(res);
+        this.ms.geocodeLatLng(newLat, newLng).then(res => {
+          if(res[0].address.length > 0) {
+            this.singleton.createModalParams("PaymentPage", {address: res[0].address, lat: newLat, lng: newLng, cost: content});
+          }
+        });
       });
     }
   }

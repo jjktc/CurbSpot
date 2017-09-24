@@ -14941,23 +14941,23 @@ ion-loading {
 
 .loading-ios .spinner-ios line,
 .loading-ios .spinner-ios-small line {
-  stroke: #69717d;
+  stroke: #488aff;
 }
 
 .loading-ios .spinner-bubbles circle {
-  fill: #69717d;
+  fill: #488aff;
 }
 
 .loading-ios .spinner-circles circle {
-  fill: #69717d;
+  fill: #488aff;
 }
 
 .loading-ios .spinner-crescent circle {
-  stroke: #69717d;
+  stroke: #488aff;
 }
 
 .loading-ios .spinner-dots circle {
-  fill: #69717d;
+  fill: #488aff;
 }
 
 .loading-md .loading-wrapper {
@@ -25207,6 +25207,11 @@ img[src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   display: none;
 }
 
+ion-footer button {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 page-find-events ion-card {
   position: relative;
   text-align: center;
@@ -25247,6 +25252,10 @@ page-find-events .card-subtitle {
   color: #fff;
 }
 
+page-find-parking ion-header, page-find-parking ion-navbar, page-find-parking ion-title, page-find-parking ion-toolbar {
+  background: transparent !important;
+}
+
 page-find-parking .scroll {
   height: 100%;
 }
@@ -25254,6 +25263,36 @@ page-find-parking .scroll {
 page-find-parking #map {
   width: 100%;
   height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-find-parking .scroll-content {
+  overflow: visible !important;
+}
+
+page-find-parking .platform-ios.platform-cordova:not(.fullscreen) .has-header {
+  top: 0px;
+}
+
+page-payment .scroll {
+  height: 100%;
+}
+
+page-payment #pano {
+  width: 100%;
+  height: 50%;
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;

@@ -96,8 +96,12 @@ var FindParkingPage = (function () {
         };
     }
     FindParkingPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
         console.log('ionViewDidLoad FindParkingPage');
-        this.ms.loadMap(this.mapElement);
+        this.singleton.createLoader("Loading latest data");
+        this.ms.loadMap(this.mapElement).then(function (res) {
+            _this.singleton.destroyLoader();
+        });
     };
     FindParkingPage.prototype.onFocusSearch = function () {
         var _this = this;
@@ -121,8 +125,11 @@ var FindParkingPage = (function () {
             var title = "Title";
             var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
             this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
-                _this.singleton.createModalParams("PaymentPage", { cost: content });
-                console.log(res);
+                _this.ms.geocodeLatLng(newLat, newLng).then(function (res) {
+                    if (res[0].address.length > 0) {
+                        _this.singleton.createModalParams("PaymentPage", { address: res[0].address, lat: newLat, lng: newLng, cost: content });
+                    }
+                });
             });
         }
         for (var i = 0; i < 3; i++) {
@@ -131,8 +138,11 @@ var FindParkingPage = (function () {
             var title = "Title";
             var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
             this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
-                _this.singleton.createModalParams("PaymentPage", { cost: content });
-                console.log(res);
+                _this.ms.geocodeLatLng(newLat, newLng).then(function (res) {
+                    if (res[0].address.length > 0) {
+                        _this.singleton.createModalParams("PaymentPage", { address: res[0].address, lat: newLat, lng: newLng, cost: content });
+                    }
+                });
             });
         }
         for (var i = 0; i < 3; i++) {
@@ -141,8 +151,11 @@ var FindParkingPage = (function () {
             var title = "Title";
             var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
             this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
-                _this.singleton.createModalParams("PaymentPage", { cost: content });
-                console.log(res);
+                _this.ms.geocodeLatLng(newLat, newLng).then(function (res) {
+                    if (res[0].address.length > 0) {
+                        _this.singleton.createModalParams("PaymentPage", { address: res[0].address, lat: newLat, lng: newLng, cost: content });
+                    }
+                });
             });
         }
         for (var i = 0; i < 3; i++) {
@@ -151,8 +164,11 @@ var FindParkingPage = (function () {
             var title = "Title";
             var content = "$" + (Math.floor((Math.random() * 15.0)) + 5);
             this.ms.createBasicMarker(newLat, newLng, title, content).then(function (res) {
-                _this.singleton.createModalParams("PaymentPage", { cost: content });
-                console.log(res);
+                _this.ms.geocodeLatLng(newLat, newLng).then(function (res) {
+                    if (res[0].address.length > 0) {
+                        _this.singleton.createModalParams("PaymentPage", { address: res[0].address, lat: newLat, lng: newLng, cost: content });
+                    }
+                });
             });
         }
     };
@@ -169,7 +185,7 @@ __decorate([
 FindParkingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
+        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n    <ion-toolbar>\n      <ion-searchbar [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n        \n      </ion-searchbar>\n    </ion-toolbar>\n    <ion-toolbar>\n      <ion-segment [(ngModel)]="filterType">\n        <ion-segment-button value="price">\n          Price\n        </ion-segment-button>\n        <ion-segment-button value="duration">\n          Duration\n        </ion-segment-button>\n        <ion-segment-button value="radius">\n          Radius\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n    <ion-toolbar [ngSwitch]="filterType">\n      <div *ngSwitchCase="\'price\'">\n        <ion-range min="5" max="50" step="5" snaps="true">\n          <ion-label range-left>\n            $5\n          </ion-label>\n          <ion-label range-right>\n            $50\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'duration\'">\n        <ion-range min="1" max="24" step="1" snaps="true">\n          <ion-label range-left>\n            1hr\n          </ion-label>\n          <ion-label range-right>\n            24hr\n          </ion-label>\n        </ion-range>\n      </div>\n      <div *ngSwitchCase="\'radius\'">\n        radius\n      </div>\n    </ion-toolbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right edge>\n      <button ion-fab mini>\n        <ion-icon name="md-arrow-round-forward"></ion-icon>\n      </button>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]) === "function" && _e || Object])
 ], FindParkingPage);
@@ -276,25 +292,61 @@ var MapServiceProvider = (function () {
             });
         });
     };
+    MapServiceProvider.prototype.geocodeLatLng = function (lat, lng) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var latlng = { lat: lat, lng: lng };
+            _this.geocoder.geocode({ 'location': latlng }, function (results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        console.log(results[0].formatted_address);
+                        resolve([{ address: results[0].formatted_address }]);
+                    }
+                    else {
+                        resolve([{ address: "" }]);
+                    }
+                }
+                else {
+                    resolve([{ address: "" }]);
+                }
+            });
+        });
+    };
+    MapServiceProvider.prototype.streetView = function (panoElement, lat, lng) {
+        var location = { lat: lat, lng: lng };
+        var latLng = new google.maps.LatLng(lat, lng);
+        var panorama = new google.maps.StreetViewPanorama(panoElement.nativeElement, {
+            position: location,
+            pov: {
+                heading: 34,
+                pitch: 0
+            },
+            zoom: 1
+        });
+    };
     MapServiceProvider.prototype.loadMap = function (mapElement) {
         var _this = this;
-        this.geolocation.getCurrentPosition().then(function (position) {
-            _this.location.lat = position.coords.latitude;
-            _this.location.lng = position.coords.longitude;
-            var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            var mapOptions = {
-                center: latLng,
-                zoom: 15,
-                mapTypeControl: false,
-                zoomControl: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
-            //this.createMarker(this.location.lat, this.location.lng, "title", "content");
-            _this.acService = new google.maps.places.AutocompleteService();
-            _this.placesService = new google.maps.places.PlacesService(_this.map);
-        }, function (err) {
-            console.log(err);
+        return new Promise(function (resolve) {
+            _this.geolocation.getCurrentPosition().then(function (position) {
+                _this.location.lat = position.coords.latitude;
+                _this.location.lng = position.coords.longitude;
+                var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    center: latLng,
+                    zoom: 15,
+                    mapTypeControl: false,
+                    zoomControl: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+                //this.createMarker(this.location.lat, this.location.lng, "title", "content");
+                _this.acService = new google.maps.places.AutocompleteService();
+                _this.placesService = new google.maps.places.PlacesService(_this.map);
+                _this.geocoder = new google.maps.Geocoder;
+                resolve();
+            }, function (err) {
+                console.log(err);
+            });
         });
     };
     return MapServiceProvider;
@@ -726,10 +778,9 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
 ], SingletonProvider);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),

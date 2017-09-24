@@ -22,3 +22,10 @@ ion-content {
 img[src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     display: none;
 }
+
+ion-footer {
+    button {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+}

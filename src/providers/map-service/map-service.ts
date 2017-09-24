@@ -11,6 +11,8 @@ export class MapServiceProvider {
 
   public acService : any;
   public placesService : any;
+  public geocoder : any;
+
   public suggestions = [];
   public location = {
     name: "",
@@ -95,29 +97,65 @@ export class MapServiceProvider {
     });
   }
 
+  geocodeLatLng(lat, lng) {
+    return new Promise(resolve => {
+      var latlng = {lat: lat, lng: lng};
+      this.geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            console.log(results[0].formatted_address)
+            resolve([{address: results[0].formatted_address}]);
+          } else {
+            resolve([{address: ""}]);
+          }
+        } else {
+          resolve([{address: ""}]);
+        }
+      });
+    });
+  }
+
+  streetView(panoElement, lat, lng) {
+    var location = {lat: lat, lng: lng};
+    let latLng = new google.maps.LatLng(lat, lng);
+    var panorama = new google.maps.StreetViewPanorama(
+      panoElement.nativeElement, {
+        position: location,
+        pov: {
+          heading: 34,
+          pitch: 0
+        },
+        zoom: 1
+    });
+  }
+
   loadMap(mapElement) {
-    this.geolocation.getCurrentPosition().then((position) => {
-      this.location.lat = position.coords.latitude;
-      this.location.lng = position.coords.longitude;
-      
-      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-      let mapOptions = {
-        center: latLng,
-        zoom: 15,
-        mapTypeControl: false,
-        zoomControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-
-      this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
-
-      //this.createMarker(this.location.lat, this.location.lng, "title", "content");
-
-      this.acService = new google.maps.places.AutocompleteService();
-      this.placesService = new google.maps.places.PlacesService(this.map);
-    }, (err) => {
-      console.log(err);
+    return new Promise(resolve => {
+      this.geolocation.getCurrentPosition().then((position) => {
+        this.location.lat = position.coords.latitude;
+        this.location.lng = position.coords.longitude;
+        
+        let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  
+        let mapOptions = {
+          center: latLng,
+          zoom: 15,
+          mapTypeControl: false,
+          zoomControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+  
+        this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+  
+        //this.createMarker(this.location.lat, this.location.lng, "title", "content");
+  
+        this.acService = new google.maps.places.AutocompleteService();
+        this.placesService = new google.maps.places.PlacesService(this.map);
+        this.geocoder = new google.maps.Geocoder;
+        resolve();
+      }, (err) => {
+        console.log(err);
+      });
     });
   }
 

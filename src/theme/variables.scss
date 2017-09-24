@@ -41,6 +41,9 @@ $colors: (
   dark:       #222
 );
 
+$loading-ios-spinner-color: color($colors, primary);
+$loading-md-spinner-color: color($colors, primary);
+
 
 // App iOS Variables
 // --------------------------------------------------

@@ -2,13 +2,37 @@
 
   <ion-navbar>
     <ion-title>Reserve</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-left (click)="viewCtrl.dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+          Cancel
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <button ion-button block>{{cost}}</button>
+  <ion-card>
+    <ion-card-header text-wrap>
+      {{address}}
+      <h2>{{cost}}</h2>
+    </ion-card-header>
+
+
+  </ion-card>
+
+  <div #pano id="pano">
+    <ion-spinner color="primary" name="dots"></ion-spinner>
+  </div>
+  <!--<div #pano id="pano"><ion-spinner></ion-spinner></div>-->
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar no-padding>
+    <button no-padding ion-button full color="secondary">Reserve ({{cost}})</button>
+  </ion-toolbar>
+</ion-footer>
