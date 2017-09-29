@@ -4,10 +4,10 @@ import { FindParkingPage } from './find-parking';
 
 @NgModule({
   declarations: [
-    FindParkingPage,
+    //FindParkingPage,
   ],
   imports: [
-    IonicPageModule.forChild(FindParkingPage),
+    //IonicPageModule.forChild(FindParkingPage),
   ],
 })
 export class FindParkingPageModule {}
