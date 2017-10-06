@@ -22,6 +22,13 @@ export class UserServiceProvider {
       ]).then(res => {
         var data = res[0].data;
         console.log("Login response", data);
+        
+        if(data.status) {
+          singleton.username = username;
+          singleton.password = password;
+          singleton.firstName = data.firstName;
+          singleton.lastName = data.lastName;
+        }
       })
     });
   }

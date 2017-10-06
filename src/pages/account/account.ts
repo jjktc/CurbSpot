@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { SingletonProvider } from '../../providers/singleton/singleton';
+
 @IonicPage()
 @Component({
   selector: 'page-account',
@@ -8,7 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public singleton : SingletonProvider) {
   }
 
   ionViewDidLoad() {

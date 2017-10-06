@@ -10,9 +10,15 @@ import { UserServiceProvider } from '../user-service/user-service';
 @Injectable()
 export class SingletonProvider {
 
+  public loader : any;
+
   baseURL : string = "https://jefftc.com/CurbSpotAPI/";
 
-  public loader : any;
+  authorized : boolean = false;
+  username : string = "";
+  password : string = "";
+  firstName : string = "";
+  lastName : string = "";
 
   constructor(public http: Http, public platform : Platform, public ac : AlertController, public tc : ToastController, public lc : LoadingController, public mc : ModalController, public datePicker : DatePicker, public us : UserServiceProvider) {
     console.log('Hello SingletonProvider Provider');

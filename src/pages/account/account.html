@@ -9,22 +9,29 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-list-header color="light">
-      Personal Information
-    </ion-list-header>
-    <button ion-item>
-      First Name
-      <ion-note item-end>
-        John
-      </ion-note>
-    </button>
-    <button ion-item>
-      Last Name
-      <ion-note item-end>
-        Doe
-      </ion-note>
-    </button>
-  </ion-list>
+  <div [ngSwitch]="singleton.authorized">
+    <div *ngSwitchCase="true">
+      <ion-list>
+        <ion-list-header color="light">
+          Personal Information
+        </ion-list-header>
+        <button ion-item>
+          First Name
+          <ion-note item-end>
+            {{singleton.firstName}}
+          </ion-note>
+        </button>
+        <button ion-item>
+          Last Name
+          <ion-note item-end>
+            {{singleton.lastName}}
+          </ion-note>
+        </button>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="false">
+      
+    </div>
+  </div>
 
 </ion-content>
