@@ -13,6 +13,19 @@
     <div *ngSwitchCase="true">
       <ion-list>
         <ion-list-header color="light">
+          Account Information
+        </ion-list-header>
+        <button ion-item>
+          Username
+          <ion-note item-end>
+            {{singleton.username}}
+          </ion-note>
+        </button>
+        <button ion-item>
+          Change Password
+        </button>
+        
+        <ion-list-header color="light">
           Personal Information
         </ion-list-header>
         <button ion-item>
@@ -27,6 +40,12 @@
             {{singleton.lastName}}
           </ion-note>
         </button>
+        <button ion-item>
+          Email
+          <ion-note item-end>
+            {{singleton.email}}
+          </ion-note>
+        </button>
       </ion-list>
     </div>
     <div *ngSwitchCase="false" [ngSwitch]="view">
@@ -34,12 +53,111 @@
         <!--
           Register information
         -->
+        <ion-list>
+          <ion-item>
+            <ion-label color="primary" fixed>Username *</ion-label>
+            <ion-input
+              #inputRegisterUsername
+              type="text"
+              placeholder="username"
+              value=""
+              [(ngModel)]="nUsername"
+              >
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" fixed>First Name *</ion-label>
+            <ion-input
+              #inputRegisterFirstName
+              type="text"
+              placeholder="first name"
+              value=""
+              [(ngModel)]="nFirstName"
+              >
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" fixed>Last Name *</ion-label>
+            <ion-input
+              #inputRegisterLastName
+              type="text"
+              placeholder="last name"
+              value=""
+              [(ngModel)]="nLastName"
+              >
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" fixed>Email *</ion-label>
+            <ion-input
+              #inputRegisterEmail
+              type="email"
+              placeholder="email"
+              value=""
+              [(ngModel)]="nEmail"
+              >
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="primary" fixed>Password *</ion-label>
+            <ion-input
+              #inputRegisterPassword
+              type="password"
+              placeholder="password"
+              value=""
+              [(ngModel)]="nPassword"
+              >
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" fixed>Confirm *</ion-label>
+            <ion-input
+              #inputRegisterConfirmPassword
+              type="password"
+              placeholder="confirm password"
+              value=""
+              [(ngModel)]="nConfirmPassword"
+              >
+            </ion-input>
+          </ion-item>
+          
+          <!--
+            Car license?
+            Address?
+          -->
+        </ion-list>
       </div>
       <div *ngSwitchCase="1">
         <!--
           Login information
         -->
+        <ion-list>
+            <ion-item>
+              <ion-label color="primary" fixed>Username *</ion-label>
+              <ion-input
+                #inputLoginUsername
+                type="text"
+                placeholder="username"
+                value=""
+                [(ngModel)]="nUsername"
+                >
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary" fixed>Password *</ion-label>
+              <ion-input
+                #inputLoginPassword
+                type="password"
+                placeholder="password"
+                value=""
+                [(ngModel)]="nPassword"
+                >
+              </ion-input>
+            </ion-item>
+          </ion-list>
       </div>
+      <div ion-text color="danger">{{error_text}}</div>
     </div>
   </div>
 
@@ -49,14 +167,16 @@
   <ion-toolbar no-padding [ngSwitch]="view">
     <div *ngSwitchCase="0">
       <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>
-      <button no-padding ion-button icon-left large full>
+      <button no-padding ion-button icon-right large full (click)="onClickRegister()">
         REGISTER
+        <ion-icon name="ios-arrow-forward"></ion-icon>
       </button>
     </div>
     <div *ngSwitchCase="1">
       <p padding-left padding-right>Don't have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>
-      <button no-padding ion-button icon-left large full>
+      <button no-padding ion-button icon-right large full (click)="onClickLogin()">
         LOGIN
+        <ion-icon name="ios-arrow-forward"></ion-icon>
       </button>
     </div>
   </ion-toolbar>

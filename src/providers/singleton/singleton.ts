@@ -17,6 +17,7 @@ export class SingletonProvider {
   authorized : boolean = false;
   username : string = "";
   password : string = "";
+  email : string = "";
   firstName : string = "";
   lastName : string = "";
 

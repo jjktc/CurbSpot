@@ -41,6 +41,7 @@ var SingletonProvider = (function () {
         this.authorized = false;
         this.username = "";
         this.password = "";
+        this.email = "";
         this.firstName = "";
         this.lastName = "";
         console.log('Hello SingletonProvider Provider');
@@ -380,9 +381,10 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */]) === "function" && _h || Object])
 ], SingletonProvider);
 
+var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),
@@ -862,21 +864,54 @@ var UserServiceProvider = (function () {
                     singleton.password = password;
                     singleton.firstName = data.firstName;
                     singleton.lastName = data.lastName;
+                    resolve([{ status: true }]);
+                }
+                else {
+                    resolve([{ status: false, error: data.response }]);
                 }
             });
         });
     };
-    UserServiceProvider.prototype.register = function (singleton, username, password, firstName, lastName, car, address) {
+    UserServiceProvider.prototype.register = function (singleton, username, password, email, firstName, lastName, car, address) {
         return new Promise(function (resolve) {
+            singleton.apiRequest("auth/register.php", [
+                "username",
+                "password",
+                "email",
+                "firstName",
+                "lastName"
+            ], [
+                username,
+                password,
+                email,
+                firstName,
+                lastName
+            ]).then(function (res) {
+                var data = res[0].data;
+                console.log("Register response", data);
+                if (data.status) {
+                    singleton.username = username;
+                    singleton.password = password;
+                    singleton.email = email;
+                    singleton.firstName = firstName;
+                    singleton.lastName = lastName;
+                    singleton.authorized = true;
+                    resolve([{ status: true }]);
+                }
+                else {
+                    resolve([{ status: false, error: data.response }]);
+                }
+            });
         });
     };
     return UserServiceProvider;
 }());
 UserServiceProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], UserServiceProvider);
 
+var _a;
 //# sourceMappingURL=user-service.js.map
 
 /***/ }),
@@ -909,6 +944,13 @@ var AccountPage = (function () {
         this.VIEW_REGISTER = 0;
         this.VIEW_LOGIN = 1;
         this.view = this.VIEW_REGISTER;
+        this.error_text = "";
+        this.nUsername = "";
+        this.nFirstName = "";
+        this.nLastName = "";
+        this.nEmail = "";
+        this.nPassword = "";
+        this.nConfirmPassword = "";
     }
     AccountPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AccountPage');
@@ -918,18 +960,63 @@ var AccountPage = (function () {
     };
     AccountPage.prototype.onClickLogin = function () {
     };
+    //still have to protect data
     AccountPage.prototype.onClickRegister = function () {
+        var _this = this;
+        console.log("Register clicked", [this.nUsername, this.nFirstName, this.nLastName, this.nEmail, this.nPassword, this.nConfirmPassword]);
+        this.singleton.createLoader("Registering");
+        if (this.nUsername.length >= 3 && this.nUsername.length <= 15) {
+            if (this.nFirstName.length > 0 && this.nLastName.length > 0) {
+                if (this.nEmail.indexOf("@") > 0 && this.nEmail.indexOf(".") > 0) {
+                    if (this.nPassword.length >= 4) {
+                        if (this.nPassword == this.nConfirmPassword) {
+                            this.singleton.us.register(this.singleton, this.nUsername, this.nPassword, this.nEmail, this.nFirstName, this.nLastName, undefined, undefined).then(function (res) {
+                                _this.singleton.destroyLoader();
+                                if (res[0].status) {
+                                }
+                                else {
+                                    switch (res[0].error) {
+                                        case "exists_error":
+                                            _this.error_text = "Sorry, that username is taken!";
+                                            break;
+                                        case "insert_error":
+                                            _this.error_text = "Encountered an issue, please try again later!";
+                                            break;
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            this.error_text = "Passwords do not match";
+                        }
+                    }
+                    else {
+                        this.error_text = "Password must be at least 4 characters";
+                    }
+                }
+                else {
+                    this.error_text = "Email is invalid";
+                }
+            }
+            else {
+                this.error_text = "Name is invalid";
+            }
+        }
+        else {
+            this.error_text = "Username must be between 3 and 15 characters";
+        }
     };
     return AccountPage;
 }());
 AccountPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->i\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding [ngSwitch]="view">\n    <div *ngSwitchCase="0">\n      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n      <button no-padding ion-button icon-left large full>\n        REGISTER\n      </button>\n    </div>\n    <div *ngSwitchCase="1">\n      <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n      <button no-padding ion-button icon-left large full>\n        LOGIN\n      </button>\n    </div>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
+        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Account Information\n        </ion-list-header>\n        <button ion-item>\n          Username\n          <ion-note item-end>\n            {{singleton.username}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Change Password\n        </button>\n        \n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Email\n          <ion-note item-end>\n            {{singleton.email}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->\n        <ion-list>\n          <ion-item>\n            <ion-label color="primary" fixed>Username *</ion-label>\n            <ion-input\n              #inputRegisterUsername\n              type="text"\n              placeholder="username"\n              value=""\n              [(ngModel)]="nUsername"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>First Name *</ion-label>\n            <ion-input\n              #inputRegisterFirstName\n              type="text"\n              placeholder="first name"\n              value=""\n              [(ngModel)]="nFirstName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Last Name *</ion-label>\n            <ion-input\n              #inputRegisterLastName\n              type="text"\n              placeholder="last name"\n              value=""\n              [(ngModel)]="nLastName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Email *</ion-label>\n            <ion-input\n              #inputRegisterEmail\n              type="email"\n              placeholder="email"\n              value=""\n              [(ngModel)]="nEmail"\n              >\n            </ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label color="primary" fixed>Password *</ion-label>\n            <ion-input\n              #inputRegisterPassword\n              type="password"\n              placeholder="password"\n              value=""\n              [(ngModel)]="nPassword"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Confirm *</ion-label>\n            <ion-input\n              #inputRegisterConfirmPassword\n              type="password"\n              placeholder="confirm password"\n              value=""\n              [(ngModel)]="nConfirmPassword"\n              >\n            </ion-input>\n          </ion-item>\n          \n          <!--\n            Car license?\n            Address?\n          -->\n        </ion-list>\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n        <ion-list>\n            <ion-item>\n              <ion-label color="primary" fixed>Username *</ion-label>\n              <ion-input\n                #inputLoginUsername\n                type="text"\n                placeholder="username"\n                value=""\n                [(ngModel)]="nUsername"\n                >\n              </ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label color="primary" fixed>Password *</ion-label>\n              <ion-input\n                #inputLoginPassword\n                type="password"\n                placeholder="password"\n                value=""\n                [(ngModel)]="nPassword"\n                >\n              </ion-input>\n            </ion-item>\n          </ion-list>\n      </div>\n      <div ion-text color="danger">{{error_text}}</div>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding [ngSwitch]="view">\n    <div *ngSwitchCase="0">\n      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n      <button no-padding ion-button icon-right large full (click)="onClickRegister()">\n        REGISTER\n        <ion-icon name="ios-arrow-forward"></ion-icon>\n      </button>\n    </div>\n    <div *ngSwitchCase="1">\n      <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n      <button no-padding ion-button icon-right large full (click)="onClickLogin()">\n        LOGIN\n        <ion-icon name="ios-arrow-forward"></ion-icon>\n      </button>\n    </div>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _c || Object])
 ], AccountPage);
 
+var _a, _b, _c;
 //# sourceMappingURL=account.js.map
 
 /***/ }),

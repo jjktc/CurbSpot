@@ -28,14 +28,44 @@ export class UserServiceProvider {
           singleton.password = password;
           singleton.firstName = data.firstName;
           singleton.lastName = data.lastName;
+          resolve([{status: true}]);
+        } else {
+          resolve([{status: false, error: data.response}]);
         }
       })
     });
   }
 
-  register(singleton : SingletonProvider, username, password, firstName, lastName, car, address) {
+  register(singleton : SingletonProvider, username, password, email, firstName, lastName, car, address) {
     return new Promise(resolve => {
-
+      singleton.apiRequest("auth/register.php", [
+        "username",
+        "password",
+        "email",
+        "firstName",
+        "lastName"
+      ], [
+        username,
+        password,
+        email,
+        firstName,
+        lastName
+      ]).then(res => {
+        var data = res[0].data;
+        console.log("Register response", data);
+        
+        if(data.status) {
+          singleton.username = username;
+          singleton.password = password;
+          singleton.email = email;
+          singleton.firstName = firstName;
+          singleton.lastName = lastName;
+          singleton.authorized = true;
+          resolve([{status: true}]);
+        } else {
+          resolve([{status: false, error: data.response}]);
+        }
+      })
     });
   }
 
