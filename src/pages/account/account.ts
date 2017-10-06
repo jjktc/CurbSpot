@@ -10,11 +10,27 @@ import { SingletonProvider } from '../../providers/singleton/singleton';
 })
 export class AccountPage {
 
+  VIEW_REGISTER = 0;
+  VIEW_LOGIN = 1;
+  view = this.VIEW_REGISTER;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public singleton : SingletonProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
+  }
+
+  onClickSwitch(view) {
+    this.view = view;
+  }
+
+  onClickLogin() {
+
+  }
+
+  onClickRegister() {
+
   }
 
 }

@@ -1,1 +1,1094 @@
-webpackJsonp([6],{117:function(n,l){function t(n){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+n+"'.")})}t.keys=function(){return[]},t.resolve=t,n.exports=t,t.id=117},126:function(n,l,t){function e(n){var l=o[n];return l?t.e(l[1]).then(function(){return t(l[0])}):Promise.reject(new Error("Cannot find module '"+n+"'."))}var o={"../pages/account/account.module.ngfactory":[177,5],"../pages/find-events/find-events.module.ngfactory":[178,4],"../pages/find-parking/find-parking.module.ngfactory":[179,3],"../pages/location-picker/location-picker.module.ngfactory":[180,2],"../pages/payment/payment.module.ngfactory":[181,1],"../pages/reservations/reservations.module.ngfactory":[182,0]};e.keys=function(){return Object.keys(o)},e.id=126,n.exports=e},143:function(n,l,t){"use strict";function e(n){return h._24(0,[(n()(),h._4(0,null,null,2,"ion-nav",[],null,null,null,_n.b,_n.a)),h._3(4374528,null,0,sn.a,[[2,cn.a],[2,dn.a],z.a,hn.a,pn.a,h.k,h.y,h.E,h.j,x.g,tn.a,[2,gn.a],G.a,h.l],{root:[0,"root"]},null),h._20(6144,null,fn.a,null,[sn.a]),(n()(),h._23(null,["\n"]))],function(n,l){n(l,1,0,l.component.rootPage)},null)}function o(n){return h._24(0,[(n()(),h._4(0,null,null,37,"ion-card",[],null,null,null,null,null)),h._3(16384,null,0,vn.a,[hn.a,h.k,h.E],null,null),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,15,"ion-item",[["class","item item-block"]],null,null,null,Pn.b,Pn.a)),h._3(1097728,null,3,kn.a,[Z.a,hn.a,h.k,h.E,[2,Cn.a]],null,null),h._21(335544320,2,{contentLabel:0}),h._21(603979776,3,{_buttons:1}),h._21(603979776,4,{_icons:1}),h._3(16384,null,0,En.a,[],null,null),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,0,1,"ion-icon",[["item-start",""],["large",""],["name","md-calendar"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,[[4,4]],0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,2,1,"h2",[["text-wrap",""]],null,null,null,null,null)),(n()(),h._23(null,["",""])),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,2,1,"p",[],null,null,null,null,null)),(n()(),h._23(null,[""," @ "," - ",""])),(n()(),h._23(2,["\n        "])),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,16,"ion-row",[["class","row"]],null,null,null,null,null)),h._3(16384,null,0,wn.a,[],null,null),(n()(),h._23(null,["\n          "])),(n()(),h._4(0,null,null,12,"ion-col",[["class","col"]],null,null,null,null,null)),h._3(16384,null,0,Mn.a,[],null,null),(n()(),h._23(null,["\n            "])),(n()(),h._4(0,null,null,8,"button",[["block",""],["clear",""],["icon-left",""],["ion-button",""]],null,null,null,On.b,On.a)),h._3(1097728,null,0,Dn.a,[[8,""],hn.a,h.k,h.E],{clear:[0,"clear"],block:[1,"block"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-search"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"div",[],null,null,null,null,null)),(n()(),h._23(null,["Availability"])),(n()(),h._23(0,["\n            "])),(n()(),h._23(null,["\n          "])),(n()(),h._23(null,["\n        "])),(n()(),h._23(null,["\n      "]))],function(n,l){n(l,11,0,"md-calendar");n(l,27,0,"","");n(l,30,0,"md-search")},function(n,l){n(l,10,0,h._17(l,11)._hidden),n(l,14,0,l.context.$implicit.address),n(l,17,0,l.context.$implicit.startDate,l.context.$implicit.startTime,l.context.$implicit.endTime),n(l,29,0,h._17(l,30)._hidden)})}function i(n){return h._24(0,[(n()(),h._4(0,null,null,4,"div",[],null,null,null,null,null)),(n()(),h._23(null,["\n      "])),(n()(),h._0(16777216,null,null,1,null,o)),h._3(802816,null,0,H.g,[h.O,h.L,h.s],{ngForOf:[0,"ngForOf"]},null),(n()(),h._23(null,["\n    "]))],function(n,l){n(l,3,0,l.component.history)},null)}function a(n){return h._24(0,[(n()(),h._4(0,null,null,51,"ion-card",[],null,null,null,null,null)),h._3(16384,null,0,vn.a,[hn.a,h.k,h.E],null,null),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,15,"ion-item",[["class","item item-block"]],null,null,null,Pn.b,Pn.a)),h._3(1097728,null,3,kn.a,[Z.a,hn.a,h.k,h.E,[2,Cn.a]],null,null),h._21(335544320,5,{contentLabel:0}),h._21(603979776,6,{_buttons:1}),h._21(603979776,7,{_icons:1}),h._3(16384,null,0,En.a,[],null,null),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,0,1,"ion-icon",[["item-start",""],["large",""],["name","md-calendar"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,[[7,4]],0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,2,1,"h2",[],null,null,null,null,null)),(n()(),h._23(null,[""," - ",""])),(n()(),h._23(2,["\n          "])),(n()(),h._4(0,null,2,1,"p",[["text-wrap",""]],null,null,null,null,null)),(n()(),h._23(null,["",""])),(n()(),h._23(2,["\n        "])),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,30,"ion-row",[["class","row"]],null,null,null,null,null)),h._3(16384,null,0,wn.a,[],null,null),(n()(),h._23(null,["\n          "])),(n()(),h._4(0,null,null,12,"ion-col",[["class","col"]],null,null,null,null,null)),h._3(16384,null,0,Mn.a,[],null,null),(n()(),h._23(null,["\n            "])),(n()(),h._4(0,null,null,8,"button",[["block",""],["clear",""],["icon-left",""],["ion-button",""]],null,null,null,On.b,On.a)),h._3(1097728,null,0,Dn.a,[[8,""],hn.a,h.k,h.E],{clear:[0,"clear"],block:[1,"block"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-alarm"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"div",[],null,null,null,null,null)),(n()(),h._23(null,["Set Alarm"])),(n()(),h._23(0,["\n            "])),(n()(),h._23(null,["\n          "])),(n()(),h._23(null,["\n          "])),(n()(),h._4(0,null,null,12,"ion-col",[["class","col"],["text-center",""]],null,null,null,null,null)),h._3(16384,null,0,Mn.a,[],null,null),(n()(),h._23(null,["\n            "])),(n()(),h._4(0,null,null,8,"button",[["block",""],["clear",""],["icon-left",""],["ion-button",""]],null,null,null,On.b,On.a)),h._3(1097728,null,0,Dn.a,[[8,""],hn.a,h.k,h.E],{clear:[0,"clear"],block:[1,"block"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-navigate"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n              "])),(n()(),h._4(0,null,0,1,"div",[],null,null,null,null,null)),(n()(),h._23(null,["Navigate"])),(n()(),h._23(0,["\n            "])),(n()(),h._23(null,["\n          "])),(n()(),h._23(null,["\n        "])),(n()(),h._23(null,["\n      "]))],function(n,l){n(l,11,0,"md-calendar");n(l,27,0,"","");n(l,30,0,"md-alarm");n(l,41,0,"","");n(l,44,0,"md-navigate")},function(n,l){n(l,10,0,h._17(l,11)._hidden),n(l,14,0,l.context.$implicit.startTime,l.context.$implicit.endTime),n(l,17,0,l.context.$implicit.address),n(l,29,0,h._17(l,30)._hidden),n(l,43,0,h._17(l,44)._hidden)})}function r(n){return h._24(0,[(n()(),h._4(0,null,null,4,"div",[],null,null,null,null,null)),(n()(),h._23(null,["\n      "])),(n()(),h._0(16777216,null,null,1,null,a)),h._3(802816,null,0,H.g,[h.O,h.L,h.s],{ngForOf:[0,"ngForOf"]},null),(n()(),h._23(null,["\n    "]))],function(n,l){n(l,3,0,l.component.upcoming)},null)}function u(n){return h._24(0,[(n()(),h._4(0,null,null,30,"ion-header",[],null,null,null,null,null)),h._3(16384,null,0,Rn.a,[hn.a,h.k,h.E,[2,cn.a]],null,null),(n()(),h._23(null,["\n\n  "])),(n()(),h._4(0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,An.b,An.a)),h._3(49152,null,0,Ln.a,[z.a,[2,cn.a],[2,dn.a],hn.a,h.k,h.E],null,null),(n()(),h._23(3,["\n    "])),(n()(),h._4(0,null,3,2,"ion-title",[],null,null,null,Tn.b,Tn.a)),h._3(49152,null,0,jn.a,[hn.a,h.k,h.E,[2,In.a],[2,Ln.a]],null,null),(n()(),h._23(0,["Reservations"])),(n()(),h._23(3,["\n  "])),(n()(),h._23(null,["\n\n  "])),(n()(),h._4(0,null,null,18,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,Fn.b,Fn.a)),h._3(49152,null,0,In.a,[hn.a,h.k,h.E],null,null),(n()(),h._23(3,["\n    "])),(n()(),h._4(0,null,3,14,"ion-segment",[],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null],[2,"segment-disabled",null]],[[null,"ngModelChange"]],function(n,l,t){var e=!0,o=n.component;return"ngModelChange"===l&&(e=!1!==(o.reservationType=t)&&e),e},null,null)),h._3(671744,null,0,V.h,[[8,null],[8,null],[8,null],[8,null]],{model:[0,"model"]},{update:"ngModelChange"}),h._20(2048,null,V.f,null,[V.h]),h._3(16384,null,0,V.g,[V.f],null,null),h._3(1196032,null,1,Hn.a,[hn.a,h.k,h.E,[2,V.f]],null,null),h._21(603979776,1,{_buttons:1}),(n()(),h._23(null,["\n      "])),(n()(),h._4(0,null,null,2,"ion-segment-button",[["class","segment-button"],["role","button"],["tappable",""],["value","history"]],[[2,"segment-button-disabled",null],[2,"segment-activated",null],[1,"aria-pressed",0]],[[null,"click"]],function(n,l,t){var e=!0;return"click"===l&&(e=!1!==h._17(n,22).onClick()&&e),e},Nn.b,Nn.a)),h._3(114688,[[1,4]],0,Gn.a,[],{value:[0,"value"]},null),(n()(),h._23(0,["\n        History\n      "])),(n()(),h._23(null,["\n      "])),(n()(),h._4(0,null,null,2,"ion-segment-button",[["class","segment-button"],["role","button"],["tappable",""],["value","upcoming"]],[[2,"segment-button-disabled",null],[2,"segment-activated",null],[1,"aria-pressed",0]],[[null,"click"]],function(n,l,t){var e=!0;return"click"===l&&(e=!1!==h._17(n,26).onClick()&&e),e},Nn.b,Nn.a)),h._3(114688,[[1,4]],0,Gn.a,[],{value:[0,"value"]},null),(n()(),h._23(0,["\n        Upcoming\n      "])),(n()(),h._23(null,["\n    "])),(n()(),h._23(3,["\n  "])),(n()(),h._23(null,["\n\n"])),(n()(),h._23(null,["\n\n\n"])),(n()(),h._4(0,null,null,12,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Bn.b,Bn.a)),h._3(4374528,null,0,zn.a,[hn.a,pn.a,G.a,h.k,h.E,z.a,W.a,h.y,[2,cn.a],[2,dn.a]],null,null),(n()(),h._23(1,["\n\n  "])),(n()(),h._4(0,null,1,8,"div",[],null,null,null,null,null)),h._3(16384,null,0,H.l,[],{ngSwitch:[0,"ngSwitch"]},null),(n()(),h._23(null,["\n    "])),(n()(),h._0(16777216,null,null,1,null,i)),h._3(278528,null,0,H.m,[h.O,h.L,H.l],{ngSwitchCase:[0,"ngSwitchCase"]},null),(n()(),h._23(null,["\n    "])),(n()(),h._0(16777216,null,null,1,null,r)),h._3(278528,null,0,H.m,[h.O,h.L,H.l],{ngSwitchCase:[0,"ngSwitchCase"]},null),(n()(),h._23(null,["\n  "])),(n()(),h._23(1,["\n\n"])),(n()(),h._23(null,["\n"]))],function(n,l){var t=l.component;n(l,15,0,t.reservationType);n(l,22,0,"history");n(l,26,0,"upcoming"),n(l,36,0,t.reservationType);n(l,39,0,"history");n(l,42,0,"upcoming")},function(n,l){n(l,3,0,h._17(l,4)._hidden,h._17(l,4)._sbPadding),n(l,11,0,h._17(l,12)._sbPadding),n(l,14,0,h._17(l,17).ngClassUntouched,h._17(l,17).ngClassTouched,h._17(l,17).ngClassPristine,h._17(l,17).ngClassDirty,h._17(l,17).ngClassValid,h._17(l,17).ngClassInvalid,h._17(l,17).ngClassPending,h._17(l,18)._disabled),n(l,21,0,h._17(l,22)._disabled,h._17(l,22).isActive,h._17(l,22).isActive),n(l,25,0,h._17(l,26)._disabled,h._17(l,26).isActive,h._17(l,26).isActive),n(l,32,0,h._17(l,33).statusbarPadding,h._17(l,33)._hasRefresher)})}function _(n){return h._24(0,[h._21(402653184,1,{mapElement:0}),(n()(),h._23(null,["\n"])),(n()(),h._4(0,null,null,9,"ion-toolbar",[["class","toolbar"],["mode","md"],["transparent",""]],[[2,"statusbar-padding",null]],null,null,Fn.b,Fn.a)),h._3(49152,null,0,In.a,[hn.a,h.k,h.E],{mode:[0,"mode"]},null),(n()(),h._23(3,["\n  "])),(n()(),h._4(0,null,3,5,"ion-searchbar",[["mode","md"],["padding-left",""],["padding-right",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null],[2,"searchbar-animated",null],[2,"searchbar-has-value",null],[2,"searchbar-active",null],[2,"searchbar-show-cancel",null],[2,"searchbar-left-aligned",null],[2,"searchbar-has-focus",null]],[[null,"ngModelChange"],[null,"ionFocus"],[null,"ionInput"]],function(n,l,t){var e=!0,o=n.component;return"ngModelChange"===l&&(e=!1!==(o.query=t)&&e),"ionFocus"===l&&(e=!1!==o.onFocusSearch()&&e),"ionInput"===l&&(e=!1!==o.searchPlace()&&e),e},Kn.b,Kn.a)),h._3(671744,null,0,V.h,[[8,null],[8,null],[8,null],[8,null]],{model:[0,"model"]},{update:"ngModelChange"}),h._20(2048,null,V.f,null,[V.h]),h._3(16384,null,0,V.g,[V.f],null,null),h._3(1294336,null,0,qn.a,[hn.a,pn.a,h.k,h.E,[2,V.f]],{mode:[0,"mode"]},{ionFocus:"ionFocus",ionInput:"ionInput"}),(n()(),h._23(null,["\n    \n  "])),(n()(),h._23(3,["\n"])),(n()(),h._23(null,["\n"])),(n()(),h._23(null,["\n  \n  "])),(n()(),h._4(0,null,null,60,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Bn.b,Bn.a)),h._3(4374528,null,0,zn.a,[hn.a,pn.a,G.a,h.k,h.E,z.a,W.a,h.y,[2,cn.a],[2,dn.a]],null,null),(n()(),h._23(1,["\n    "])),(n()(),h._4(0,[[1,0],["map",1]],1,4,"div",[["id","map"]],null,null,null,null,null)),(n()(),h._23(null,["\n      "])),(n()(),h._4(0,null,null,1,"ion-spinner",[["color","primary"],["name","dots"]],[[2,"spinner-paused",null]],null,null,$n.b,$n.a)),h._3(114688,null,0,Zn.a,[hn.a,h.k,h.E],{color:[0,"color"],name:[1,"name"]},null),(n()(),h._23(null,["\n    "])),(n()(),h._23(1,["\n    "])),(n()(),h._4(0,null,0,50,"ion-fab",[["mode","md"],["right",""],["top",""]],null,null,null,Jn.b,Jn.a)),h._3(1228800,null,2,Wn.a,[pn.a],null,null),h._21(335544320,2,{_mainButton:0}),h._21(603979776,3,{_fabLists:1}),(n()(),h._23(0,["\n      "])),(n()(),h._4(0,null,0,6,"button",[["ion-fab",""],["mini",""],["mode","md"]],null,null,null,Yn.b,Yn.a)),h._3(49152,[[2,4]],0,Qn.a,[hn.a,h.k,h.E],{mode:[0,"mode"]},null),(n()(),h._23(0,["\n        "])),(n()(),h._23(0,["\n        "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","ios-settings"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n      "])),(n()(),h._23(0,["\n      "])),(n()(),h._4(0,null,0,36,"ion-fab-list",[["mode","md"]],null,null,null,null,null)),h._3(16384,[[3,4]],1,nl.a,[h.k,h.E,hn.a,pn.a],null,null),h._21(603979776,4,{_setbuttons:1}),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,9,"button",[["color","primary"],["ion-fab",""]],null,null,null,Yn.b,Yn.a)),h._3(49152,[[4,4],[2,4]],0,Qn.a,[hn.a,h.k,h.E],{color:[0,"color"]},null),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,2,"ion-label",[],null,null,null,null,null)),h._3(16384,null,0,ll.a,[hn.a,h.k,h.E,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),h._23(null,["Price"])),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-pricetags"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n        "])),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,9,"button",[["color","primary"],["ion-fab",""]],null,[[null,"click"]],function(n,l,t){var e=!0,o=n.component;return"click"===l&&(e=!1!==o.onClickDuration()&&e),e},Yn.b,Yn.a)),h._3(49152,[[4,4],[2,4]],0,Qn.a,[hn.a,h.k,h.E],{color:[0,"color"]},null),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,2,"ion-label",[],null,null,null,null,null)),h._3(16384,null,0,ll.a,[hn.a,h.k,h.E,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),h._23(null,["Duration"])),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-time"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n        "])),(n()(),h._23(null,["\n        "])),(n()(),h._4(0,null,null,9,"button",[["color","primary"],["ion-fab",""]],null,null,null,Yn.b,Yn.a)),h._3(49152,[[4,4],[2,4]],0,Qn.a,[hn.a,h.k,h.E],{color:[0,"color"]},null),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,2,"ion-label",[],null,null,null,null,null)),h._3(16384,null,0,ll.a,[hn.a,h.k,h.E,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),h._23(null,["Distance"])),(n()(),h._23(0,["\n          "])),(n()(),h._4(0,null,0,1,"ion-icon",[["name","md-pin"],["role","img"]],[[2,"hide",null]],null,null,null,null)),h._3(147456,null,0,Sn.a,[hn.a,h.k,h.E],{name:[0,"name"]},null),(n()(),h._23(0,["\n        "])),(n()(),h._23(null,["\n      "])),(n()(),h._23(0,["\n    "])),(n()(),h._23(1,["\n  "])),(n()(),h._23(null,["\n  "]))],function(n,l){var t=l.component;n(l,3,0,"md"),n(l,6,0,t.query);n(l,9,0,"md");n(l,20,0,"primary","dots");n(l,29,0,"md");n(l,33,0,"ios-settings");n(l,41,0,"primary");n(l,48,0,"md-pricetags");n(l,52,0,"primary");n(l,59,0,"md-time");n(l,63,0,"primary");n(l,70,0,"md-pin")},function(n,l){n(l,2,0,h._17(l,3)._sbPadding),n(l,5,1,[h._17(l,8).ngClassUntouched,h._17(l,8).ngClassTouched,h._17(l,8).ngClassPristine,h._17(l,8).ngClassDirty,h._17(l,8).ngClassValid,h._17(l,8).ngClassInvalid,h._17(l,8).ngClassPending,h._17(l,9)._animated,h._17(l,9)._value,h._17(l,9)._isActive,h._17(l,9)._showCancelButton,h._17(l,9)._shouldAlignLeft,h._17(l,9)._isFocus]),n(l,14,0,h._17(l,15).statusbarPadding,h._17(l,15)._hasRefresher),n(l,19,0,h._17(l,20)._paused),n(l,32,0,h._17(l,33)._hidden),n(l,47,0,h._17(l,48)._hidden),n(l,58,0,h._17(l,59)._hidden),n(l,69,0,h._17(l,70)._hidden)})}function s(n){return h._24(0,[(n()(),h._4(0,null,null,10,"ion-header",[],null,null,null,null,null)),h._3(16384,null,0,Rn.a,[hn.a,h.k,h.E,[2,cn.a]],null,null),(n()(),h._23(null,["\n\n  "])),(n()(),h._4(0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,An.b,An.a)),h._3(49152,null,0,Ln.a,[z.a,[2,cn.a],[2,dn.a],hn.a,h.k,h.E],null,null),(n()(),h._23(3,["\n    "])),(n()(),h._4(0,null,3,2,"ion-title",[],null,null,null,Tn.b,Tn.a)),h._3(49152,null,0,jn.a,[hn.a,h.k,h.E,[2,In.a],[2,Ln.a]],null,null),(n()(),h._23(0,["Account"])),(n()(),h._23(3,["\n  "])),(n()(),h._23(null,["\n\n"])),(n()(),h._23(null,["\n\n\n"])),(n()(),h._4(0,null,null,38,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Bn.b,Bn.a)),h._3(4374528,null,0,zn.a,[hn.a,pn.a,G.a,h.k,h.E,z.a,W.a,h.y,[2,cn.a],[2,dn.a]],null,null),(n()(),h._23(1,["\n\n  "])),(n()(),h._4(0,null,1,34,"ion-list",[],null,null,null,null,null)),h._3(16384,null,0,il.a,[hn.a,h.k,h.E,pn.a,x.g,G.a],null,null),(n()(),h._23(null,["\n    "])),(n()(),h._4(0,null,null,6,"ion-list-header",[["class","item"],["color","light"]],null,null,null,Pn.b,Pn.a)),h._3(1097728,null,3,kn.a,[Z.a,hn.a,h.k,h.E,[2,Cn.a]],{color:[0,"color"]},null),h._21(335544320,1,{contentLabel:0}),h._21(603979776,2,{_buttons:1}),h._21(603979776,3,{_icons:1}),h._3(16384,null,0,al.a,[hn.a,h.E,h.k,[8,null]],{color:[0,"color"]},null),(n()(),h._23(2,["\n      Personal Information\n    "])),(n()(),h._23(null,["\n    "])),(n()(),h._4(0,null,null,10,"button",[["class","item item-block"],["ion-item",""]],null,null,null,Pn.b,Pn.a)),h._3(1097728,null,3,kn.a,[Z.a,hn.a,h.k,h.E,[2,Cn.a]],null,null),h._21(335544320,4,{contentLabel:0}),h._21(603979776,5,{_buttons:1}),h._21(603979776,6,{_icons:1}),h._3(16384,null,0,En.a,[],null,null),(n()(),h._23(2,["\n      First Name\n      "])),(n()(),h._4(0,null,4,2,"ion-note",[["item-end",""]],null,null,null,null,null)),h._3(16384,null,0,rl.a,[hn.a,h.k,h.E],null,null),(n()(),h._23(null,["\n        John\n      "])),(n()(),h._23(2,["\n    "])),(n()(),h._23(null,["\n    "])),(n()(),h._4(0,null,null,10,"button",[["class","item item-block"],["ion-item",""]],null,null,null,Pn.b,Pn.a)),h._3(1097728,null,3,kn.a,[Z.a,hn.a,h.k,h.E,[2,Cn.a]],null,null),h._21(335544320,7,{contentLabel:0}),h._21(603979776,8,{_buttons:1}),h._21(603979776,9,{_icons:1}),h._3(16384,null,0,En.a,[],null,null),(n()(),h._23(2,["\n      Last Name\n      "])),(n()(),h._4(0,null,4,2,"ion-note",[["item-end",""]],null,null,null,null,null)),h._3(16384,null,0,rl.a,[hn.a,h.k,h.E],null,null),(n()(),h._23(null,["\n        Doe\n      "])),(n()(),h._23(2,["\n    "])),(n()(),h._23(null,["\n  "])),(n()(),h._23(1,["\n\n"])),(n()(),h._23(null,["\n"]))],function(n,l){n(l,19,0,"light");n(l,23,0,"light")},function(n,l){n(l,3,0,h._17(l,4)._hidden,h._17(l,4)._sbPadding),n(l,12,0,h._17(l,13).statusbarPadding,h._17(l,13)._hasRefresher)})}function c(n){return h._24(0,[(n()(),h._4(0,null,null,12,"ion-tabs",[["selectedIndex","0"]],null,null,null,cl.b,cl.a)),h._3(4374528,null,0,dl.a,[[2,dn.a],[2,cn.a],z.a,hn.a,h.k,pn.a,h.E,gn.a,W.a],{selectedIndex:[0,"selectedIndex"]},null),h._20(6144,null,fn.a,null,[dl.a]),(n()(),h._23(0,["\n  "])),(n()(),h._4(0,null,0,1,"ion-tab",[["role","tabpanel"],["tabIcon","md-car"],["tabTitle","Park"]],[[1,"id",0],[1,"aria-labelledby",0]],null,null,hl.b,hl.a)),h._3(245760,null,0,pl.a,[dl.a,z.a,hn.a,pn.a,h.k,h.y,h.E,h.j,h.h,x.g,tn.a,[2,gn.a],G.a,h.l],{root:[0,"root"],tabTitle:[1,"tabTitle"],tabIcon:[2,"tabIcon"]},null),(n()(),h._23(0,["\n  "])),(n()(),h._4(0,null,0,1,"ion-tab",[["role","tabpanel"],["tabIcon","md-bookmarks"],["tabTitle","Reservations"]],[[1,"id",0],[1,"aria-labelledby",0]],null,null,hl.b,hl.a)),h._3(245760,null,0,pl.a,[dl.a,z.a,hn.a,pn.a,h.k,h.y,h.E,h.j,h.h,x.g,tn.a,[2,gn.a],G.a,h.l],{root:[0,"root"],tabTitle:[1,"tabTitle"],tabIcon:[2,"tabIcon"]},null),(n()(),h._23(0,["\n  "])),(n()(),h._4(0,null,0,1,"ion-tab",[["role","tabpanel"],["tabIcon","md-contact"],["tabTitle","Account"]],[[1,"id",0],[1,"aria-labelledby",0]],null,null,hl.b,hl.a)),h._3(245760,null,0,pl.a,[dl.a,z.a,hn.a,pn.a,h.k,h.y,h.E,h.j,h.h,x.g,tn.a,[2,gn.a],G.a,h.l],{root:[0,"root"],tabTitle:[1,"tabTitle"],tabIcon:[2,"tabIcon"]},null),(n()(),h._23(0,["\n"])),(n()(),h._23(null,["\n"]))],function(n,l){var t=l.component;n(l,1,0,"0");n(l,5,0,t.tab1Root,"Park","md-car");n(l,8,0,t.tab2Root,"Reservations","md-bookmarks");n(l,11,0,t.tab3Root,"Account","md-contact")},function(n,l){n(l,4,0,h._17(l,5)._tabId,h._17(l,5)._btnId),n(l,7,0,h._17(l,8)._tabId,h._17(l,8)._btnId),n(l,10,0,h._17(l,11)._tabId,h._17(l,11)._btnId)})}Object.defineProperty(l,"__esModule",{value:!0});var d=t(23),h=t(0),p=t(28),g=t(70),f=t(71),m=function(){function n(n,l){this.navCtrl=n,this.navParams=l,this.reservationType="upcoming",this.history=[{address:"1 Oakwood Avenue, Los Angeles, CA",startDate:"09/14/2017",startTime:"09:30 am",endDate:"09/14/2017",endTime:"02:30 pm"}],this.upcoming=[{address:"1 Oakwood Avenue, Los Angeles, CA",startDate:"09/23/2017",startTime:"09:30 am",endDate:"09/23/2017",endTime:"02:30 pm"}]}return n.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad ReservationsPage")},n}(),b=t(68),y=(t(135),t(99)),v=this&&this.__decorate||function(n,l,t,e){var o,i=arguments.length,a=i<3?l:null===e?e=Object.getOwnPropertyDescriptor(l,t):e;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(n,l,t,e);else for(var r=n.length-1;r>=0;r--)(o=n[r])&&(a=(i<3?o(a):i>3?o(l,t,a):o(l,t))||a);return i>3&&a&&Object.defineProperty(l,t,a),a},P=this&&this.__metadata||function(n,l){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,l)},k=function(){function n(n,l,t,e,o,i,a){this.http=n,this.platform=l,this.ac=t,this.tc=e,this.lc=o,this.mc=i,this.datePicker=a,console.log("Hello SingletonProvider Provider")}return n.prototype.partition=function(n,l,t,e){var o=n;if(1==n.length)return o;var i=-1,a=-1;this.pivot(n,t,e),i=t,a=t+1;for(var r=t+1;r<=e;r++)if(l[r]<l[i]){var u=o[r],_=o[a];o[a]=u,o[r]=_,a++}var u=o[i],_=o[a-1];return o[i]=_,o[a-1]=u,a-2-t>=1&&(o=this.partition(o,l,t,a-2)),e-a>=1&&(o=this.partition(o,l,a,e)),o},n.prototype.pivot=function(n,l,t){var e=n[l],o=n[t];n[l]=o,n[t]=e},n.prototype.produceRadioStates=function(n,l){for(var t=[],e=0;e<n.length;e++)t.push(n[e]?!0:!1)},n.prototype.sortAlpha=function(n){var l=n.slice();return l.sort(function(n,l){var t=n.toLowerCase(),e=l.toLowerCase();return t<e?-1:t>e?1:0}),l},n.prototype.createDatePicker=function(){this.datePicker.show({date:new Date,mode:"date",androidTheme:this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK}).then(function(n){return console.log("Got date: ",n)},function(n){return console.log("Error occurred while getting date: ",n)})},n.prototype.createDateAlert=function(n,l){var t=this;return new Promise(function(n){t.ac.create({title:"Due Date",inputs:[{name:"Date",type:"date",value:l}],buttons:[{text:"Cancel",role:"cancel",handler:function(l){console.log("Cancel clicked"),n([""])}},{text:"Save",handler:function(l){console.log("Returned result",l),n([l.Date])}}]}).present()})},n.prototype.createDateRangeAlert=function(n,l,t){var e=this;return new Promise(function(n){e.ac.create({title:"Due Date",inputs:[{name:"Date1",type:"date",value:l},{name:"Date2",type:"date",value:l}],buttons:[{text:"Cancel",role:"cancel",handler:function(l){console.log("Cancel clicked"),n([void 0,void 0])}},{text:"Save",handler:function(l){console.log("Returned result",l),n([l.Date1,l.Date2])}}]}).present()})},n.prototype.createPromptAlert=function(n,l,t,e){var o=this;return new Promise(function(i){o.ac.create({title:n,inputs:[{name:l,placeholder:t,type:e}],buttons:[{text:"Cancel",role:"cancel",handler:function(n){console.log("Cancel clicked"),i([""])}},{text:"OK",handler:function(n){console.log("Returned result",n[l]),i([n[l]])}}]}).present()})},n.prototype.createRadioAlert=function(n,l,t){var e=this;return new Promise(function(o){for(var i=[],a=0;a<l.length;a++)i.push({name:l[a],label:l[a],value:t[a],type:"radio"});e.ac.create({title:n,inputs:i,buttons:[{text:"Cancel",role:"cancel",handler:function(n){console.log("Cancel clicked")}},{text:"OK",handler:function(n){console.log("User submitted alert",n),o([n])}}]}).present()})},n.prototype.sendAlert=function(n,l,t){this.ac.create({title:n,subTitle:l,buttons:t}).present()},n.prototype.sendToast=function(n){this.tc.create({message:n,duration:3500,showCloseButton:!0,position:"bottom"}).present()},n.prototype.createLoader=function(n){this.loader=this.lc.create({spinner:"dots",content:n}),this.loader.present()},n.prototype.destroyLoader=function(){this.loader&&this.loader.dismiss()},n.prototype.createModal=function(n){var l=this;return new Promise(function(t){var e=l.mc.create(n);e.present(),e.onDidDismiss(function(n){t([{data:n}])})})},n.prototype.createModalParams=function(n,l){var t=this;return new Promise(function(e){var o=t.mc.create(n,l);o.present(),o.onDidDismiss(function(n){e([{data:n}])})})},n.prototype.capitalizeFirstLetter=function(n){return n.charAt(0).toUpperCase()+n.slice(1)},n.prototype.contains=function(n,l){for(var t=!1,e=0;e<n.length;e++){n[e].search(/[\uD800-\uDFFF]./)>=0&&(t=!0);for(var o=0;o<l.length;o++)void 0!=n[e]&&void 0!=l[o]&&n[e].indexOf(l[o])>=0&&(t=!0)}return t},n}();k=v([Object(h.p)(),P("design:paramtypes",["function"==typeof(C=void 0!==b.d&&b.d)&&C||Object,"function"==typeof(E=void 0!==p.d&&p.d)&&E||Object,"function"==typeof(S=void 0!==p.a&&p.a)&&S||Object,"function"==typeof(w=void 0!==p.e&&p.e)&&w||Object,"function"==typeof(M=void 0!==p.b&&p.b)&&M||Object,"function"==typeof(O=void 0!==p.c&&p.c)&&O||Object,"function"==typeof(D=void 0!==y.a&&y.a)&&D||Object])],k);var C,E,S,w,M,O,D,R=t(49),A=function(){function n(n,l,t,e){this.navCtrl=n,this.navParams=l,this.singleton=t,this.ms=e,this.query="",this.filterType="price",this.location={name:"",lat:0,lng:0},this.markers=[]}return n.prototype.ionViewDidLoad=function(){var n=this;console.log("ionViewDidLoad FindParkingPage"),this.singleton.createLoader("Loading latest data"),this.ms.loadMap(this.mapElement).then(function(l){n.singleton.destroyLoader()})},n.prototype.onFocusSearch=function(){var n=this;this.singleton.createModal("LocationPickerPage").then(function(l){void 0!=l&&void 0!=l[0]&&void 0!=l[0].data&&(console.log("Received location",l[0].data),n.query=l[0].data.place.description,n.ms.selectPlace(l[0].data.place).then(function(l){n.randomizeMarkers(l[0].lat,l[0].lng)}))})},n.prototype.onClickDuration=function(){this.singleton.createDatePicker()},n.prototype.addMarker=function(n,l,t){var e=this;this.markers.push({lat:n,lng:l,content:t}),this.ms.createBasicMarker(n,l,"title",t,function(){e.ms.geocodeLatLng(n,l).then(function(n){n[0].address.length>0&&e.singleton.createModalParams("PaymentPage",{address:n[0].address,lat:n[0].lat,lng:n[0].lng,cost:t})})})},n.prototype.randomizeMarkers=function(n,l){console.log("Randomizing markers");for(t=0;t<3;t++)this.addMarker(n+.005*Math.random()*(t+1),l+.005*Math.random()*(t+1),"$"+(Math.floor(15*Math.random())+5));for(t=0;t<3;t++)this.addMarker(n-.005*Math.random()*(t+1),l-.005*Math.random()*(t+1),"$"+(Math.floor(15*Math.random())+5));for(t=0;t<3;t++)this.addMarker(n-.005*Math.random()*(t+1),l+.005*Math.random()*(t+1),"$"+(Math.floor(15*Math.random())+5));for(var t=0;t<3;t++)this.addMarker(n+.005*Math.random()*(t+1),l-.005*Math.random()*(t+1),"$"+(Math.floor(15*Math.random())+5))},n.prototype.openEvents=function(){this.singleton.createModal("FindEventsPage").then(function(n){})},n}(),L=function(){function n(n,l){this.navCtrl=n,this.navParams=l}return n.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad AccountPage")},n}(),T=function(){return function(){this.tab1Root=A,this.tab2Root=m,this.tab3Root=L}}(),j=function(){return function(n,l,t){this.rootPage=T,n.ready().then(function(){l.styleDefault(),t.hide()})}}(),I=t(98),F=function(){return function(){}}(),H=t(10),N=t(136),G=t(7),B=t(41),z=t(5),x=t(8),U=t(88),V=t(21),X=t(100),K=t(90),q=t(83),$=t(89),Z=t(27),J=t(62),W=t(15),Y=t(87),Q=t(94),nn=t(92),ln=t(97),tn=t(19),en=t(137),on=t(138),an=t(139),rn=t(140),un=t(141),_n=t(171),sn=t(63),cn=t(4),dn=t(11),hn=t(1),pn=t(3),gn=t(13),fn=t(25),mn=[],bn=h._2({encapsulation:2,styles:mn,data:{}}),yn=h._1("ng-component",j,function(n){return h._24(0,[(n()(),h._4(0,null,null,1,"ng-component",[],null,null,null,e,bn)),h._3(49152,null,0,j,[pn.a,g.a,f.a],null,null)],null,null)},{},{},[]),vn=t(73),Pn=t(104),kn=t(35),Cn=t(29),En=t(52),Sn=t(18),wn=t(86),Mn=t(85),On=t(34),Dn=t(17),Rn=t(51),An=t(102),Ln=t(22),Tn=t(103),jn=t(36),In=t(20),Fn=t(108),Hn=t(96),Nn=t(172),Gn=t(48),Bn=t(72),zn=t(26),xn=t(12),Un=[],Vn=h._2({encapsulation:2,styles:Un,data:{}}),Xn=h._1("page-reservations",m,function(n){return h._24(0,[(n()(),h._4(0,null,null,1,"page-reservations",[],null,null,null,u,Vn)),h._3(49152,null,0,m,[dn.a,xn.a],null,null)],null,null)},{},{},[]),Kn=t(142),qn=t(53),$n=t(107),Zn=t(37),Jn=t(173),Wn=t(58),Yn=t(174),Qn=t(32),nl=t(59),ll=t(47),tl=[],el=h._2({encapsulation:2,styles:tl,data:{}}),ol=h._1("page-find-parking",A,function(n){return h._24(0,[(n()(),h._4(0,null,null,1,"page-find-parking",[],null,null,null,_,el)),h._3(49152,null,0,A,[dn.a,xn.a,k,R.a],null,null)],null,null)},{},{},[]),il=t(74),al=t(75),rl=t(95),ul=[],_l=h._2({encapsulation:2,styles:ul,data:{}}),sl=h._1("page-account",L,function(n){return h._24(0,[(n()(),h._4(0,null,null,1,"page-account",[],null,null,null,s,_l)),h._3(49152,null,0,L,[dn.a,xn.a],null,null)],null,null)},{},{},[]),cl=t(175),dl=t(33),hl=t(176),pl=t(64),gl=[],fl=h._2({encapsulation:2,styles:gl,data:{}}),ml=h._1("ng-component",T,function(n){return h._24(0,[(n()(),h._4(0,null,null,1,"ng-component",[],null,null,null,c,fl)),h._3(49152,null,0,T,[],null,null)],null,null)},{},{},[]),bl=t(44),yl=t(91),vl=t(50),Pl=t(93),kl=t(39),Cl=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,l){n.__proto__=l}||function(n,l){for(var t in l)l.hasOwnProperty(t)&&(n[t]=l[t])};return function(l,t){function e(){this.constructor=l}n(l,t),l.prototype=null===t?Object.create(t):(e.prototype=t.prototype,new e)}}(),El=function(n){function l(l){return n.call(this,l,[en.a,on.a,an.a,rn.a,un.a,yn,Xn,ol,sl,ml],[on.a])||this}return Cl(l,n),Object.defineProperty(l.prototype,"_LOCALE_ID_26",{get:function(){return null==this.__LOCALE_ID_26&&(this.__LOCALE_ID_26=h._15(this.parent.get(h.u,null))),this.__LOCALE_ID_26},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_NgLocalization_27",{get:function(){return null==this.__NgLocalization_27&&(this.__NgLocalization_27=new H.i(this._LOCALE_ID_26)),this.__NgLocalization_27},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_APP_ID_28",{get:function(){return null==this.__APP_ID_28&&(this.__APP_ID_28=h._6()),this.__APP_ID_28},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_IterableDiffers_29",{get:function(){return null==this.__IterableDiffers_29&&(this.__IterableDiffers_29=h._12()),this.__IterableDiffers_29},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_KeyValueDiffers_30",{get:function(){return null==this.__KeyValueDiffers_30&&(this.__KeyValueDiffers_30=h._14()),this.__KeyValueDiffers_30},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_DomSanitizer_31",{get:function(){return null==this.__DomSanitizer_31&&(this.__DomSanitizer_31=new d.s(this.parent.get(d.b))),this.__DomSanitizer_31},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Sanitizer_32",{get:function(){return null==this.__Sanitizer_32&&(this.__Sanitizer_32=this._DomSanitizer_31),this.__Sanitizer_32},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_HAMMER_GESTURE_CONFIG_33",{get:function(){return null==this.__HAMMER_GESTURE_CONFIG_33&&(this.__HAMMER_GESTURE_CONFIG_33=new K.a),this.__HAMMER_GESTURE_CONFIG_33},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_EVENT_MANAGER_PLUGINS_34",{get:function(){return null==this.__EVENT_MANAGER_PLUGINS_34&&(this.__EVENT_MANAGER_PLUGINS_34=[new d.l(this.parent.get(d.b)),new d.p(this.parent.get(d.b)),new d.o(this.parent.get(d.b),this._HAMMER_GESTURE_CONFIG_33)]),this.__EVENT_MANAGER_PLUGINS_34},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_EventManager_35",{get:function(){return null==this.__EventManager_35&&(this.__EventManager_35=new d.e(this._EVENT_MANAGER_PLUGINS_34,this.parent.get(h.y))),this.__EventManager_35},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵDomSharedStylesHost_36",{get:function(){return null==this.__ɵDomSharedStylesHost_36&&(this.__ɵDomSharedStylesHost_36=new d.n(this.parent.get(d.b))),this.__ɵDomSharedStylesHost_36},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵDomRendererFactory2_37",{get:function(){return null==this.__ɵDomRendererFactory2_37&&(this.__ɵDomRendererFactory2_37=new d.m(this._EventManager_35,this._ɵDomSharedStylesHost_36)),this.__ɵDomRendererFactory2_37},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_RendererFactory2_38",{get:function(){return null==this.__RendererFactory2_38&&(this.__RendererFactory2_38=this._ɵDomRendererFactory2_37),this.__RendererFactory2_38},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵSharedStylesHost_39",{get:function(){return null==this.__ɵSharedStylesHost_39&&(this.__ɵSharedStylesHost_39=this._ɵDomSharedStylesHost_36),this.__ɵSharedStylesHost_39},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Testability_40",{get:function(){return null==this.__Testability_40&&(this.__Testability_40=new h.M(this.parent.get(h.y))),this.__Testability_40},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Meta_41",{get:function(){return null==this.__Meta_41&&(this.__Meta_41=new d.h(this.parent.get(d.b))),this.__Meta_41},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Title_42",{get:function(){return null==this.__Title_42&&(this.__Title_42=new d.j(this.parent.get(d.b))),this.__Title_42},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_BrowserXhr_43",{get:function(){return null==this.__BrowserXhr_43&&(this.__BrowserXhr_43=new b.c),this.__BrowserXhr_43},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ResponseOptions_44",{get:function(){return null==this.__ResponseOptions_44&&(this.__ResponseOptions_44=new b.b),this.__ResponseOptions_44},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_XSRFStrategy_45",{get:function(){return null==this.__XSRFStrategy_45&&(this.__XSRFStrategy_45=b.j()),this.__XSRFStrategy_45},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_XHRBackend_46",{get:function(){return null==this.__XHRBackend_46&&(this.__XHRBackend_46=new b.h(this._BrowserXhr_43,this._ResponseOptions_44,this._XSRFStrategy_45)),this.__XHRBackend_46},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_RequestOptions_47",{get:function(){return null==this.__RequestOptions_47&&(this.__RequestOptions_47=new b.a),this.__RequestOptions_47},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Http_48",{get:function(){return null==this.__Http_48&&(this.__Http_48=b.k(this._XHRBackend_46,this._RequestOptions_47)),this.__Http_48},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵi_49",{get:function(){return null==this.__ɵi_49&&(this.__ɵi_49=new V.k),this.__ɵi_49},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_FormBuilder_50",{get:function(){return null==this.__FormBuilder_50&&(this.__FormBuilder_50=new V.c),this.__FormBuilder_50},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_AlertController_54",{get:function(){return null==this.__AlertController_54&&(this.__AlertController_54=new q.a(this._App_8,this._Config_5)),this.__AlertController_54},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Events_55",{get:function(){return null==this.__Events_55&&(this.__Events_55=new $.a),this.__Events_55},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Form_56",{get:function(){return null==this.__Form_56&&(this.__Form_56=new Z.a),this.__Form_56},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Haptic_57",{get:function(){return null==this.__Haptic_57&&(this.__Haptic_57=new J.a(this._Platform_4)),this.__Haptic_57},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Keyboard_58",{get:function(){return null==this.__Keyboard_58&&(this.__Keyboard_58=new W.a(this._Config_5,this._Platform_4,this.parent.get(h.y),this._DomController_6)),this.__Keyboard_58},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_LoadingController_59",{get:function(){return null==this.__LoadingController_59&&(this.__LoadingController_59=new Y.a(this._App_8,this._Config_5)),this.__LoadingController_59},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_LocationStrategy_60",{get:function(){return null==this.__LocationStrategy_60&&(this.__LocationStrategy_60=X.c(this.parent.get(H.p),this._APP_BASE_HREF_52,this._Config_5)),this.__LocationStrategy_60},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Location_61",{get:function(){return null==this.__Location_61&&(this.__Location_61=new H.d(this._LocationStrategy_60)),this.__Location_61},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_UrlSerializer_62",{get:function(){return null==this.__UrlSerializer_62&&(this.__UrlSerializer_62=bl.d(this._App_8,this._DeepLinkConfigToken_10)),this.__UrlSerializer_62},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_DeepLinker_63",{get:function(){return null==this.__DeepLinker_63&&(this.__DeepLinker_63=gn.b(this._App_8,this._UrlSerializer_62,this._Location_61,this._ModuleLoader_13,this.componentFactoryResolver)),this.__DeepLinker_63},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ModalController_64",{get:function(){return null==this.__ModalController_64&&(this.__ModalController_64=new Q.a(this._App_8,this._Config_5,this._DeepLinker_63)),this.__ModalController_64},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_TapClick_67",{get:function(){return null==this.__TapClick_67&&(this.__TapClick_67=new nn.a(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9)),this.__TapClick_67},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ToastController_68",{get:function(){return null==this.__ToastController_68&&(this.__ToastController_68=new ln.a(this._App_8,this._Config_5)),this.__ToastController_68},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_TransitionController_69",{get:function(){return null==this.__TransitionController_69&&(this.__TransitionController_69=new tn.a(this._Platform_4,this._Config_5)),this.__TransitionController_69},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_StatusBar_70",{get:function(){return null==this.__StatusBar_70&&(this.__StatusBar_70=new g.a),this.__StatusBar_70},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_SplashScreen_71",{get:function(){return null==this.__SplashScreen_71&&(this.__SplashScreen_71=new f.a),this.__SplashScreen_71},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Geolocation_72",{get:function(){return null==this.__Geolocation_72&&(this.__Geolocation_72=new I.a),this.__Geolocation_72},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_DatePicker_73",{get:function(){return null==this.__DatePicker_73&&(this.__DatePicker_73=new y.a),this.__DatePicker_73},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_SingletonProvider_74",{get:function(){return null==this.__SingletonProvider_74&&(this.__SingletonProvider_74=new k(this._Http_48,this._Platform_4,this._AlertController_54,this._ToastController_68,this._LoadingController_59,this._ModalController_64,this._DatePicker_73)),this.__SingletonProvider_74},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_MapServiceProvider_75",{get:function(){return null==this.__MapServiceProvider_75&&(this.__MapServiceProvider_75=new R.a(this._Http_48,this._Geolocation_72)),this.__MapServiceProvider_75},enumerable:!0,configurable:!0}),l.prototype.createInternal=function(){return this._CommonModule_0=new H.b,this._ErrorHandler_1=new N.a,this._ConfigToken_2=null,this._PlatformConfigToken_3=yl.b(),this._Platform_4=pn.b(this.parent.get(d.b),this._PlatformConfigToken_3,this.parent.get(h.y)),this._Config_5=hn.c(this._ConfigToken_2,this._Platform_4),this._DomController_6=new G.a(this._Platform_4),this._MenuController_7=new B.a,this._App_8=new z.a(this._Config_5,this._Platform_4,this._MenuController_7),this._GestureController_9=new x.g(this._App_8),this._DeepLinkConfigToken_10={links:[{loadChildren:"../pages/account/account.module.ngfactory#AccountPageModuleNgFactory",name:"AccountPage",segment:"account",priority:"low",defaultHistory:[]},{loadChildren:"../pages/find-events/find-events.module.ngfactory#FindEventsPageModuleNgFactory",name:"FindEventsPage",segment:"find-events",priority:"low",defaultHistory:[]},{loadChildren:"../pages/find-parking/find-parking.module.ngfactory#FindParkingPageModuleNgFactory",name:"FindParkingPage",segment:"find-parking",priority:"low",defaultHistory:[]},{loadChildren:"../pages/location-picker/location-picker.module.ngfactory#LocationPickerPageModuleNgFactory",name:"LocationPickerPage",segment:"location-picker",priority:"low",defaultHistory:[]},{loadChildren:"../pages/payment/payment.module.ngfactory#PaymentPageModuleNgFactory",name:"PaymentPage",segment:"payment",priority:"low",defaultHistory:[]},{loadChildren:"../pages/reservations/reservations.module.ngfactory#ReservationsPageModuleNgFactory",name:"ReservationsPage",segment:"reservations",priority:"low",defaultHistory:[]}]},this._Compiler_11=new h.i,this._NgModuleLoader_12=new U.a(this._Compiler_11),this._ModuleLoader_13=vl.c(this._NgModuleLoader_12,this),this._APP_INITIALIZER_14=[h._18,d.r(this.parent.get(d.i,null),this.parent.get(h.x,null)),Pl.a(this._Config_5),$.b(this._Platform_4,this._DomController_6),nn.b(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9),vl.d(this._Config_5,this._DeepLinkConfigToken_10,this._ModuleLoader_13,this.parent.get(h.y))],this._ApplicationInitStatus_15=new h.d(this._APP_INITIALIZER_14),this._ɵf_16=new h._5(this.parent.get(h.y),this.parent.get(h.Y),this,this._ErrorHandler_1,this.componentFactoryResolver,this._ApplicationInitStatus_15),this._ApplicationRef_17=this._ɵf_16,this._ApplicationModule_18=new h.e(this._ApplicationRef_17),this._BrowserModule_19=new d.a(this.parent.get(d.a,null)),this._HttpModule_20=new b.e,this._ɵba_21=new V.j,this._FormsModule_22=new V.d,this._ReactiveFormsModule_23=new V.i,this._IonicModule_24=new X.a,this._AppModule_25=new F,this._AppRootToken_51=j,this._APP_BASE_HREF_52="/",this._AppModule_25},l.prototype.getInternal=function(n,l){return n===H.b?this._CommonModule_0:n===h.l?this._ErrorHandler_1:n===hn.b?this._ConfigToken_2:n===yl.a?this._PlatformConfigToken_3:n===pn.a?this._Platform_4:n===hn.a?this._Config_5:n===G.a?this._DomController_6:n===B.a?this._MenuController_7:n===z.a?this._App_8:n===x.g?this._GestureController_9:n===bl.a?this._DeepLinkConfigToken_10:n===h.i?this._Compiler_11:n===U.a?this._NgModuleLoader_12:n===vl.b?this._ModuleLoader_13:n===h.c?this._APP_INITIALIZER_14:n===h.d?this._ApplicationInitStatus_15:n===h._5?this._ɵf_16:n===h.f?this._ApplicationRef_17:n===h.e?this._ApplicationModule_18:n===d.a?this._BrowserModule_19:n===b.e?this._HttpModule_20:n===V.j?this._ɵba_21:n===V.d?this._FormsModule_22:n===V.i?this._ReactiveFormsModule_23:n===X.a?this._IonicModule_24:n===F?this._AppModule_25:n===h.u?this._LOCALE_ID_26:n===H.j?this._NgLocalization_27:n===h.b?this._APP_ID_28:n===h.s?this._IterableDiffers_29:n===h.t?this._KeyValueDiffers_30:n===d.c?this._DomSanitizer_31:n===h.H?this._Sanitizer_32:n===d.f?this._HAMMER_GESTURE_CONFIG_33:n===d.d?this._EVENT_MANAGER_PLUGINS_34:n===d.e?this._EventManager_35:n===d.n?this._ɵDomSharedStylesHost_36:n===d.m?this._ɵDomRendererFactory2_37:n===h.F?this._RendererFactory2_38:n===d.q?this._ɵSharedStylesHost_39:n===h.M?this._Testability_40:n===d.h?this._Meta_41:n===d.j?this._Title_42:n===b.c?this._BrowserXhr_43:n===b.g?this._ResponseOptions_44:n===b.i?this._XSRFStrategy_45:n===b.h?this._XHRBackend_46:n===b.f?this._RequestOptions_47:n===b.d?this._Http_48:n===V.k?this._ɵi_49:n===V.c?this._FormBuilder_50:n===kl.a?this._AppRootToken_51:n===H.a?this._APP_BASE_HREF_52:n===q.a?this._AlertController_54:n===$.a?this._Events_55:n===Z.a?this._Form_56:n===J.a?this._Haptic_57:n===W.a?this._Keyboard_58:n===Y.a?this._LoadingController_59:n===H.e?this._LocationStrategy_60:n===H.d?this._Location_61:n===bl.b?this._UrlSerializer_62:n===gn.a?this._DeepLinker_63:n===Q.a?this._ModalController_64:n===nn.a?this._TapClick_67:n===ln.a?this._ToastController_68:n===tn.a?this._TransitionController_69:n===g.a?this._StatusBar_70:n===f.a?this._SplashScreen_71:n===I.a?this._Geolocation_72:n===y.a?this._DatePicker_73:n===k?this._SingletonProvider_74:n===R.a?this._MapServiceProvider_75:l},l.prototype.destroyInternal=function(){this._ɵf_16.ngOnDestroy(),this.__ɵDomSharedStylesHost_36&&this._ɵDomSharedStylesHost_36.ngOnDestroy()},l}(h.Z),Sl=new h.v(El,F);Object(h.S)(),Object(d.k)().bootstrapModuleFactory(Sl)},49:function(n,l,t){"use strict";t.d(l,"a",function(){return _});var e=t(0),o=t(68),i=t(135),a=(t.n(i),t(98)),r=this&&this.__decorate||function(n,l,t,e){var o,i=arguments.length,a=i<3?l:null===e?e=Object.getOwnPropertyDescriptor(l,t):e;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(n,l,t,e);else for(var r=n.length-1;r>=0;r--)(o=n[r])&&(a=(i<3?o(a):i>3?o(l,t,a):o(l,t))||a);return i>3&&a&&Object.defineProperty(l,t,a),a},u=this&&this.__metadata||function(n,l){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,l)},_=function(){function n(n,l){this.http=n,this.geolocation=l,this.suggestions=[],this.location={name:"",lat:0,lng:0},console.log("Hello MapServiceProvider Provider")}return n.prototype.selectPlace=function(n){var l=this;return new Promise(function(t){l.placesService.getDetails({placeId:n.place_id},function(n){l.location.name=n.name,l.location.lat=n.geometry.location.lat(),l.location.lng=n.geometry.location.lng(),l.map.setCenter({lat:l.location.lat,lng:l.location.lng}),t([{lat:l.location.lat,lng:l.location.lng}])})})},n.prototype.searchPlace=function(n){var l=this;return new Promise(function(t){if(n.length>0){var e={types:["geocode"],input:n};l.acService.getPlacePredictions(e,function(n,e){e==google.maps.places.PlacesServiceStatus.OK&&n&&(l.suggestions=[],n.forEach(function(n){l.suggestions.push(n)}),t([{suggestions:l.suggestions}]))})}})},n.prototype.myFunction=function(){console.log("test")},n.prototype.createBasicMarker=function(n,l,t,e,o){this.createMarker(n,l,t,"<span id='myid' style='font-weight: bold'>"+e+"</span>",o)},n.prototype.createMarker=function(n,l,t,e,o){var i=new google.maps.InfoWindow({content:e}),a=new google.maps.Marker({position:{lat:n,lng:l},map:this.map,title:t,animation:google.maps.Animation.DROP});i.open(this.map,a),a.addListener("click",function(){i.open(this.map,a),o()})},n.prototype.geocodeLatLng=function(n,l){var t=this;return new Promise(function(e){var o={lat:n,lng:l};t.geocoder.geocode({location:o},function(t,o){"OK"===o&&t[0]?(console.log(t[0].formatted_address),e([{address:t[0].formatted_address,lat:n,lng:l}])):e([{address:"",lat:0,lng:0}])})})},n.prototype.streetView=function(n,l,t){var e={lat:l,lng:t};new google.maps.LatLng(l,t),new google.maps.StreetViewPanorama(n.nativeElement,{position:e,pov:{heading:34,pitch:0},zoom:1})},n.prototype.loadMap=function(n){var l=this;return new Promise(function(t){l.geolocation.getCurrentPosition().then(function(e){l.location.lat=e.coords.latitude,l.location.lng=e.coords.longitude;var o={center:new google.maps.LatLng(e.coords.latitude,e.coords.longitude),zoom:15,mapTypeControl:!1,zoomControl:!1,mapTypeId:google.maps.MapTypeId.ROADMAP};l.map=new google.maps.Map(n.nativeElement,o),l.acService=new google.maps.places.AutocompleteService,l.placesService=new google.maps.places.PlacesService(l.map),l.geocoder=new google.maps.Geocoder,t()},function(n){console.log(n)})})},n}();_=r([Object(e.p)(),u("design:paramtypes",["function"==typeof(s=void 0!==o.d&&o.d)&&s||Object,"function"==typeof(c=void 0!==a.a&&a.a)&&c||Object])],_);var s,c}},[143]);
+webpackJsonp([6],{
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SingletonProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__ = __webpack_require__(201);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var SingletonProvider = (function () {
+    function SingletonProvider(http, platform, ac, tc, lc, mc, datePicker, us) {
+        this.http = http;
+        this.platform = platform;
+        this.ac = ac;
+        this.tc = tc;
+        this.lc = lc;
+        this.mc = mc;
+        this.datePicker = datePicker;
+        this.us = us;
+        this.baseURL = "https://jefftc.com/CurbSpotAPI/";
+        this.authorized = false;
+        this.username = "";
+        this.password = "";
+        this.firstName = "";
+        this.lastName = "";
+        console.log('Hello SingletonProvider Provider');
+    }
+    //sorting algorithm
+    SingletonProvider.prototype.partition = function (array, compareNumbers, left, right) {
+        var newArray = array;
+        if (array.length == 1) {
+            return newArray;
+        }
+        else {
+            var p = -1;
+            var i = -1;
+            this.pivot(array, left, right);
+            p = left;
+            i = left + 1;
+            for (var j = left + 1; j <= right; j++) {
+                if (compareNumbers[j] < compareNumbers[p]) {
+                    var a = newArray[j];
+                    var b = newArray[i];
+                    newArray[i] = a;
+                    newArray[j] = b;
+                    i++;
+                }
+            }
+            var a = newArray[p];
+            var b = newArray[i - 1];
+            newArray[p] = b;
+            newArray[i - 1] = a;
+            if (i - 2 - left >= 1) {
+                newArray = this.partition(newArray, compareNumbers, left, i - 2);
+            }
+            if (right - i >= 1) {
+                newArray = this.partition(newArray, compareNumbers, i, right);
+            }
+        }
+        return newArray;
+    };
+    SingletonProvider.prototype.pivot = function (array, left, right) {
+        var a = array[left];
+        var b = array[right];
+        array[left] = b;
+        array[right] = a;
+    };
+    //returns an array that shows which radio button to check
+    SingletonProvider.prototype.produceRadioStates = function (options, current) {
+        var is = [];
+        for (var i = 0; i < options.length; i++) {
+            if (current = options[i]) {
+                is.push(true);
+            }
+            else {
+                is.push(false);
+            }
+        }
+    };
+    //sorts an array alphabetically and returns the result
+    SingletonProvider.prototype.sortAlpha = function (input) {
+        var sorted = input.slice();
+        sorted.sort(function (a, b) {
+            var aL = a.toLowerCase();
+            var bL = b.toLowerCase();
+            return aL < bL ? -1 : aL > bL ? 1 : 0;
+        });
+        return sorted;
+    };
+    SingletonProvider.prototype.createDatePicker = function () {
+        this.datePicker.show({
+            date: new Date(),
+            mode: 'date',
+            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+        }).then(function (date) { return console.log('Got date: ', date); }, function (err) { return console.log('Error occurred while getting date: ', err); });
+    };
+    SingletonProvider.prototype.createDateAlert = function (aTitle, aValue) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var alert = _this.ac.create({
+                title: 'Due Date',
+                inputs: [
+                    {
+                        name: 'Date',
+                        type: 'date',
+                        value: aValue
+                    }
+                ],
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        handler: function (data) {
+                            console.log('Cancel clicked');
+                            resolve([""]);
+                        }
+                    },
+                    {
+                        text: 'Save',
+                        handler: function (data) {
+                            console.log("Returned result", data);
+                            resolve([data.Date]);
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        });
+    };
+    SingletonProvider.prototype.createDateRangeAlert = function (aTitle, aValue1, aValue2) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var alert = _this.ac.create({
+                title: 'Due Date',
+                inputs: [
+                    {
+                        name: 'Date1',
+                        type: 'date',
+                        value: aValue1
+                    },
+                    {
+                        name: 'Date2',
+                        type: 'date',
+                        value: aValue1
+                    }
+                ],
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        handler: function (data) {
+                            console.log('Cancel clicked');
+                            resolve([undefined, undefined]);
+                        }
+                    },
+                    {
+                        text: 'Save',
+                        handler: function (data) {
+                            console.log("Returned result", data);
+                            resolve([data.Date1, data.Date2]);
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        });
+    };
+    SingletonProvider.prototype.createPromptAlert = function (aTitle, aName, aPlaceholder, aType) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var alert = _this.ac.create({
+                title: aTitle,
+                inputs: [
+                    {
+                        name: aName,
+                        placeholder: aPlaceholder,
+                        type: aType
+                    },
+                ],
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        handler: function (data) {
+                            console.log('Cancel clicked');
+                            resolve([""]);
+                        }
+                    },
+                    {
+                        text: 'OK',
+                        handler: function (data) {
+                            console.log("Returned result", data[aName]);
+                            resolve([data[aName]]);
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        });
+    };
+    SingletonProvider.prototype.createRadioAlert = function (title, optionTitles, optionValues) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var aInputs = [];
+            for (var i = 0; i < optionTitles.length; i++) {
+                aInputs.push({
+                    name: optionTitles[i],
+                    label: optionTitles[i],
+                    value: optionValues[i],
+                    type: "radio"
+                });
+            }
+            var alert = _this.ac.create({
+                title: title,
+                inputs: aInputs,
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        handler: function (data) {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'OK',
+                        handler: function (data) {
+                            console.log("User submitted alert", data);
+                            resolve([data]);
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        });
+    };
+    //sends an alert with the desired specifications
+    SingletonProvider.prototype.sendAlert = function (title, subtitle, buttons) {
+        var alert = this.ac.create({
+            title: title,
+            subTitle: subtitle,
+            buttons: buttons
+        });
+        alert.present();
+    };
+    SingletonProvider.prototype.sendToast = function (sText) {
+        var toast = this.tc.create({
+            message: sText,
+            duration: 3500,
+            showCloseButton: true,
+            position: "bottom"
+        });
+        toast.present();
+    };
+    //creates a spinner object with the desired message
+    SingletonProvider.prototype.createLoader = function (message) {
+        this.loader = this.lc.create({
+            spinner: "dots",
+            content: message
+        });
+        this.loader.present();
+    };
+    //destroys any active spinner object
+    SingletonProvider.prototype.destroyLoader = function () {
+        if (this.loader) {
+            this.loader.dismiss();
+        }
+    };
+    SingletonProvider.prototype.createModal = function (content) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var m = _this.mc.create(content);
+            m.present();
+            m.onDidDismiss(function (data) {
+                resolve([{ data: data }]);
+            });
+        });
+    };
+    SingletonProvider.prototype.createModalParams = function (content, params) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var m = _this.mc.create(content, params);
+            m.present();
+            m.onDidDismiss(function (data) {
+                resolve([{ data: data }]);
+            });
+        });
+    };
+    SingletonProvider.prototype.capitalizeFirstLetter = function (str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+    SingletonProvider.prototype.contains = function (s, c) {
+        var con = false;
+        for (var a = 0; a < s.length; a++) {
+            var emoji = s[a].search(/[\uD800-\uDFFF]./);
+            if (emoji >= 0) {
+                con = true;
+            }
+            for (var i = 0; i < c.length; i++) {
+                if (s[a] != undefined && c[i] != undefined) {
+                    if (s[a].indexOf(c[i]) >= 0) {
+                        con = true;
+                    }
+                }
+            }
+        }
+        return con;
+    };
+    SingletonProvider.prototype.appendTarget = function (target, kvPairs) {
+        var newTarget = String(target);
+        for (var i = 0; i < kvPairs.length; i++) {
+            if ((String(kvPairs[i].value)).length > 0) {
+                if (newTarget.indexOf("?") > 0) {
+                    newTarget += "&" + kvPairs[i].key + "=" + kvPairs[i].value;
+                }
+                else {
+                    newTarget += "?" + kvPairs[i].key + "=" + kvPairs[i].value;
+                }
+            }
+        }
+        return newTarget;
+    };
+    SingletonProvider.prototype.jsonRequest = function (target) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            console.log("JSON [PENDING] @ ", target);
+            _this.http.get(target).map(function (res) { return res.json(); }).subscribe(function (data) {
+                console.log("JSON [SUCCESS] @ ", target, data);
+                resolve([{ data: data }]);
+            }, function (error) {
+                console.log("JSON [FAILURE] @ ", target);
+                resolve([{ data: undefined }]);
+            });
+        });
+    };
+    SingletonProvider.prototype.apiCall = function (target) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.jsonRequest(_this.baseURL + target).then(function (res) {
+                resolve(res);
+            });
+        });
+    };
+    SingletonProvider.prototype.apiRequest = function (target, keys, values) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var appendages = [];
+            for (var i = 0; i < keys.length; i++) {
+                appendages.push({
+                    key: keys[i],
+                    value: values[i]
+                });
+            }
+            console.log("API [PENDING] @", target, appendages);
+            _this.jsonRequest(_this.appendTarget(_this.baseURL + target, appendages)).then(function (res) {
+                resolve(res);
+            });
+        });
+    };
+    return SingletonProvider;
+}());
+SingletonProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */]])
+], SingletonProvider);
+
+//# sourceMappingURL=singleton.js.map
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(154);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MapServiceProvider = (function () {
+    function MapServiceProvider(http, geolocation) {
+        this.http = http;
+        this.geolocation = geolocation;
+        this.suggestions = [];
+        this.location = {
+            name: "",
+            lat: 0,
+            lng: 0
+        };
+        console.log('Hello MapServiceProvider Provider');
+    }
+    MapServiceProvider.prototype.selectPlace = function (place) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.placesService.getDetails({ placeId: place.place_id }, function (details) {
+                _this.location.name = details.name;
+                _this.location.lat = details.geometry.location.lat();
+                _this.location.lng = details.geometry.location.lng();
+                _this.map.setCenter({ lat: _this.location.lat, lng: _this.location.lng });
+                resolve([{ lat: _this.location.lat, lng: _this.location.lng }]);
+            });
+        });
+    };
+    MapServiceProvider.prototype.searchPlace = function (query) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            if (query.length > 0) {
+                var config = {
+                    types: ['geocode'],
+                    input: query
+                };
+                _this.acService.getPlacePredictions(config, function (predictions, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK && predictions) {
+                        _this.suggestions = [];
+                        predictions.forEach(function (prediction) {
+                            _this.suggestions.push(prediction);
+                        });
+                        resolve([{ suggestions: _this.suggestions }]);
+                    }
+                });
+            }
+        });
+    };
+    MapServiceProvider.prototype.myFunction = function () {
+        console.log("test");
+    };
+    MapServiceProvider.prototype.createBasicMarker = function (lat, lng, title, cost, func) {
+        this.createMarker(lat, lng, title, "<span id='myid' style='font-weight: bold'>" + cost + "</span>", func);
+    };
+    MapServiceProvider.prototype.createMarker = function (lat, lng, title, content, func) {
+        var info = new google.maps.InfoWindow({
+            content: content
+        });
+        var marker = new google.maps.Marker({
+            position: { lat: lat, lng: lng },
+            map: this.map,
+            title: title,
+            //icon: "https://i.stack.imgur.com/VpVF8.png",
+            animation: google.maps.Animation.DROP
+        });
+        info.open(this.map, marker);
+        marker.addListener("click", function () {
+            info.open(this.map, marker);
+            func();
+        });
+    };
+    MapServiceProvider.prototype.geocodeLatLng = function (lat, lng) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var latlng = { lat: lat, lng: lng };
+            _this.geocoder.geocode({ 'location': latlng }, function (results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        console.log(results[0].formatted_address);
+                        resolve([{ address: results[0].formatted_address, lat: lat, lng: lng }]);
+                    }
+                    else {
+                        resolve([{ address: "", lat: 0, lng: 0 }]);
+                    }
+                }
+                else {
+                    resolve([{ address: "", lat: 0, lng: 0 }]);
+                }
+            });
+        });
+    };
+    MapServiceProvider.prototype.streetView = function (panoElement, lat, lng) {
+        var location = { lat: lat, lng: lng };
+        var latLng = new google.maps.LatLng(lat, lng);
+        var panorama = new google.maps.StreetViewPanorama(panoElement.nativeElement, {
+            position: location,
+            pov: {
+                heading: 34,
+                pitch: 0
+            },
+            zoom: 1
+        });
+    };
+    MapServiceProvider.prototype.loadMap = function (mapElement) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.geolocation.getCurrentPosition().then(function (position) {
+                _this.location.lat = position.coords.latitude;
+                _this.location.lng = position.coords.longitude;
+                var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    center: latLng,
+                    zoom: 15,
+                    mapTypeControl: false,
+                    zoomControl: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                _this.map = new google.maps.Map(mapElement.nativeElement, mapOptions);
+                //this.createMarker(this.location.lat, this.location.lng, "title", "content");
+                _this.acService = new google.maps.places.AutocompleteService();
+                _this.placesService = new google.maps.places.PlacesService(_this.map);
+                _this.geocoder = new google.maps.Geocoder;
+                resolve();
+            }, function (err) {
+                console.log(err);
+            });
+        });
+    };
+    return MapServiceProvider;
+}());
+MapServiceProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
+], MapServiceProvider);
+
+//# sourceMappingURL=map-service.js.map
+
+/***/ }),
+
+/***/ 111:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 111;
+
+/***/ }),
+
+/***/ 153:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/account/account.module": [
+		274,
+		5
+	],
+	"../pages/find-events/find-events.module": [
+		272,
+		2
+	],
+	"../pages/find-parking/find-parking.module": [
+		273,
+		4
+	],
+	"../pages/location-picker/location-picker.module": [
+		275,
+		1
+	],
+	"../pages/payment/payment.module": [
+		276,
+		0
+	],
+	"../pages/reservations/reservations.module": [
+		271,
+		3
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 153;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__account_account__ = __webpack_require__(202);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TabsPage = (function () {
+    function TabsPage() {
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_2__find_parking_find_parking__["a" /* FindParkingPage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__reservations_reservations__["a" /* ReservationsPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__account_account__["a" /* AccountPage */];
+    }
+    return TabsPage;
+}());
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/'<ion-tabs selectedIndex="0">\n  <ion-tab [root]="tab1Root" tabTitle="Park" tabIcon="md-car"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Reservations" tabIcon="md-bookmarks"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Account" tabIcon="md-contact"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/tabs/tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [])
+], TabsPage);
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 198:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ReservationsPage = (function () {
+    function ReservationsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.reservationType = "upcoming";
+        this.history = [
+            {
+                address: "1 Oakwood Avenue, Los Angeles, CA",
+                startDate: "09/14/2017",
+                startTime: "09:30 am",
+                endDate: "09/14/2017",
+                endTime: "02:30 pm"
+            }
+        ];
+        this.upcoming = [
+            {
+                address: "1 Oakwood Avenue, Los Angeles, CA",
+                startDate: "09/23/2017",
+                startTime: "09:30 am",
+                endDate: "09/23/2017",
+                endTime: "02:30 pm"
+            }
+        ];
+    }
+    ReservationsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReservationsPage');
+    };
+    return ReservationsPage;
+}());
+ReservationsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="reservationType">\n      <ion-segment-button value="history">\n        History\n      </ion-segment-button>\n      <ion-segment-button value="upcoming">\n        Upcoming\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="reservationType">\n    <div *ngSwitchCase="\'history\'">\n      <ion-card *ngFor="let reservation of history">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2 text-wrap>{{reservation.address}}</h2>\n          <p>{{reservation.startDate}} @ {{reservation.startTime}} - {{reservation.endTime}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-search"></ion-icon>\n              <div>Availability</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n    <div *ngSwitchCase="\'upcoming\'">\n      <ion-card *ngFor="let reservation of upcoming">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n          <p text-wrap>{{reservation.address}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-alarm"></ion-icon>\n              <div>Set Alarm</div>\n            </button>\n          </ion-col>\n          <ion-col text-center>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-navigate"></ion-icon>\n              <div>Navigate</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+], ReservationsPage);
+
+//# sourceMappingURL=reservations.js.map
+
+/***/ }),
+
+/***/ 199:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FindParkingPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__ = __webpack_require__(102);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var FindParkingPage = (function () {
+    function FindParkingPage(navCtrl, navParams, singleton, ms) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.singleton = singleton;
+        this.ms = ms;
+        this.query = "";
+        this.filterType = "price";
+        this.location = {
+            name: "",
+            lat: 0,
+            lng: 0
+        };
+        this.markers = [];
+    }
+    FindParkingPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad FindParkingPage');
+        this.singleton.createLoader("Loading latest data");
+        this.ms.loadMap(this.mapElement).then(function (res) {
+            _this.singleton.destroyLoader();
+        });
+    };
+    FindParkingPage.prototype.onFocusSearch = function () {
+        var _this = this;
+        this.singleton.createModal("LocationPickerPage").then(function (res) {
+            if (res != undefined && res[0] != undefined && res[0].data != undefined) {
+                console.log("Received location", res[0].data);
+                _this.query = res[0].data.place.description;
+                _this.ms.selectPlace(res[0].data.place).then(function (res) {
+                    _this.randomizeMarkers(res[0].lat, res[0].lng);
+                });
+            }
+        });
+    };
+    FindParkingPage.prototype.onClickDuration = function () {
+        this.singleton.createDatePicker();
+    };
+    FindParkingPage.prototype.addMarker = function (lat, lng, cost) {
+        var _this = this;
+        this.markers.push({
+            lat: lat,
+            lng: lng,
+            content: cost
+        });
+        //console.log("Creating marker", [lat, lng], cost);
+        this.ms.createBasicMarker(lat, lng, "title", cost, function () {
+            _this.ms.geocodeLatLng(lat, lng).then(function (res) {
+                if (res[0].address.length > 0) {
+                    _this.singleton.createModalParams("PaymentPage", { address: res[0].address, lat: res[0].lat, lng: res[0].lng, cost: cost });
+                }
+            });
+        });
+    };
+    FindParkingPage.prototype.randomizeMarkers = function (lat, lng) {
+        console.log("Randomizing markers");
+        var total = 0;
+        for (var i = 0; i < 3; i++) {
+            this.addMarker((lat + (Math.random() * 0.005 * (i + 1))), (lng + (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
+        }
+        for (var i = 0; i < 3; i++) {
+            this.addMarker((lat - (Math.random() * 0.005 * (i + 1))), (lng - (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
+        }
+        for (var i = 0; i < 3; i++) {
+            this.addMarker((lat - (Math.random() * 0.005 * (i + 1))), (lng + (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
+        }
+        for (var i = 0; i < 3; i++) {
+            this.addMarker((lat + (Math.random() * 0.005 * (i + 1))), (lng - (Math.random() * 0.005 * (i + 1))), "$" + (Math.floor((Math.random() * 15.0)) + 5));
+        }
+    };
+    FindParkingPage.prototype.openEvents = function () {
+        this.singleton.createModal("FindEventsPage").then(function (res) {
+        });
+    };
+    return FindParkingPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+], FindParkingPage.prototype, "mapElement", void 0);
+FindParkingPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<!--<ion-header>\n  \n    <ion-navbar no-shadow no-border transparent>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n</ion-header>-->\n<ion-toolbar mode="md" transparent>\n  <ion-searchbar mode="md" padding-left padding-right [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n    \n  </ion-searchbar>\n</ion-toolbar>\n<!--<ion-toolbar transparent>\n  <ion-segment [(ngModel)]="filterType">\n    <ion-segment-button value="price">\n      Price\n    </ion-segment-button>\n    <ion-segment-button value="duration">\n      Duration\n    </ion-segment-button>\n    <ion-segment-button value="radius">\n      Radius\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n<ion-toolbar [ngSwitch]="filterType">\n  <div *ngSwitchCase="\'price\'">\n    <ion-range min="5" max="50" step="5" snaps="true">\n      <ion-label range-left>\n        $5\n      </ion-label>\n      <ion-label range-right>\n        $50\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'duration\'">\n    <ion-range min="1" max="24" step="1" snaps="true">\n      <ion-label range-left>\n        1hr\n      </ion-label>\n      <ion-label range-right>\n        24hr\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'radius\'">\n    radius\n  </div>\n</ion-toolbar>-->\n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right mode="md">\n      <button ion-fab mini mode="md">\n        <!--<ion-icon name="md-arrow-round-forward"></ion-icon>-->\n        <ion-icon name="ios-settings"></ion-icon>\n      </button>\n      <ion-fab-list mode="md">\n        <button ion-fab color="primary">\n          <ion-label>Price</ion-label>\n          <ion-icon name="md-pricetags"></ion-icon>\n        </button>\n        <button ion-fab color="primary" (click)="onClickDuration()">\n          <ion-label>Duration</ion-label>\n          <ion-icon name="md-time"></ion-icon>\n        </button>\n        <button ion-fab color="primary">\n          <ion-label>Distance</ion-label>\n          <ion-icon name="md-pin"></ion-icon>\n        </button>\n      </ion-fab-list>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
+], FindParkingPage);
+
+//# sourceMappingURL=find-parking.js.map
+
+/***/ }),
+
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserServiceProvider = (function () {
+    function UserServiceProvider(http) {
+        this.http = http;
+        console.log('Hello UserServiceProvider Provider');
+    }
+    UserServiceProvider.prototype.login = function (singleton, username, password) {
+        return new Promise(function (resolve) {
+            singleton.apiRequest("auth/login.php", [
+                "username",
+                "password"
+            ], [
+                username,
+                password
+            ]).then(function (res) {
+                var data = res[0].data;
+                console.log("Login response", data);
+                if (data.status) {
+                    singleton.username = username;
+                    singleton.password = password;
+                    singleton.firstName = data.firstName;
+                    singleton.lastName = data.lastName;
+                }
+            });
+        });
+    };
+    UserServiceProvider.prototype.register = function (singleton, username, password, firstName, lastName, car, address) {
+        return new Promise(function (resolve) {
+        });
+    };
+    return UserServiceProvider;
+}());
+UserServiceProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], UserServiceProvider);
+
+//# sourceMappingURL=user-service.js.map
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AccountPage = (function () {
+    function AccountPage(navCtrl, navParams, singleton) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.singleton = singleton;
+        this.VIEW_REGISTER = 0;
+        this.VIEW_LOGIN = 1;
+        this.view = this.VIEW_REGISTER;
+    }
+    AccountPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AccountPage');
+    };
+    AccountPage.prototype.onClickSwitch = function (view) {
+        this.view = view;
+    };
+    AccountPage.prototype.onClickLogin = function () {
+    };
+    AccountPage.prototype.onClickRegister = function () {
+    };
+    return AccountPage;
+}());
+AccountPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->i\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding [ngSwitch]="view">\n    <div *ngSwitchCase="0">\n      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n      <button no-padding ion-button icon-left large full>\n        REGISTER\n      </button>\n    </div>\n    <div *ngSwitchCase="1">\n      <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n      <button no-padding ion-button icon-left large full>\n        LOGIN\n      </button>\n    </div>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]])
+], AccountPage);
+
+//# sourceMappingURL=account.js.map
+
+/***/ }),
+
+/***/ 203:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(222);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_account_account__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_date_picker__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_singleton_singleton__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_map_service_map_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_user_service_user_service__ = __webpack_require__(201);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__["a" /* ReservationsPage */],
+            __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__["a" /* FindParkingPage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_account_account__["a" /* AccountPage */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                links: [
+                    { loadChildren: '../pages/reservations/reservations.module#ReservationsPageModule', name: 'ReservationsPage', segment: 'reservations', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/find-events/find-events.module#FindEventsPageModule', name: 'FindEventsPage', segment: 'find-events', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/find-parking/find-parking.module#FindParkingPageModule', name: 'FindParkingPage', segment: 'find-parking', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/location-picker/location-picker.module#LocationPickerPageModule', name: 'LocationPickerPage', segment: 'location-picker', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/payment/payment.module#PaymentPageModule', name: 'PaymentPage', segment: 'payment', priority: 'low', defaultHistory: [] }
+                ]
+            })
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__["a" /* ReservationsPage */],
+            __WEBPACK_IMPORTED_MODULE_5__pages_find_parking_find_parking__["a" /* FindParkingPage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_account_account__["a" /* AccountPage */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_date_picker__["a" /* DatePicker */],
+            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+            __WEBPACK_IMPORTED_MODULE_13__providers_singleton_singleton__["a" /* SingletonProvider */],
+            __WEBPACK_IMPORTED_MODULE_14__providers_map_service_map_service__["a" /* MapServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_15__providers_user_service_user_service__["a" /* UserServiceProvider */]
+        ]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 270:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(197);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            splashScreen.hide();
+        });
+    }
+    return MyApp;
+}());
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/app/app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ })
+
+},[203]);
+//# sourceMappingURL=main.js.map

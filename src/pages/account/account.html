@@ -29,9 +29,35 @@
         </button>
       </ion-list>
     </div>
-    <div *ngSwitchCase="false">
-      
+    <div *ngSwitchCase="false" [ngSwitch]="view">
+      <div *ngSwitchCase="0">
+        <!--
+          Register information
+        -->i
+      </div>
+      <div *ngSwitchCase="1">
+        <!--
+          Login information
+        -->
+      </div>
     </div>
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar no-padding [ngSwitch]="view">
+    <div *ngSwitchCase="0">
+      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>
+      <button no-padding ion-button icon-left large full>
+        REGISTER
+      </button>
+    </div>
+    <div *ngSwitchCase="1">
+      <p padding-left padding-right>Don't have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>
+      <button no-padding ion-button icon-left large full>
+        LOGIN
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
