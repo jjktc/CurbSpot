@@ -15,6 +15,7 @@ import { HttpModule } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SingletonProvider } from '../providers/singleton/singleton';
 import { MapServiceProvider } from '../providers/map-service/map-service';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MapServiceProvider } from '../providers/map-service/map-service';
     DatePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SingletonProvider,
-    MapServiceProvider
+    MapServiceProvider,
+    UserServiceProvider
   ]
 })
 export class AppModule {}

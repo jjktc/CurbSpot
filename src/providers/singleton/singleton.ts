@@ -5,12 +5,16 @@ import { Platform, AlertController, ToastController, LoadingController, ModalCon
 
 import { DatePicker } from '@ionic-native/date-picker';
 
+import { UserServiceProvider } from '../user-service/user-service';
+
 @Injectable()
 export class SingletonProvider {
 
+  baseURL : string = "https://jefftc.com/CurbSpotAPI/";
+
   public loader : any;
 
-  constructor(public http: Http, public platform : Platform, public ac : AlertController, public tc : ToastController, public lc : LoadingController, public mc : ModalController, public datePicker : DatePicker) {
+  constructor(public http: Http, public platform : Platform, public ac : AlertController, public tc : ToastController, public lc : LoadingController, public mc : ModalController, public datePicker : DatePicker, public us : UserServiceProvider) {
     console.log('Hello SingletonProvider Provider');
   }
 
@@ -308,6 +312,57 @@ export class SingletonProvider {
       }
     }
     return con;
+  }
+
+  appendTarget(target, kvPairs) {
+    var newTarget = String(target);
+    for(var i = 0; i < kvPairs.length; i++) {
+      if((String(kvPairs[i].value)).length > 0) {
+        if(newTarget.indexOf("?") > 0) {
+          newTarget += "&" + kvPairs[i].key + "=" + kvPairs[i].value;
+        } else {
+          newTarget += "?" + kvPairs[i].key + "=" + kvPairs[i].value;
+        }
+      }
+    }
+    return newTarget;
+  }
+
+  jsonRequest(target) {
+    return new Promise(resolve => {
+      console.log("JSON [PENDING] @ ", target);
+      this.http.get(target).map(res => res.json()).subscribe(data => {
+        console.log("JSON [SUCCESS] @ ", target, data);
+        resolve([{data: data}]);
+      }, error => {
+        console.log("JSON [FAILURE] @ " , target);
+        resolve([{data: undefined}])
+      });
+    });
+  }
+
+  apiCall(target) {
+    return new Promise(resolve => {
+      this.jsonRequest(this.baseURL + target).then(res => {
+        resolve(res);
+      });
+    });
+  }
+
+  apiRequest(target, keys, values) {
+    return new Promise(resolve => {
+      var appendages = [];
+      for(var i = 0; i < keys.length; i++) {
+        appendages.push({
+          key: keys[i],
+          value: values[i]
+        });
+      }
+      console.log("API [PENDING] @", target, appendages);
+      this.jsonRequest(this.appendTarget(this.baseURL + target, appendages)).then(res => {
+        resolve(res);
+      });
+    });
   }
 
 }
