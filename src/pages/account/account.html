@@ -163,21 +163,24 @@
 
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar no-padding [ngSwitch]="view">
-    <div *ngSwitchCase="0">
-      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>
-      <button no-padding ion-button icon-right large full (click)="onClickRegister()">
-        REGISTER
-        <ion-icon name="ios-arrow-forward"></ion-icon>
-      </button>
-    </div>
-    <div *ngSwitchCase="1">
-      <p padding-left padding-right>Don't have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>
-      <button no-padding ion-button icon-right large full (click)="onClickLogin()">
-        LOGIN
-        <ion-icon name="ios-arrow-forward"></ion-icon>
-      </button>
-    </div>
-  </ion-toolbar>
+
+<ion-footer [ngSwitch]="singleton.authorized">
+  <div *ngSwitchCase="false">
+    <ion-toolbar no-padding [ngSwitch]="view">
+      <div *ngSwitchCase="0">
+        <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>
+        <button no-padding ion-button icon-right large full (click)="onClickRegister()">
+          REGISTER
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </div>
+      <div *ngSwitchCase="1">
+        <p padding-left padding-right>Don't have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>
+        <button no-padding ion-button icon-right large full (click)="onClickLogin()">
+          LOGIN
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </ion-toolbar>
+  </div>
 </ion-footer>

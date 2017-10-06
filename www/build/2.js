@@ -29,7 +29,7 @@ FindEventsPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__find_events__["a" /* FindEventsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__find_events__["a" /* FindEventsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__find_events__["a" /* FindEventsPage */]),
         ],
     })
 ], FindEventsPageModule);
@@ -90,11 +90,11 @@ var FindEventsPage = (function () {
     return FindEventsPage;
 }());
 FindEventsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-find-events',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-events/find-events.html"*/'<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Choose Event</ion-title>\n      <ion-buttons left>\n        <button ion-button icon-left (click)="viewCtrl.dismiss()">\n          <ion-icon name="arrow-back"></ion-icon>\n          Cancel\n        </button>\n      </ion-buttons>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <ion-card *ngFor="let event of events" [style.backgroundImage]="\'url(\' + event.image + \')\'">\n      <!--<img src={{event.image}}/>-->\n      <div class="card-title">{{event.title}}</div>\n      <div class="card-subtitle">{{event.subtitle}}</div>\n    </ion-card>\n  \n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-events/find-events.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]])
 ], FindEventsPage);
 
 //# sourceMappingURL=find-events.js.map

@@ -26,8 +26,10 @@ export class UserServiceProvider {
         if(data.status) {
           singleton.username = username;
           singleton.password = password;
+          singleton.email = data.email;
           singleton.firstName = data.firstName;
           singleton.lastName = data.lastName;
+          singleton.authorized = true;
           resolve([{status: true}]);
         } else {
           resolve([{status: false, error: data.response}]);

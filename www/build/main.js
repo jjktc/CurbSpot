@@ -381,10 +381,9 @@ var SingletonProvider = (function () {
 }());
 SingletonProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_5__user_service_user_service__["a" /* UserServiceProvider */]])
 ], SingletonProvider);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=singleton.js.map
 
 /***/ }),
@@ -697,11 +696,11 @@ var ReservationsPage = (function () {
     return ReservationsPage;
 }());
 ReservationsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-reservations',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reservations</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="reservationType">\n      <ion-segment-button value="history">\n        History\n      </ion-segment-button>\n      <ion-segment-button value="upcoming">\n        Upcoming\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="reservationType">\n    <div *ngSwitchCase="\'history\'">\n      <ion-card *ngFor="let reservation of history">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2 text-wrap>{{reservation.address}}</h2>\n          <p>{{reservation.startDate}} @ {{reservation.startTime}} - {{reservation.endTime}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-search"></ion-icon>\n              <div>Availability</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n    <div *ngSwitchCase="\'upcoming\'">\n      <ion-card *ngFor="let reservation of upcoming">\n        <ion-item>\n          <ion-icon name="md-calendar" item-start large></ion-icon>\n          <h2>{{reservation.startTime}} - {{reservation.endTime}}</h2>\n          <p text-wrap>{{reservation.address}}</p>\n        </ion-item>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-alarm"></ion-icon>\n              <div>Set Alarm</div>\n            </button>\n          </ion-col>\n          <ion-col text-center>\n            <button ion-button icon-left clear block>\n              <ion-icon name="md-navigate"></ion-icon>\n              <div>Navigate</div>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/reservations/reservations.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
 ], ReservationsPage);
 
 //# sourceMappingURL=reservations.js.map
@@ -811,11 +810,11 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], FindParkingPage.prototype, "mapElement", void 0);
 FindParkingPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-find-parking',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/'<!--<ion-header>\n  \n    <ion-navbar no-shadow no-border transparent>\n      <ion-title>Find Parking</ion-title>\n  \n      <ion-buttons end>\n        <button ion-button (click)="openEvents()">Events</button>\n      </ion-buttons>\n    </ion-navbar>\n</ion-header>-->\n<ion-toolbar mode="md" transparent>\n  <ion-searchbar mode="md" padding-left padding-right [(ngModel)]="query" (ionFocus)="onFocusSearch()" (ionInput)="searchPlace()">\n    \n  </ion-searchbar>\n</ion-toolbar>\n<!--<ion-toolbar transparent>\n  <ion-segment [(ngModel)]="filterType">\n    <ion-segment-button value="price">\n      Price\n    </ion-segment-button>\n    <ion-segment-button value="duration">\n      Duration\n    </ion-segment-button>\n    <ion-segment-button value="radius">\n      Radius\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n<ion-toolbar [ngSwitch]="filterType">\n  <div *ngSwitchCase="\'price\'">\n    <ion-range min="5" max="50" step="5" snaps="true">\n      <ion-label range-left>\n        $5\n      </ion-label>\n      <ion-label range-right>\n        $50\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'duration\'">\n    <ion-range min="1" max="24" step="1" snaps="true">\n      <ion-label range-left>\n        1hr\n      </ion-label>\n      <ion-label range-right>\n        24hr\n      </ion-label>\n    </ion-range>\n  </div>\n  <div *ngSwitchCase="\'radius\'">\n    radius\n  </div>\n</ion-toolbar>-->\n  \n  <ion-content>\n    <div #map id="map">\n      <ion-spinner color="primary" name="dots"></ion-spinner>\n    </div>\n    <ion-fab top right mode="md">\n      <button ion-fab mini mode="md">\n        <!--<ion-icon name="md-arrow-round-forward"></ion-icon>-->\n        <ion-icon name="ios-settings"></ion-icon>\n      </button>\n      <ion-fab-list mode="md">\n        <button ion-fab color="primary">\n          <ion-label>Price</ion-label>\n          <ion-icon name="md-pricetags"></ion-icon>\n        </button>\n        <button ion-fab color="primary" (click)="onClickDuration()">\n          <ion-label>Duration</ion-label>\n          <ion-icon name="md-time"></ion-icon>\n        </button>\n        <button ion-fab color="primary">\n          <ion-label>Distance</ion-label>\n          <ion-icon name="md-pin"></ion-icon>\n        </button>\n      </ion-fab-list>\n    </ion-fab>\n  </ion-content>\n  '/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/find-parking/find-parking.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_map_service_map_service__["a" /* MapServiceProvider */]])
 ], FindParkingPage);
 
 //# sourceMappingURL=find-parking.js.map
@@ -862,8 +861,10 @@ var UserServiceProvider = (function () {
                 if (data.status) {
                     singleton.username = username;
                     singleton.password = password;
+                    singleton.email = data.email;
                     singleton.firstName = data.firstName;
                     singleton.lastName = data.lastName;
+                    singleton.authorized = true;
                     resolve([{ status: true }]);
                 }
                 else {
@@ -958,7 +959,39 @@ var AccountPage = (function () {
     AccountPage.prototype.onClickSwitch = function (view) {
         this.view = view;
     };
+    //accept login or email?
     AccountPage.prototype.onClickLogin = function () {
+        var _this = this;
+        console.log("Login clicked", [this.nUsername, this.nPassword]);
+        this.singleton.createLoader("Logging In");
+        if (this.nUsername.length >= 3 && this.nUsername.length <= 15) {
+            if (this.nPassword.length >= 4) {
+                this.singleton.us.login(this.singleton, this.nUsername.toLowerCase(), this.nPassword).then(function (res) {
+                    _this.singleton.destroyLoader();
+                    if (res[0].status) {
+                        _this.content.resize();
+                    }
+                    else {
+                        switch (res[0].error) {
+                            case "dne_error":
+                                _this.error_text = "Username and/or password is incorrect";
+                                break;
+                            case "password_error":
+                                _this.error_text = "Username and/or password is incorrect";
+                                break;
+                        }
+                    }
+                });
+            }
+            else {
+                this.singleton.destroyLoader();
+                this.error_text = "Username and/or password is incorrect";
+            }
+        }
+        else {
+            this.singleton.destroyLoader();
+            this.error_text = "Username and/or password is incorrect";
+        }
     };
     //still have to protect data
     AccountPage.prototype.onClickRegister = function () {
@@ -970,9 +1003,10 @@ var AccountPage = (function () {
                 if (this.nEmail.indexOf("@") > 0 && this.nEmail.indexOf(".") > 0) {
                     if (this.nPassword.length >= 4) {
                         if (this.nPassword == this.nConfirmPassword) {
-                            this.singleton.us.register(this.singleton, this.nUsername, this.nPassword, this.nEmail, this.nFirstName, this.nLastName, undefined, undefined).then(function (res) {
+                            this.singleton.us.register(this.singleton, this.nUsername.toLowerCase(), this.nPassword, this.nEmail, this.nFirstName, this.nLastName, undefined, undefined).then(function (res) {
                                 _this.singleton.destroyLoader();
                                 if (res[0].status) {
+                                    _this.content.resize();
                                 }
                                 else {
                                     switch (res[0].error) {
@@ -1008,15 +1042,19 @@ var AccountPage = (function () {
     };
     return AccountPage;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]) === "function" && _a || Object)
+], AccountPage.prototype, "content", void 0);
 AccountPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Account Information\n        </ion-list-header>\n        <button ion-item>\n          Username\n          <ion-note item-end>\n            {{singleton.username}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Change Password\n        </button>\n        \n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Email\n          <ion-note item-end>\n            {{singleton.email}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->\n        <ion-list>\n          <ion-item>\n            <ion-label color="primary" fixed>Username *</ion-label>\n            <ion-input\n              #inputRegisterUsername\n              type="text"\n              placeholder="username"\n              value=""\n              [(ngModel)]="nUsername"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>First Name *</ion-label>\n            <ion-input\n              #inputRegisterFirstName\n              type="text"\n              placeholder="first name"\n              value=""\n              [(ngModel)]="nFirstName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Last Name *</ion-label>\n            <ion-input\n              #inputRegisterLastName\n              type="text"\n              placeholder="last name"\n              value=""\n              [(ngModel)]="nLastName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Email *</ion-label>\n            <ion-input\n              #inputRegisterEmail\n              type="email"\n              placeholder="email"\n              value=""\n              [(ngModel)]="nEmail"\n              >\n            </ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label color="primary" fixed>Password *</ion-label>\n            <ion-input\n              #inputRegisterPassword\n              type="password"\n              placeholder="password"\n              value=""\n              [(ngModel)]="nPassword"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Confirm *</ion-label>\n            <ion-input\n              #inputRegisterConfirmPassword\n              type="password"\n              placeholder="confirm password"\n              value=""\n              [(ngModel)]="nConfirmPassword"\n              >\n            </ion-input>\n          </ion-item>\n          \n          <!--\n            Car license?\n            Address?\n          -->\n        </ion-list>\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n        <ion-list>\n            <ion-item>\n              <ion-label color="primary" fixed>Username *</ion-label>\n              <ion-input\n                #inputLoginUsername\n                type="text"\n                placeholder="username"\n                value=""\n                [(ngModel)]="nUsername"\n                >\n              </ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label color="primary" fixed>Password *</ion-label>\n              <ion-input\n                #inputLoginPassword\n                type="password"\n                placeholder="password"\n                value=""\n                [(ngModel)]="nPassword"\n                >\n              </ion-input>\n            </ion-item>\n          </ion-list>\n      </div>\n      <div ion-text color="danger">{{error_text}}</div>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding [ngSwitch]="view">\n    <div *ngSwitchCase="0">\n      <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n      <button no-padding ion-button icon-right large full (click)="onClickRegister()">\n        REGISTER\n        <ion-icon name="ios-arrow-forward"></ion-icon>\n      </button>\n    </div>\n    <div *ngSwitchCase="1">\n      <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n      <button no-padding ion-button icon-right large full (click)="onClickLogin()">\n        LOGIN\n        <ion-icon name="ios-arrow-forward"></ion-icon>\n      </button>\n    </div>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
+        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Account Information\n        </ion-list-header>\n        <button ion-item>\n          Username\n          <ion-note item-end>\n            {{singleton.username}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Change Password\n        </button>\n        \n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Email\n          <ion-note item-end>\n            {{singleton.email}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->\n        <ion-list>\n          <ion-item>\n            <ion-label color="primary" fixed>Username *</ion-label>\n            <ion-input\n              #inputRegisterUsername\n              type="text"\n              placeholder="username"\n              value=""\n              [(ngModel)]="nUsername"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>First Name *</ion-label>\n            <ion-input\n              #inputRegisterFirstName\n              type="text"\n              placeholder="first name"\n              value=""\n              [(ngModel)]="nFirstName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Last Name *</ion-label>\n            <ion-input\n              #inputRegisterLastName\n              type="text"\n              placeholder="last name"\n              value=""\n              [(ngModel)]="nLastName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Email *</ion-label>\n            <ion-input\n              #inputRegisterEmail\n              type="email"\n              placeholder="email"\n              value=""\n              [(ngModel)]="nEmail"\n              >\n            </ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label color="primary" fixed>Password *</ion-label>\n            <ion-input\n              #inputRegisterPassword\n              type="password"\n              placeholder="password"\n              value=""\n              [(ngModel)]="nPassword"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Confirm *</ion-label>\n            <ion-input\n              #inputRegisterConfirmPassword\n              type="password"\n              placeholder="confirm password"\n              value=""\n              [(ngModel)]="nConfirmPassword"\n              >\n            </ion-input>\n          </ion-item>\n          \n          <!--\n            Car license?\n            Address?\n          -->\n        </ion-list>\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n        <ion-list>\n            <ion-item>\n              <ion-label color="primary" fixed>Username *</ion-label>\n              <ion-input\n                #inputLoginUsername\n                type="text"\n                placeholder="username"\n                value=""\n                [(ngModel)]="nUsername"\n                >\n              </ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label color="primary" fixed>Password *</ion-label>\n              <ion-input\n                #inputLoginPassword\n                type="password"\n                placeholder="password"\n                value=""\n                [(ngModel)]="nPassword"\n                >\n              </ion-input>\n            </ion-item>\n          </ion-list>\n      </div>\n      <div ion-text color="danger">{{error_text}}</div>\n    </div>\n  </div>\n\n</ion-content>\n\n\n<ion-footer [ngSwitch]="singleton.authorized">\n  <div *ngSwitchCase="false">\n    <ion-toolbar no-padding [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickRegister()">\n          REGISTER\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n      <div *ngSwitchCase="1">\n        <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickLogin()">\n          LOGIN\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n    </ion-toolbar>\n  </div>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object])
 ], AccountPage);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=account.js.map
 
 /***/ }),
@@ -1095,7 +1133,7 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_11__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/reservations/reservations.module#ReservationsPageModule', name: 'ReservationsPage', segment: 'reservations', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/find-events/find-events.module#FindEventsPageModule', name: 'FindEventsPage', segment: 'find-events', priority: 'low', defaultHistory: [] },
@@ -1106,7 +1144,7 @@ AppModule = __decorate([
                 ]
             })
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_4__pages_reservations_reservations__["a" /* ReservationsPage */],
@@ -1119,7 +1157,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_10__ionic_native_date_picker__["a" /* DatePicker */],
-            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
             __WEBPACK_IMPORTED_MODULE_13__providers_singleton_singleton__["a" /* SingletonProvider */],
             __WEBPACK_IMPORTED_MODULE_14__providers_map_service_map_service__["a" /* MapServiceProvider */],
             __WEBPACK_IMPORTED_MODULE_15__providers_user_service_user_service__["a" /* UserServiceProvider */]
@@ -1170,7 +1208,7 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map

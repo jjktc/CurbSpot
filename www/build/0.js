@@ -29,7 +29,7 @@ PaymentPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__payment__["a" /* PaymentPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__payment__["a" /* PaymentPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__payment__["a" /* PaymentPage */]),
         ],
     })
 ], PaymentPageModule);
@@ -86,11 +86,11 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
 ], PaymentPage.prototype, "panoElement", void 0);
 PaymentPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-payment',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reserve</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-left (click)="viewCtrl.dismiss()">\n          <ion-icon name="arrow-back"></ion-icon>\n          Cancel\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <ion-card>\n      <ion-item>\n        <ion-icon name="md-pin" item-start large></ion-icon>\n        <h2 text-wrap>{{address}}</h2>\n      </ion-item>\n\n  </ion-card>\n\n  <div #pano id="pano">\n    <ion-spinner color="primary" name="dots"></ion-spinner>\n  </div>\n\n  <ion-list>\n    <ion-list-header>\n      Reservation Starts\n    </ion-list-header>\n    <button ion-item >\n      Sept 24, 2017 @ 9:30 am\n    </button>\n    <ion-list-header>\n      Reservation Ends\n    </ion-list-header>\n    <button ion-item>\n      Sept 24, 2017 @ 2:30 pm\n    </button>\n  </ion-list>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-padding>\n    <button no-padding ion-button icon-left large full color="secondary">\n      <ion-icon showWhen="ios" name="logo-apple"></ion-icon>\n      <ion-icon showWhen="android" name="logo-android"></ion-icon>\n      Reserve ({{cost}})\n    </button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/payment/payment.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_map_service_map_service__["a" /* MapServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]])
 ], PaymentPage);
 
 //# sourceMappingURL=payment.js.map
