@@ -36,6 +36,10 @@ export class AccountPage {
     this.view = view;
   }
 
+  onClickLogout() {
+    
+  }
+
   //accept login or email?
   onClickLogin() {
     console.log("Login clicked", [this.nUsername, this.nPassword]);
