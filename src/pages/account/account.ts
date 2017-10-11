@@ -112,4 +112,60 @@ export class AccountPage {
     }
   }
 
+  onClickEditPassword() {
+    this.singleton.createPromptAlert("Current Password", "password", "password", "password").then(res => {
+      var cPassword = res[0];
+      if(cPassword == this.singleton.password) {
+        this.singleton.createPromptAlert("New Password", "password", "password", "password").then(res => {
+          var nPassword = res[0];
+          if(nPassword.length >= 4) {
+            this.singleton.createPromptAlert("Confirm Password", "password", "password", "password").then(res => {
+              if(res[0] == nPassword) {
+                this.singleton.apiRequest(
+                  "auth/changePassword.php",
+                  [
+                    "username",
+                    "password",
+                    "newpassword"
+                  ],
+                  [
+                    this.singleton.username,
+                    this.singleton.password,
+                    nPassword
+                  ]
+                ).then(res => {
+                  var data = res[0].data;
+                  if(data.status) {
+                    this.singleton.password = data.password;
+                    this.singleton.sendToast("Password updated!");
+                  } else {
+                    this.singleton.sendToast("Error changing password!");
+                  }
+                });
+              } else {
+                this.singleton.sendToast("Password didn't match!");
+              }
+            })
+          } else {
+            this.singleton.sendToast("Password too short!");
+          }
+        })
+      } else {
+        this.singleton.sendToast("Incorrect password!");
+      }
+    })
+  }
+
+  onClickEditFirstName() {
+
+  }
+
+  onClickEditLastName() {
+
+  }
+
+  onClickEditEmail() {
+
+  }
+
 }

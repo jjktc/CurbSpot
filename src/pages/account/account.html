@@ -26,26 +26,26 @@
             {{singleton.username}}
           </ion-note>
         </button>
-        <button ion-item>
+        <button ion-item (click)="onClickEditPassword()">
           Change Password
         </button>
         
         <ion-list-header color="light">
           Personal Information
         </ion-list-header>
-        <button ion-item>
+        <button ion-item (click)="onClickEditFirstName()">
           First Name
           <ion-note item-end>
             {{singleton.firstName}}
           </ion-note>
         </button>
-        <button ion-item>
+        <button ion-item (click)="onClickEditLastName()">
           Last Name
           <ion-note item-end>
             {{singleton.lastName}}
           </ion-note>
         </button>
-        <button ion-item>
+        <button ion-item (click)="onClickEditEmail()">
           Email
           <ion-note item-end>
             {{singleton.email}}
