@@ -377,6 +377,8 @@ var SingletonProvider = (function () {
             });
         });
     };
+    SingletonProvider.prototype.apiAuthRequest = function (target, keys, values) {
+    };
     return SingletonProvider;
 }());
 SingletonProvider = __decorate([
@@ -1000,7 +1002,7 @@ var AccountPage = (function () {
         console.log("Register clicked", [this.nUsername, this.nFirstName, this.nLastName, this.nEmail, this.nPassword, this.nConfirmPassword]);
         this.singleton.createLoader("Registering");
         if (this.nUsername.length >= 3 && this.nUsername.length <= 15) {
-            if (this.nFirstName.length > 0 && this.nLastName.length > 0) {
+            if (this.nFirstName.length > 0 && this.nFirstName.length < 30 && this.nLastName.length > 0 && this.nLastName.length < 30) {
                 if (this.nEmail.indexOf("@") > 0 && this.nEmail.indexOf(".") > 0) {
                     if (this.nPassword.length >= 4) {
                         if (this.nPassword == this.nConfirmPassword) {
@@ -1034,28 +1036,125 @@ var AccountPage = (function () {
                 }
             }
             else {
-                this.error_text = "Name is invalid";
+                this.error_text = "Name is invalid. It may be too long or too short";
             }
         }
         else {
             this.error_text = "Username must be between 3 and 15 characters";
         }
     };
+    AccountPage.prototype.onClickEditPassword = function () {
+        var _this = this;
+        this.singleton.createPromptAlert("Current Password", "password", "password", "password").then(function (res) {
+            var cPassword = res[0];
+            if (cPassword == _this.singleton.password) {
+                _this.singleton.createPromptAlert("New Password", "password", "password", "password").then(function (res) {
+                    var nPassword = res[0];
+                    if (nPassword.length >= 4) {
+                        _this.singleton.createPromptAlert("Confirm Password", "password", "password", "password").then(function (res) {
+                            if (res[0] == nPassword) {
+                                _this.singleton.apiRequest("auth/changePassword.php", [
+                                    "username",
+                                    "password",
+                                    "newpassword"
+                                ], [
+                                    _this.singleton.username,
+                                    _this.singleton.password,
+                                    nPassword
+                                ]).then(function (res) {
+                                    var data = res[0].data;
+                                    if (data.status) {
+                                        _this.singleton.password = data.password;
+                                        _this.singleton.sendToast("Password updated!");
+                                    }
+                                    else {
+                                        _this.singleton.sendToast("Error changing password!");
+                                    }
+                                });
+                            }
+                            else {
+                                _this.singleton.sendToast("Password didn't match!");
+                            }
+                        });
+                    }
+                    else {
+                        _this.singleton.sendToast("Password too short!");
+                    }
+                });
+            }
+            else {
+                _this.singleton.sendToast("Incorrect password!");
+            }
+        });
+    };
+    AccountPage.prototype.onClickEditFirstName = function () {
+        var _this = this;
+        this.singleton.createPromptAlert("New First Name", "firstname", "first name", "text").then(function (res) {
+            var nFirstName = res[0];
+            if (nFirstName.length > 0 && nFirstName.length < 30) {
+                _this.singleton.apiRequest("auth/changeFirstName.php", [
+                    "username",
+                    "password",
+                    "newfirstname"
+                ], [
+                    _this.singleton.username,
+                    _this.singleton.password,
+                    nFirstName
+                ]).then(function (res) {
+                    var data = res[0].data;
+                    if (data.status) {
+                        _this.singleton.firstName = data.firstName;
+                        _this.singleton.sendToast("First name updated!");
+                    }
+                    else {
+                        _this.singleton.sendToast("Error changing first name!");
+                    }
+                });
+            }
+        });
+    };
+    AccountPage.prototype.onClickEditLastName = function () {
+        var _this = this;
+        this.singleton.createPromptAlert("New Last Name", "lastname", "last name", "text").then(function (res) {
+            var nLastName = res[0];
+            if (nLastName.length > 0 && nLastName.length < 30) {
+                _this.singleton.apiRequest("auth/changeLastName.php", [
+                    "username",
+                    "password",
+                    "newlastname"
+                ], [
+                    _this.singleton.username,
+                    _this.singleton.password,
+                    nLastName
+                ]).then(function (res) {
+                    var data = res[0].data;
+                    if (data.status) {
+                        _this.singleton.lastName = data.lastName;
+                        _this.singleton.sendToast("Last name updated!");
+                    }
+                    else {
+                        _this.singleton.sendToast("Error changing last name!");
+                    }
+                });
+            }
+        });
+    };
+    AccountPage.prototype.onClickEditEmail = function () {
+    };
     return AccountPage;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
 ], AccountPage.prototype, "content", void 0);
 AccountPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="onClickLogout()">\n        Logout\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Account Information\n        </ion-list-header>\n        <button ion-item>\n          Username\n          <ion-note item-end>\n            {{singleton.username}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Change Password\n        </button>\n        \n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item>\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n        <button ion-item>\n          Email\n          <ion-note item-end>\n            {{singleton.email}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->\n        <ion-list>\n          <ion-item>\n            <ion-label color="primary" fixed>Username *</ion-label>\n            <ion-input\n              #inputRegisterUsername\n              type="text"\n              placeholder="username"\n              value=""\n              [(ngModel)]="nUsername"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>First Name *</ion-label>\n            <ion-input\n              #inputRegisterFirstName\n              type="text"\n              placeholder="first name"\n              value=""\n              [(ngModel)]="nFirstName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Last Name *</ion-label>\n            <ion-input\n              #inputRegisterLastName\n              type="text"\n              placeholder="last name"\n              value=""\n              [(ngModel)]="nLastName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Email *</ion-label>\n            <ion-input\n              #inputRegisterEmail\n              type="email"\n              placeholder="email"\n              value=""\n              [(ngModel)]="nEmail"\n              >\n            </ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label color="primary" fixed>Password *</ion-label>\n            <ion-input\n              #inputRegisterPassword\n              type="password"\n              placeholder="password"\n              value=""\n              [(ngModel)]="nPassword"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Confirm *</ion-label>\n            <ion-input\n              #inputRegisterConfirmPassword\n              type="password"\n              placeholder="confirm password"\n              value=""\n              [(ngModel)]="nConfirmPassword"\n              >\n            </ion-input>\n          </ion-item>\n          \n          <!--\n            Car license?\n            Address?\n          -->\n        </ion-list>\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n        <ion-list>\n            <ion-item>\n              <ion-label color="primary" fixed>Username *</ion-label>\n              <ion-input\n                #inputLoginUsername\n                type="text"\n                placeholder="username"\n                value=""\n                [(ngModel)]="nUsername"\n                >\n              </ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label color="primary" fixed>Password *</ion-label>\n              <ion-input\n                #inputLoginPassword\n                type="password"\n                placeholder="password"\n                value=""\n                [(ngModel)]="nPassword"\n                >\n              </ion-input>\n            </ion-item>\n          </ion-list>\n      </div>\n      <div ion-text color="danger">{{error_text}}</div>\n    </div>\n  </div>\n\n</ion-content>\n\n\n<ion-footer [ngSwitch]="singleton.authorized">\n  <div *ngSwitchCase="false">\n    <ion-toolbar no-padding [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickRegister()">\n          REGISTER\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n      <div *ngSwitchCase="1">\n        <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickLogin()">\n          LOGIN\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n    </ion-toolbar>\n  </div>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
+        selector: 'page-account',template:/*ion-inline-start:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Account</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="onClickLogout()">\n        Logout\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div [ngSwitch]="singleton.authorized">\n    <div *ngSwitchCase="true">\n      <ion-list>\n        <ion-list-header color="light">\n          Account Information\n        </ion-list-header>\n        <button ion-item>\n          Username\n          <ion-note item-end>\n            {{singleton.username}}\n          </ion-note>\n        </button>\n        <button ion-item (click)="onClickEditPassword()">\n          Change Password\n        </button>\n        \n        <ion-list-header color="light">\n          Personal Information\n        </ion-list-header>\n        <button ion-item (click)="onClickEditFirstName()">\n          First Name\n          <ion-note item-end>\n            {{singleton.firstName}}\n          </ion-note>\n        </button>\n        <button ion-item (click)="onClickEditLastName()">\n          Last Name\n          <ion-note item-end>\n            {{singleton.lastName}}\n          </ion-note>\n        </button>\n        <button ion-item (click)="onClickEditEmail()">\n          Email\n          <ion-note item-end>\n            {{singleton.email}}\n          </ion-note>\n        </button>\n      </ion-list>\n    </div>\n    <div *ngSwitchCase="false" [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <!--\n          Register information\n        -->\n        <ion-list>\n          <ion-item>\n            <ion-label color="primary" fixed>Username *</ion-label>\n            <ion-input\n              #inputRegisterUsername\n              type="text"\n              placeholder="username"\n              value=""\n              [(ngModel)]="nUsername"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>First Name *</ion-label>\n            <ion-input\n              #inputRegisterFirstName\n              type="text"\n              placeholder="first name"\n              value=""\n              [(ngModel)]="nFirstName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Last Name *</ion-label>\n            <ion-input\n              #inputRegisterLastName\n              type="text"\n              placeholder="last name"\n              value=""\n              [(ngModel)]="nLastName"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Email *</ion-label>\n            <ion-input\n              #inputRegisterEmail\n              type="email"\n              placeholder="email"\n              value=""\n              [(ngModel)]="nEmail"\n              >\n            </ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label color="primary" fixed>Password *</ion-label>\n            <ion-input\n              #inputRegisterPassword\n              type="password"\n              placeholder="password"\n              value=""\n              [(ngModel)]="nPassword"\n              >\n            </ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label color="primary" fixed>Confirm *</ion-label>\n            <ion-input\n              #inputRegisterConfirmPassword\n              type="password"\n              placeholder="confirm password"\n              value=""\n              [(ngModel)]="nConfirmPassword"\n              >\n            </ion-input>\n          </ion-item>\n          \n          <!--\n            Car license?\n            Address?\n          -->\n        </ion-list>\n      </div>\n      <div *ngSwitchCase="1">\n        <!--\n          Login information\n        -->\n        <ion-list>\n            <ion-item>\n              <ion-label color="primary" fixed>Username *</ion-label>\n              <ion-input\n                #inputLoginUsername\n                type="text"\n                placeholder="username"\n                value=""\n                [(ngModel)]="nUsername"\n                >\n              </ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label color="primary" fixed>Password *</ion-label>\n              <ion-input\n                #inputLoginPassword\n                type="password"\n                placeholder="password"\n                value=""\n                [(ngModel)]="nPassword"\n                >\n              </ion-input>\n            </ion-item>\n          </ion-list>\n      </div>\n      <div ion-text color="danger">{{error_text}}</div>\n    </div>\n  </div>\n\n</ion-content>\n\n\n<ion-footer [ngSwitch]="singleton.authorized">\n  <div *ngSwitchCase="false">\n    <ion-toolbar no-padding [ngSwitch]="view">\n      <div *ngSwitchCase="0">\n        <p padding-left padding-right>Already have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(1)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickRegister()">\n          REGISTER\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n      <div *ngSwitchCase="1">\n        <p padding-left padding-right>Don\'t have an account? <span ion-text style="font-weight: bold" color="primary" (click)="onClickSwitch(0)">Click Here</span></p>\n        <button no-padding ion-button icon-right large full (click)="onClickLogin()">\n          LOGIN\n          <ion-icon name="ios-arrow-forward"></ion-icon>\n        </button>\n      </div>\n    </ion-toolbar>\n  </div>\n</ion-footer>\n'/*ion-inline-end:"/Users/helios/Documents/Helios/Ionic/CurbSpot/src/pages/account/account.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_singleton_singleton__["a" /* SingletonProvider */]])
 ], AccountPage);
 
-var _a, _b, _c, _d;
 //# sourceMappingURL=account.js.map
 
 /***/ }),

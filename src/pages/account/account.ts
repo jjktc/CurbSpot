@@ -76,7 +76,7 @@ export class AccountPage {
     console.log("Register clicked", [this.nUsername, this.nFirstName, this.nLastName, this.nEmail, this.nPassword, this.nConfirmPassword]);
     this.singleton.createLoader("Registering");
     if(this.nUsername.length >= 3 && this.nUsername.length <= 15) {
-      if(this.nFirstName.length > 0 && this.nLastName.length > 0) {
+      if(this.nFirstName.length > 0 && this.nFirstName.length < 30 && this.nLastName.length > 0 && this.nLastName.length < 30) {
         if(this.nEmail.indexOf("@") > 0 && this.nEmail.indexOf(".") > 0) {
           if(this.nPassword.length >= 4) {
             if(this.nPassword == this.nConfirmPassword) {
@@ -105,7 +105,7 @@ export class AccountPage {
           this.error_text = "Email is invalid";
         }
       } else {
-        this.error_text = "Name is invalid";
+        this.error_text = "Name is invalid. It may be too long or too short";
       }
     } else {
       this.error_text = "Username must be between 3 and 15 characters";
@@ -157,15 +157,65 @@ export class AccountPage {
   }
 
   onClickEditFirstName() {
-
+    this.singleton.createPromptAlert("New First Name", "firstname", "first name", "text").then(res => {
+      var nFirstName = res[0];
+      if(nFirstName.length > 0 && nFirstName.length < 30) {
+        this.singleton.apiRequest(
+          "auth/changeFirstName.php",
+          [
+            "username",
+            "password",
+            "newfirstname"
+          ],
+          [
+            this.singleton.username,
+            this.singleton.password,
+            nFirstName
+          ]
+        ).then(res => {
+          var data = res[0].data;
+          if(data.status) {
+            this.singleton.firstName = data.firstName;
+            this.singleton.sendToast("First name updated!");
+          } else {
+            this.singleton.sendToast("Error changing first name!");
+          }
+        })
+      }
+    });
   }
 
   onClickEditLastName() {
-
+    this.singleton.createPromptAlert("New Last Name", "lastname", "last name", "text").then(res => {
+      var nLastName = res[0];
+      if(nLastName.length > 0 && nLastName.length < 30) {
+        this.singleton.apiRequest(
+          "auth/changeLastName.php",
+          [
+            "username",
+            "password",
+            "newlastname"
+          ],
+          [
+            this.singleton.username,
+            this.singleton.password,
+            nLastName
+          ]
+        ).then(res => {
+          var data = res[0].data;
+          if(data.status) {
+            this.singleton.lastName = data.lastName;
+            this.singleton.sendToast("Last name updated!");
+          } else {
+            this.singleton.sendToast("Error changing last name!");
+          }
+        })
+      }
+    });
   }
 
   onClickEditEmail() {
-
+    
   }
 
 }

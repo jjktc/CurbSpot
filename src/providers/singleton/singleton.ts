@@ -372,4 +372,8 @@ export class SingletonProvider {
     });
   }
 
+  apiAuthRequest(target, keys, values) {
+    
+  }
+
 }
