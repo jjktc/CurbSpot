@@ -11,6 +11,16 @@ export class UserServiceProvider {
     console.log('Hello UserServiceProvider Provider');
   }
 
+  logout(singleton : SingletonProvider) {
+    console.log("Logging out");
+    singleton.authorized = false;
+    singleton.username = "";
+    singleton.password = "";
+    singleton.email = "";
+    singleton.firstName = "";
+    singleton.lastName = "";
+  }
+
   login(singleton : SingletonProvider, username, password) {
     return new Promise(resolve => {
       singleton.apiRequest("auth/login.php", [

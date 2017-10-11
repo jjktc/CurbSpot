@@ -37,7 +37,8 @@ export class AccountPage {
   }
 
   onClickLogout() {
-    
+    console.log("Logout clicked");
+    this.singleton.us.logout(this.singleton);
   }
 
   //accept login or email?
