@@ -1,26 +1,10 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# CurbSpot
+Founded by Jeff Taylor-Chang, Austin Sun, David Cooke, Ken Wu, and Gabrielle Chen in 54 hours at 54.io Startup Competition.
 
-## How to use this template
+## Recognition
+- 2nd place at 54.io
+- Received initial grant to pay for startup costs
+- Invited demo at ThinkChicago '17
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
-
-Then, to run it, cd into `myTabs` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+## Prototype
+Working nearly 54 hours straight, I built a prototype of how we envisioned the mobile and desktop interfaces to look that had working map features, location searching, and various functional screens. I worked with a professional UX designer in order to make it look sleek and streamlined, and talked with people from various companies like Capital One to influence the direction of the product. It was written using the Ionic Framework (TypeScript, HTML, and SCSS)
